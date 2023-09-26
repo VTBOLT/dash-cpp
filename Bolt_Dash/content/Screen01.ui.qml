@@ -30,6 +30,13 @@ Rectangle {
         width: 600
         height: 48
         value: 0.5
-        onMoved: speedometer.speedoPercent = slider.value
+        onMoved: batterySlider.fullness = slider.value
+    }
+
+    BatterySlider {
+        id: batterySlider
+        x: 52
+        y: 172
+        scale: 0.5
     }
 }
