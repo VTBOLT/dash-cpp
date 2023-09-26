@@ -35,8 +35,15 @@ Rectangle {
 
     BatterySlider {
         id: batterySlider
-        x: 52
-        y: 172
+        x: 25
+        y: 175
+        scale: 0.5
+    }
+
+    BatterySlider {
+        id: auxSlider
+        x: 125
+        y: 175
         scale: 0.5
     }
 }
