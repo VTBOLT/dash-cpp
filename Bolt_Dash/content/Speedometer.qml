@@ -30,44 +30,6 @@ Item {
         id: root
         width: parent.width
         height: parent.height
-
-        Canvas {
-            id: curveCanvas
-            anchors.fill: parent
-
-            onPaint: {
-                var ctx = getContext("2d");
-
-                ctx.clearRect(0, 0, width, height);
-
-                ctx.strokeStyle = "blue";
-                ctx.lineWidth = 24;
-
-                // Define the quadratic curve equation
-                function quadraticCurveEquation(x) {
-                    // Example equation: y = x^2 / 100
-                    return root.height-(Math.pow(x-12,1/6)*39);
-                }
-
-                // Specify the range of x values
-                var startX = 12;     // Start x-coordinate
-                var endX = 600*root.parent.speedoPercent;     // End x-coordinate
-                var stepSize = 2;   // Step size for x values
-
-                ctx.beginPath();
-
-                // Move to the starting point
-                ctx.moveTo(startX, quadraticCurveEquation(startX));
-
-                // Draw the curve by connecting points
-                for (var x = startX + stepSize; x <= endX; x += stepSize) {
-                    var y = quadraticCurveEquation(x);
-                    ctx.lineTo(x, y);
-                }
-
-                ctx.stroke();
-            }
-        }
     }
 }
 
