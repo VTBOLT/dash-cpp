@@ -34,7 +34,7 @@ Rectangle {
     }
 
     BatterySlider {
-        id: batterySlider
+        id: packSlider
         x: 25
         y: 175
         scale: 0.5
@@ -45,5 +45,25 @@ Rectangle {
         x: 125
         y: 175
         scale: 0.5
+    }
+
+    Text {
+        id: packLabel
+        x: 61
+        y: 444
+        width: 48
+        height: 29
+        text: qsTr("PACK")
+        font.pixelSize: 20
+    }
+
+    Text {
+        id: auxLabel
+        x: 168
+        y: 444
+        width: 48
+        height: 29
+        text: qsTr("AUX")
+        font.pixelSize: 20
     }
 }
