@@ -15,9 +15,9 @@ import QtQuick.Studio.Components
 Item {
     visible: true
     id: container
-    width: 600
-    height: 125
-    property double speedoPercent: 0.5;
+    width: 700
+    height: 75
+    property double fullness: 0.5;
 
     Connections {
         target: container
@@ -30,6 +30,18 @@ Item {
         id: root
         width: parent.width
         height: parent.height
+        radius: 10
+        border.color: "#616161"
+        border.width: 10
+
+        Rectangle {
+            id: rectangle
+            x: 10
+            y: 10
+            width: 680*fullness
+            height: 55
+            color: "#0c00ff"
+        }
     }
 }
 
