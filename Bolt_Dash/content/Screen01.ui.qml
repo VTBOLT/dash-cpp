@@ -1,5 +1,4 @@
 
-
 /*
 This is a UI file (.ui.qml) that is intended to be edited in Qt Design Studio only.
 It is supposed to be strictly declarative and only uses a subset of QML. If you edit
@@ -74,7 +73,7 @@ Rectangle {
 
     TempSlider {
         id: tempSlider
-        x: 660
+        x: 715
         y: 175
         scale: 0.5
         fullness: 1 - slider.value
@@ -82,7 +81,7 @@ Rectangle {
 
     Text {
         id: packTempLabel
-        x: 696
+        x: 723
         y: 444
         width: 48
         height: 29
@@ -93,7 +92,7 @@ Rectangle {
 
     TempSlider {
         id: tempSlider1
-        x: 560
+        x: 633
         y: 175
         scale: 0.5
         fullness: 1 - slider.value
@@ -101,7 +100,7 @@ Rectangle {
 
     Text {
         id: mcTempLabel
-        x: 596
+        x: 641
         y: 444
         width: 48
         height: 29
@@ -112,7 +111,7 @@ Rectangle {
 
     TempSlider {
         id: tempSlider2
-        x: 460
+        x: 545
         y: 175
         scale: 0.5
         fullness: 1 - slider.value
@@ -120,7 +119,7 @@ Rectangle {
 
     Text {
         id: motorTempLabel
-        x: 496
+        x: 549
         y: 444
         width: 48
         height: 29
@@ -139,5 +138,11 @@ Rectangle {
         font.pixelSize: 125
         horizontalAlignment: Text.AlignHCenter
         font.family: "Verdana"
+    }
+
+    WarningSymbol {
+        id: warningSymbol
+        x: 350
+        y: 308
     }
 }
