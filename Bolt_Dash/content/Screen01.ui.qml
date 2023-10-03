@@ -35,7 +35,7 @@ Rectangle {
 
     BatterySlider {
         id: packSlider
-        x: 25
+        x: 28
         y: 175
         scale: 0.5
         fullness: slider.value
@@ -43,7 +43,7 @@ Rectangle {
 
     BatterySlider {
         id: auxSlider
-        x: 125
+        x: 98
         y: 175
         scale: 0.5
         fullness: slider.value
@@ -51,7 +51,7 @@ Rectangle {
 
     Text {
         id: packLabel
-        x: 61
+        x: 36
         y: 444
         width: 48
         height: 29
@@ -62,7 +62,7 @@ Rectangle {
 
     Text {
         id: auxLabel
-        x: 161
+        x: 104
         y: 443
         width: 48
         height: 29
@@ -72,7 +72,7 @@ Rectangle {
     }
 
     TempSlider {
-        id: tempSlider
+        id: packTempSlider
         x: 715
         y: 175
         scale: 0.5
@@ -91,8 +91,8 @@ Rectangle {
     }
 
     TempSlider {
-        id: tempSlider1
-        x: 633
+        id: mCTempSlider
+        x: 644
         y: 175
         scale: 0.5
         fullness: 1 - slider.value
@@ -100,7 +100,7 @@ Rectangle {
 
     Text {
         id: mcTempLabel
-        x: 641
+        x: 652
         y: 444
         width: 48
         height: 29
@@ -110,8 +110,8 @@ Rectangle {
     }
 
     TempSlider {
-        id: tempSlider2
-        x: 545
+        id: motorTempSlider
+        x: 568
         y: 175
         scale: 0.5
         fullness: 1 - slider.value
@@ -119,7 +119,7 @@ Rectangle {
 
     Text {
         id: motorTempLabel
-        x: 549
+        x: 572
         y: 444
         width: 48
         height: 29
@@ -142,7 +142,7 @@ Rectangle {
 
     WarningSymbol {
         id: warningSymbol
-        x: 350
-        y: 308
+        x: 626
+        y: 127
     }
 }
