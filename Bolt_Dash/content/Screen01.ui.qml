@@ -137,7 +137,7 @@ Rectangle {
         text: qsTr("174")
         font.pixelSize: 125
         horizontalAlignment: Text.AlignHCenter
-        font.family: "Verdana"
+        font.family: "Nasalization"
     }
 
     WarningSymbol {
