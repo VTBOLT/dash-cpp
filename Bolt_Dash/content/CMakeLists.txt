@@ -10,6 +10,8 @@ qt6_add_qml_module(content
         Screen01.ui.qml
         Speedometer.qml
         BatterySlider.qml
+        TempSlider.qml
+        WarningSymbol.qml
     RESOURCES
         fonts/fonts.txt
 )
