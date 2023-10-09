@@ -7,7 +7,6 @@ Item {
     readonly property string red: "#e80c0c"
     readonly property string green: "#09bd0f"
     property double fullness: 0.5;
-    property string currentColor: yellow
 
     function integerToHex(num){
         let hexString = Math.floor(num).toString(16);

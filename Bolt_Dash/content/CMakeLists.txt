@@ -14,4 +14,5 @@ qt6_add_qml_module(content
         WarningSymbol.qml
     RESOURCES
         fonts/fonts.txt
+        fonts/nasalization-rg.otf
 )
