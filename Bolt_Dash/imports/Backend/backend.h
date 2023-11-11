@@ -4,6 +4,8 @@
 #include <QObject>
 #include <QString>
 #include <qqml.h>
+#include <thread>
+#include <iostream>
 
 class Backend : public QObject
 {

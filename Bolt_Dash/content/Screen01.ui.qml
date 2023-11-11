@@ -8,6 +8,7 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 import QtQuick 6.2
 import QtQuick.Controls 6.2
 import Bolt_Dash
+import Backend
 
 Rectangle {
     id: rectangle
@@ -20,6 +21,10 @@ Rectangle {
         id: speedometer
         x: 50
         y: 24
+    }
+
+    Backend {
+        id: backend
     }
 
     Slider {

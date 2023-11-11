@@ -14,10 +14,6 @@ qt6_add_qml_module(Bolt_Dash
 		Constants.qml
 		DirectoryFontLoader.qml
 		EventListModel.qml
-		EventListSimulator.qml
-	SOURCES
-		can.cpp
-                backend.h
-                backend.cpp
+                EventListSimulator.qml
 )
 
