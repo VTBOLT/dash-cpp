@@ -1,29 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <iostream>
-#include <chrono>
-#include <thread>
-
-#include <net/if.h>
-#include <sys/ioctl.h>
-#include <sys/socket.h>
-
-#include <linux/can.h>
-#include <linux/can/raw.h>
-
+#include "can.h"
 
 using namespace std::chrono_literals;
+
 namespace can {
     int run() {
+        // Where the data will be stored to be send to the front end
         int s, i;
         int nbytes;
         struct sockaddr_can addr;
         struct ifreq ifr;
         struct can_frame frame;
 
-        std::cout << "CAN Sockets Receive Demo\r\n" << std::endl;
+        printf("CAN Sockets Receive Demo\r\n");
 
         // Create a new socket of type CAN using data CAN_RAW
         if ((s = socket(PF_CAN, SOCK_RAW, CAN_RAW)) < 0) {
@@ -59,6 +47,41 @@ namespace can {
                 return 1;
             }
 
+            switch(frame.can_id){
+                case can_ids.aux_battery:
+                    data.aux_voltage = frame.data[0];
+                    data.aux_percent = frame.data[1];
+                    break;
+                case can_ids.main_battery:
+                    data.pack_state_of_charge = frame.data[0];
+                    break;
+                case can_ids.main_pack_temp:
+                    data.high_cell_temp = frame.data[0];
+                    data.low_cell_temp = frame.data[1];
+                    break;
+                case can_ids.motor_temp:
+                    data.motor_temperature = frame.data[0] << 8;
+                    data.motor_temperature += frame.data[1];
+                    break;
+                case can_ids.bms_temp:
+                    data.bms_temperature = frame.data[0] << 8;
+                    data.bms_temperature += frame.data[1];
+                    break;
+                case can_ids.rpm:
+                    data.motor_speed = frame.data[0] << 8;
+                    data.motor_speed += frame.data[1];
+                    break;
+                case can_ids.speed:
+                    data.bike_speed = frame.data[0] << 8;
+                    data.bike_speed += frame.data[1];
+                    break;
+                default:
+                    unknown_data = new int8_t[frame.can_dlc];
+                    for(int i{}; i<frame.can_dlc; i++){
+                        unknown_data[i] = frame.data[i];
+                    }
+            }
+
             // Print the can ID and len of data
             printf("0x%03X [%d] ", frame.can_id, frame.can_dlc);
 
@@ -80,6 +103,3 @@ namespace can {
         return 0;
     }
 }
-
-
-
