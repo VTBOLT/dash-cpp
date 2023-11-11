@@ -17,5 +17,7 @@ qt6_add_qml_module(Bolt_Dash
 		EventListSimulator.qml
 	SOURCES
 		can.cpp
+                backend.h
+                backend.cpp
 )
 
