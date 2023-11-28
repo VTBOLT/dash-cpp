@@ -10,6 +10,7 @@ namespace can {
         struct sockaddr_can addr;
         struct ifreq ifr;
         struct can_frame frame;
+        int8_t *unknown_data = nullptr;
 
         printf("CAN Sockets Receive Demo\r\n");
 
@@ -26,13 +27,11 @@ namespace can {
 
         // Reserve memory for CAN frames
         memset(&addr, 0, sizeof(addr));
-        addr.can_family = AF_CAN;   // Use CAN sockets specifically
+        addr.can_family = AF_CAN; // Use CAN sockets specifically
         addr.can_ifindex = ifr.ifr_ifindex;
 
-
-
         // Connects to the socket and locks it
-        if (bind(s, (struct sockaddr*)&addr, sizeof(addr)) < 0) {
+        if (bind(s, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
             perror("Bind");
             return 1;
         }
@@ -47,39 +46,39 @@ namespace can {
                 return 1;
             }
 
-            switch(frame.can_id){
-                case can_ids.aux_battery:
-                    data.aux_voltage = frame.data[0];
-                    data.aux_percent = frame.data[1];
-                    break;
-                case can_ids.main_battery:
-                    data.pack_state_of_charge = frame.data[0];
-                    break;
-                case can_ids.main_pack_temp:
-                    data.high_cell_temp = frame.data[0];
-                    data.low_cell_temp = frame.data[1];
-                    break;
-                case can_ids.motor_temp:
-                    data.motor_temperature = frame.data[0] << 8;
-                    data.motor_temperature += frame.data[1];
-                    break;
-                case can_ids.bms_temp:
-                    data.bms_temperature = frame.data[0] << 8;
-                    data.bms_temperature += frame.data[1];
-                    break;
-                case can_ids.rpm:
-                    data.motor_speed = frame.data[0] << 8;
-                    data.motor_speed += frame.data[1];
-                    break;
-                case can_ids.speed:
-                    data.bike_speed = frame.data[0] << 8;
-                    data.bike_speed += frame.data[1];
-                    break;
-                default:
-                    unknown_data = new int8_t[frame.can_dlc];
-                    for(int i{}; i<frame.can_dlc; i++){
-                        unknown_data[i] = frame.data[i];
-                    }
+            switch (frame.can_id) {
+            case can_ids.aux_battery:
+                data.aux_voltage = frame.data[0];
+                data.aux_percent = frame.data[1];
+                break;
+            case can_ids.main_battery:
+                data.pack_state_of_charge = frame.data[0];
+                break;
+            case can_ids.main_pack_temp:
+                data.high_cell_temp = frame.data[0];
+                data.low_cell_temp = frame.data[1];
+                break;
+            case can_ids.motor_temp:
+                data.motor_temperature = frame.data[0] << 8;
+                data.motor_temperature += frame.data[1];
+                break;
+            case can_ids.bms_temp:
+                data.bms_temperature = frame.data[0] << 8;
+                data.bms_temperature += frame.data[1];
+                break;
+            case can_ids.rpm:
+                data.motor_speed = frame.data[0] << 8;
+                data.motor_speed += frame.data[1];
+                break;
+            case can_ids.speed:
+                data.bike_speed = frame.data[0] << 8;
+                data.bike_speed += frame.data[1];
+                break;
+            default:
+                unknown_data = new int8_t[frame.can_dlc];
+                for (int i{}; i < frame.can_dlc; i++) {
+                    unknown_data[i] = frame.data[i];
+                }
             }
 
             // Print the can ID and len of data
@@ -91,8 +90,6 @@ namespace can {
 
             printf("\r\n");
         }
-
-
 
         // Close socket
         if (close(s) < 0) {
