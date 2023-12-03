@@ -3,7 +3,7 @@
 
 qt_add_library(Backend STATIC)
 
-qt6_add_qml_module(backend
+qt6_add_qml_module(BackendPlugin
 	URI "Backend"
 	VERSION 1.0
 	SOURCES
