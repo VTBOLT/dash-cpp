@@ -25,6 +25,7 @@ Rectangle {
 
     Backend {
         id: backend
+        motorTemp: 0
     }
 
     Slider {
@@ -119,7 +120,7 @@ Rectangle {
         x: 568
         y: 175
         scale: 0.5
-        fullness: 1 - slider.value
+        fullness: backend.motorTemp
     }
 
     Text {
