@@ -2,6 +2,9 @@
 
 using namespace std::chrono_literals;
 
+std::mutex m;
+our_candata data{};
+
 namespace can {
     int run() {
         // Where the data will be stored to be send to the front end
@@ -21,7 +24,7 @@ namespace can {
         }
 
         // Setting the name of the physical can interface (ip a)
-        strcpy(ifr.ifr_name, "slcan0");
+        strcpy(ifr.ifr_name, "can0");
         // Converts if name to actual interface index
         ioctl(s, SIOCGIFINDEX, &ifr);
 
@@ -30,7 +33,7 @@ namespace can {
         addr.can_family = AF_CAN; // Use CAN sockets specifically
         addr.can_ifindex = ifr.ifr_ifindex;
 
-        // Connects to the socket and locks it
+        // Connects to the socket and  it locks
         if (bind(s, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
             perror("Bind");
             return 1;
@@ -45,7 +48,7 @@ namespace can {
                 perror("Read");
                 return 1;
             }
-
+            m.lock();
             switch (frame.can_id) {
             case can_ids.aux_battery:
                 data.aux_voltage = frame.data[0];
@@ -80,15 +83,16 @@ namespace can {
                     unknown_data[i] = frame.data[i];
                 }
             }
+            m.unlock();
 
             // Print the can ID and len of data
-            printf("0x%03X [%d] ", frame.can_id, frame.can_dlc);
+            //printf("0x%03X [%d] ", frame.can_id, frame.can_dlc);
 
             // Print the data in the CAN message
-            for (i = 0; i < frame.can_dlc; i++)
-                printf("%02X ", frame.data[i]);
+//            for (i = 0; i < frame.can_dlc; i++)
+                //printf("%02X ", frame.data[i]);
 
-            printf("\r\n");
+            //printf("\r\n");
         }
 
         // Close socket

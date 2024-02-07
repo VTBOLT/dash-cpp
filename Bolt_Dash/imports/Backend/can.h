@@ -8,6 +8,7 @@
 #include <string.h>
 #include <thread>
 #include <unistd.h>
+#include <mutex>
 
 #include <net/if.h>
 #include <sys/ioctl.h>
@@ -16,7 +17,7 @@
 #include <linux/can.h>
 #include <linux/can/raw.h>
 
-struct {
+struct our_candata {
     int8_t aux_voltage{};
     int8_t aux_percent{};
     int8_t pack_state_of_charge{};
@@ -26,7 +27,7 @@ struct {
     int16_t bms_temperature{};
     int16_t motor_speed{};
     int16_t bike_speed{};
-} data;
+};
 
 // ID's for each CAN thing
 constexpr struct {
@@ -38,6 +39,9 @@ constexpr struct {
     canid_t rpm{0xA1};
     canid_t speed{0xA2};
 } can_ids;
+
+extern std::mutex m;
+extern our_candata data;
 
 namespace can {
     int run();
