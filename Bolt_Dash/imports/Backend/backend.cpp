@@ -10,8 +10,10 @@ Backend::Backend(QObject* parent) :
 
 void Backend::updateVars() {
     while (true) {
-        //    setMotorTemp(data.motor_temperature/70);
-        setMotorTemp(motorTemp()+0.01);
+        setMotorTemp(data.motor_temperature/70.0);
+        data.motor_temperature++;
+//        setMotorTemp(motorTemp()+0.01);
+        std::cout << data.motor_temperature << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 }
