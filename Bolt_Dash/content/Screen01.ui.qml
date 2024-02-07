@@ -26,6 +26,7 @@ Rectangle {
     Backend {
         id: backend
         motorTemp: 0
+        auxBattery: 0
     }
 
     Slider {
@@ -52,7 +53,7 @@ Rectangle {
         x: 98
         y: 175
         scale: 0.5
-        fullness: slider.value
+        fullness: backend.auxBattery
     }
 
     Text {

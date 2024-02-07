@@ -18,13 +18,13 @@
 #include <linux/can/raw.h>
 
 struct our_candata {
-    int8_t aux_voltage{};
-    int8_t aux_percent{};
-    int8_t pack_state_of_charge{};
-    int16_t high_cell_temp{};
-    int16_t low_cell_temp{};
+    uint8_t aux_voltage{};
+    uint8_t aux_percent{};
+    uint8_t pack_state_of_charge{};
+    uint16_t high_cell_temp{};
+    uint16_t low_cell_temp{};
     int16_t motor_temperature{};
-    int16_t bms_temperature{};
+    uint16_t bms_temperature{};
     int16_t motor_speed{};
     int16_t bike_speed{};
 };
