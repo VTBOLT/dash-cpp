@@ -26,7 +26,8 @@ Rectangle {
     Backend {
         id: backend
         motorTemp: 0
-        auxBattery: 0
+        auxVoltage: 0
+        auxPercent: 0
     }
 
     Slider {
