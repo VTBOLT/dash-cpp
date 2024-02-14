@@ -17,6 +17,9 @@ class Backend : public QObject {
     Q_PROPERTY(double packSOC READ packSOC WRITE setPackSOC NOTIFY packSOCChanged);
     Q_PROPERTY(double highCellTemp READ highCellTemp WRITE setHighCellTemp NOTIFY highCellTempChanged);
     Q_PROPERTY(double lowCellTemp READ lowCellTemp WRITE setLowCellTemp NOTIFY lowCellTempChanged);
+    Q_PROPERTY(double bmsTemp READ bmsTemp WRITE setBmsTemp NOTIFY bmsTempChanged);
+    Q_PROPERTY(double motorSpeed READ motorSpeed WRITE setMotorSpeed NOTIFY motorSpeedChanged);
+    Q_PROPERTY(double bikeSpeed READ bikeSpeed WRITE setBikeSpeed NOTIFY bikeSpeedChanged);
 
 public:
     explicit Backend(QObject *parent = nullptr);
@@ -26,6 +29,9 @@ public:
     double packSOC() const;
     double highCellTemp() const;
     double lowCellTemp() const;
+    double bmsTemp() const;
+    double motorSpeed() const;
+    double bikeSpeed() const;
 
     void setMotorTemp(const double temp);
     void setAuxVoltage(const double cap);
@@ -33,6 +39,9 @@ public:
     void setPackSOC(const double soc);
     void setHighCellTemp(const double temp);
     void setLowCellTemp(const double temp);
+    void setBmsTemp(const double temp);
+    void setMotorSpeed(const double speed);
+    void setBikeSpeed(const double speed);
 
 signals:
     void motorTempChanged();
@@ -41,6 +50,9 @@ signals:
     void packSOCChanged();
     void highCellTempChanged();
     void lowCellTempChanged();
+    void bmsTempChanged();
+    void motorSpeedChanged();
+    void bikeSpeedChanged();
 
 private:
     void updateVars();
@@ -50,6 +62,9 @@ private:
     double m_packSOC;
     double m_highCellTemp;
     double m_lowCellTemp;
+    double m_bmsTemp;
+    double m_motorSpeed;
+    double m_bikeSpeed;
 };
 
 #endif // BACKEND_H
