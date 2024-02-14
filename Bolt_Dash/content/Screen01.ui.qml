@@ -90,7 +90,7 @@ Rectangle {
         x: 715
         y: 175
         scale: 0.5
-        fullness: 1-(backend.highCellTemp)
+        fullness: (backend.highCellTemp+backend.lowCellTemp)/2
     }
 
     Text {
@@ -109,7 +109,7 @@ Rectangle {
         x: 644
         y: 175
         scale: 0.5
-        fullness: 1 - backend.motorTemp
+        fullness: backend.bmsTemp
     }
 
     Text {
