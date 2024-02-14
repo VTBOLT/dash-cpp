@@ -16,9 +16,9 @@ void Backend::updateVars() {
         setAuxVoltage(data.aux_voltage / 255.0);        // volts
         setAuxPercent(data.aux_percent / 255.0);        // percent
         setPackSOC(data.pack_state_of_charge / 255.0);  // percent
-        setHighCellTemp(data.high_cell_temp);           // celsius
-        setLowCellTemp(data.low_cell_temp);             // celsius
-        setBmsTemp(data.bms_temperature);               // celsius
+        setHighCellTemp(data.high_cell_temp / 100);     // celsius
+        setLowCellTemp(data.low_cell_temp / 100);       // celsius
+        setBmsTemp(data.bms_temperature / 100);         // celsius
         setMotorSpeed(data.motor_speed);                // rpm
         setBikeSpeed(data.bike_speed);                  // mph
         m.unlock();
