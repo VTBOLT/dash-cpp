@@ -22,6 +22,8 @@ void Backend::updateVars() {
         setMotorSpeed(data.motor_speed);                // rpm
         setBikeSpeed(data.bike_speed);                  // mph
         m.unlock();
+        // Debug Message
+        std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
 }
