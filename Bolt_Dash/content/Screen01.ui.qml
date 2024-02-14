@@ -28,6 +28,12 @@ Rectangle {
         motorTemp: 0
         auxVoltage: 0
         auxPercent: 0
+        packSOC: 0
+        highCellTemp: 0
+        lowCellTemp: 0
+        bmsTemp: 0
+        motorSpeed: 0
+        bikeSpeed: 0
     }
 
     Slider {
