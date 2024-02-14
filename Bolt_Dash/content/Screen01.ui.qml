@@ -60,7 +60,7 @@ Rectangle {
         x: 98
         y: 175
         scale: 0.5
-        fullness: backend.auxBattery
+        fullness: backend.auxPercent
     }
 
     Text {
