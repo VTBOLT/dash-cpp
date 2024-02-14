@@ -12,10 +12,15 @@ Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage
 void Backend::updateVars() {
     while (true) {
         m.lock();
-        setMotorTemp(data.motor_temperature / 1000.0);
-        setAuxVoltage(data.aux_voltage / 255.0);
-        setAuxPercent(data.aux_percent / 255.0);
-        setPackSOC(data.pack_state_of_charge / 255.0);
+        setMotorTemp(data.motor_temperature / 10.0);   // celsius
+        setAuxVoltage(data.aux_voltage / 255.0);       // volts
+        setAuxPercent(data.aux_percent / 255.0);       // percent
+        setPackSOC(data.pack_state_of_charge / 255.0); // percent
+        setHighCellTemp(data.high_cell_temp);          // celsius
+        setLowCellTemp(data.low_cell_temp);            // celsius
+        setBmsTemp(data.bms_temperature);              // celsius
+        setMotorSpeed(data.motor_speed);               // rpm
+        setBikeSpeed(data.bike_speed);                 // mph
         m.unlock();
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
