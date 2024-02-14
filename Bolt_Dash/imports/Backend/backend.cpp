@@ -18,7 +18,7 @@ void Backend::updateVars() {
         setPackSOC(data.pack_state_of_charge / 255.0);  // percent
         setHighCellTemp(data.high_cell_temp / 100);     // celsius
         setLowCellTemp(data.low_cell_temp / 100);       // celsius
-        setBmsTemp(data.bms_temperature / 100);         // celsius
+        setBmsTemp(data.bms_temperature / 2000);        // celsius
         setMotorSpeed(data.motor_speed);                // rpm
         setBikeSpeed(data.bike_speed);                  // mph
         m.unlock();
