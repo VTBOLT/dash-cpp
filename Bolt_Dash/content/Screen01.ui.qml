@@ -52,7 +52,7 @@ Rectangle {
         x: 28
         y: 175
         scale: 0.5
-        fullness: slider.value
+        fullness: backend.packSOC
     }
 
     BatterySlider {
@@ -90,7 +90,7 @@ Rectangle {
         x: 715
         y: 175
         scale: 0.5
-        fullness: 1 - slider.value
+        fullness: 1-(backend.highCellTemp)
     }
 
     Text {
@@ -109,7 +109,7 @@ Rectangle {
         x: 644
         y: 175
         scale: 0.5
-        fullness: 1 - slider.value
+        fullness: 1 - backend.motorTemp
     }
 
     Text {
