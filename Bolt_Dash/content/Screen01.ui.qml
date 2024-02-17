@@ -21,6 +21,7 @@ Rectangle {
         id: speedometer
         x: 50
         y: 24
+        fullness: backend.bikeSpeed /250
     }
 
     Backend {
@@ -143,12 +144,12 @@ Rectangle {
     }
 
     Text {
-        id: text1
+        id: speedoLabel
         x: 263
         y: 105
         width: 274
         height: 160
-        text: qsTr("174")
+        text: qsTr(backend.bikeSpeed)
         font.pixelSize: 125
         horizontalAlignment: Text.AlignHCenter
         font.family: "Nasalization"
