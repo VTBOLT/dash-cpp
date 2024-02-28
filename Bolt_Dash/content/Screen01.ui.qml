@@ -19,6 +19,7 @@ Rectangle {
 
     Speedometer {
         id: speedometer
+        fullness: backend.motorSpeed / 2619 // Expected max speed of 2619 RPM
         x: 50
         y: 24
         fullness: backend.bikeSpeed /250
@@ -37,23 +38,24 @@ Rectangle {
         bikeSpeed: 0
     }
 
-    Slider {
-        id: slider
-        x: -274
-        y: 209
-        width: 600
-        height: 48
-        scale: 0.5
-        rotation: -90
-        value: 0.5
-    }
+    // Remove for production
+    // Slider {
+    //     id: slider
+    //     x: -274
+    //     y: 209
+    //     width: 600
+    //     height: 48
+    //     scale: 0.5
+    //     rotation: -90
+    //     value: 0.5
+    // }
 
     BatterySlider {
         id: packSlider
         x: 28
         y: 175
         scale: 0.5
-        fullness: backend.packSOC
+        fullness: backend.packSOC / 100     // Percent to decimal
     }
 
     BatterySlider {
@@ -61,7 +63,7 @@ Rectangle {
         x: 98
         y: 175
         scale: 0.5
-        fullness: backend.auxPercent
+        fullness: backend.auxPercent / 100      // Percent to decimal
     }
 
     Text {
@@ -91,7 +93,7 @@ Rectangle {
         x: 715
         y: 175
         scale: 0.5
-        fullness: (backend.highCellTemp+backend.lowCellTemp)/2
+        fullness: (backend.highCellTemp+backend.lowCellTemp) / 200 // Abosulte max of 100C and divide by 2 for avg
     }
 
     Text {
@@ -110,7 +112,7 @@ Rectangle {
         x: 644
         y: 175
         scale: 0.5
-        fullness: backend.bmsTemp
+        fullness: backend.bmsTemp / 100 // Abosulte max of 100C
     }
 
     Text {
@@ -129,7 +131,7 @@ Rectangle {
         x: 568
         y: 175
         scale: 0.5
-        fullness: backend.motorTemp
+        fullness: backend.motorTemp / 100 // Abosulte max of 100C
     }
 
     Text {

@@ -12,15 +12,16 @@ Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage
 void Backend::updateVars() {
     while (true) {
         m.lock();
-        setMotorTemp(data.motor_temperature / 10000.0); // celsius
-        setAuxVoltage(data.aux_voltage / 255.0);        // volts
-        setAuxPercent(data.aux_percent / 255.0);        // percent
-        setPackSOC(data.pack_state_of_charge / 255.0);  // percent
-        setHighCellTemp(data.high_cell_temp / 100);     // celsius
-        setLowCellTemp(data.low_cell_temp / 100);       // celsius
-        setBmsTemp(data.bms_temperature / 2000);        // celsius
-        setMotorSpeed(data.motor_speed);                // rpm
-        setBikeSpeed(data.bike_speed);                  // mph
+        // The only scaling here is to put the value into the right unit
+        setMotorTemp(data.motor_temperature / 10.0);   // celsius
+        setAuxVoltage(data.aux_voltage / 10);          // volts
+        setAuxPercent(data.aux_percent / 255.0);       // percent
+        setPackSOC(data.pack_state_of_charge / 255.0); // percent
+        setHighCellTemp(data.high_cell_temp);          // celsius
+        setLowCellTemp(data.low_cell_temp);            // celsius
+        setBmsTemp(data.bms_temperature);              // celsius
+        setMotorSpeed(data.motor_speed);               // rpm
+        setBikeSpeed(data.bike_speed / 100.0);         // mph
         m.unlock();
         // Debug Message
         std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
