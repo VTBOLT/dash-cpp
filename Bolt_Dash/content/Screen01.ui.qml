@@ -22,7 +22,6 @@ Rectangle {
         fullness: backend.motorSpeed / 2619 // Expected max speed of 2619 RPM
         x: 50
         y: 24
-        fullness: backend.bikeSpeed /250
     }
 
     Backend {
