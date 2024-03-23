@@ -21,7 +21,7 @@ Then, we install Qt by running `sudo apt install qt6-base-dev`
 
 ## Usage
 
-To run this, open [QT Creator](https://www.qt.io/download-qt-installer-oss?utm_referrer=https%3A%2F%2Fwww.qt.io%2F). Click on file->Open File or Project and select the top-level CMakeLists.txt in the Bolt_Dash folder. Then, press the run button on the bottom right and the application should run.
+To run this, open [QT Creator](https://www.qt.io/download-qt-installer-oss?utm_referrer=https%3A%2F%2Fwww.qt.io%2F). Click on file->Open File or Project and select the top-level CMakeLists.txt in the Bolt_Dash folder. If a screen comes up asking what you want to do, select configure project at the bottom right. Then, press the run button on the bottom right and the application should run.
 
 ## Roadmap
 
