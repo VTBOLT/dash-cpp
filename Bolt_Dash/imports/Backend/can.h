@@ -31,13 +31,13 @@ struct our_candata {
 
 // ID's for each CAN thing
 constexpr struct {
-    canid_t aux_battery{0xB1};
-    canid_t main_battery{0xB2};
-    canid_t main_pack_temp{0xF1};
-    canid_t motor_temp{0xF2};
-    canid_t bms_temp{0xF3};
-    canid_t rpm{0xA1};
-    canid_t speed{0xA2};
+    canid_t aux_battery{0x700};
+    canid_t main_battery{0x6B0};
+    canid_t main_pack_temp{0x6B4};
+    canid_t motor_temp{0xA2};
+    canid_t bms_temp{0x6B1};
+    canid_t rpm{0xA5};
+    canid_t speed{0x00};
 } can_ids;
 
 extern std::mutex m;
