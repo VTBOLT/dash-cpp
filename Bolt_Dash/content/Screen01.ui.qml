@@ -17,6 +17,10 @@ Rectangle {
 
     color: Constants.backgroundColor
 
+    readonly property int textLabelY: 435
+    readonly property int sliderY: 175
+    readonly property int valueLabelY: textLabelY+20
+
     Speedometer {
         id: speedometer
         fullness: backend.motorSpeed / 5500 // Expected max speed of 5500 RPM
@@ -52,7 +56,7 @@ Rectangle {
     BatterySlider {
         id: packSlider
         x: 28
-        y: 175
+        y: sliderY
         scale: 0.5
         fullness: backend.packSOC     // Percent to decimal
     }
@@ -60,7 +64,7 @@ Rectangle {
     BatterySlider {
         id: auxSlider
         x: 98
-        y: 175
+        y: sliderY
         scale: 0.5
         fullness: backend.auxPercent      // Percent to decimal
     }
@@ -68,7 +72,7 @@ Rectangle {
     Text {
         id: packLabel
         x: 36
-        y: 444
+        y: textLabelY
         width: 48
         height: 29
         text: qsTr("PACK")
@@ -79,10 +83,10 @@ Rectangle {
     Text {
         id: packLabel2
         x: 36
-        y: 473
+        y: valueLabelY
         width: 48
         height: 29
-        text: backend.packSOC
+        text: qsTr("%1\%").arg(Math.round(backend.packSOC))
         font.pixelSize: 20
         horizontalAlignment: Text.AlignHCenter
     }
@@ -90,7 +94,7 @@ Rectangle {
     Text {
         id: auxLabel
         x: 104
-        y: 443
+        y: textLabelY
         width: 48
         height: 29
         text: qsTr("AUX")
@@ -98,10 +102,22 @@ Rectangle {
         horizontalAlignment: Text.AlignHCenter
     }
 
+
+    Text {
+        id: auxLabel2
+        x: 104
+        y: valueLabelY
+        width: 48
+        height: 29
+        text: qsTr("%1\%").arg(Math.round(backend.auxPercent))
+        font.pixelSize: 20
+        horizontalAlignment: Text.AlignHCenter
+    }
+
     TempSlider {
         id: packTempSlider
         x: 715
-        y: 175
+        y: sliderY
         scale: 0.5
         fullness: (backend.highCellTemp+backend.lowCellTemp) / 200 // Abosulte max of 100C and divide by 2 for avg
     }
@@ -109,7 +125,7 @@ Rectangle {
     Text {
         id: packTempLabel
         x: 723
-        y: 444
+        y: textLabelY
         width: 48
         height: 29
         text: qsTr("PACK")
@@ -117,10 +133,21 @@ Rectangle {
         horizontalAlignment: Text.AlignHCenter
     }
 
+    Text {
+        id: packTempLabel2
+        x: 723
+        y: valueLabelY
+        width: 48
+        height: 29
+        text: qsTr("%1C").arg(Math.round((backend.highCellTemp+backend.lowCellTemp) / 2))
+        font.pixelSize: 20
+        horizontalAlignment: Text.AlignHCenter
+    }
+
     TempSlider {
         id: mCTempSlider
         x: 644
-        y: 175
+        y: sliderY
         scale: 0.5
         fullness: backend.mcTemp / 100 // Abosulte max of 100C
     }
@@ -128,7 +155,7 @@ Rectangle {
     Text {
         id: mcTempLabel
         x: 652
-        y: 444
+        y: textLabelY
         width: 48
         height: 29
         text: qsTr("MC")
@@ -136,10 +163,21 @@ Rectangle {
         horizontalAlignment: Text.AlignHCenter
     }
 
+    Text {
+        id: mcTempLabel2
+        x: 652
+        y: valueLabelY
+        width: 48
+        height: 29
+        text: qsTr("%1C").arg(Math.round(backend.mcTemp))
+        font.pixelSize: 20
+        horizontalAlignment: Text.AlignHCenter
+    }
+
     TempSlider {
         id: motorTempSlider
         x: 568
-        y: 175
+        y: sliderY
         scale: 0.5
         fullness: backend.motorTemp / 115 // Abosulte max of 115C
     }
@@ -147,10 +185,21 @@ Rectangle {
     Text {
         id: motorTempLabel
         x: 572
-        y: 444
+        y: textLabelY
         width: 48
         height: 29
         text: qsTr("MOTOR")
+        font.pixelSize: 20
+        horizontalAlignment: Text.AlignHCenter
+    }
+
+    Text {
+        id: motorTempLabel2
+        x: 572
+        y: valueLabelY
+        width: 48
+        height: 29
+        text: qsTr("%1C").arg(Math.round(backend.motorTemp))
         font.pixelSize: 20
         horizontalAlignment: Text.AlignHCenter
     }
