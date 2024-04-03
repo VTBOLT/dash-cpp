@@ -13,14 +13,14 @@ void Backend::updateVars() {
     while (true) {
         m.lock();
         // The only scaling here is to put the value into the right unit
-        setMotorTemp(data.motor_temperature);          // celsius
-        setAuxVoltage(data.aux_voltage / 10);          // volts
+        setMotorTemp(data.motor_temperature / 1000.0); // celsius
+        setAuxVoltage(data.aux_voltage / 10.0);        // volts
         setAuxPercent(data.aux_percent / 100.0);       // percent
         setPackSOC(data.pack_state_of_charge / 255.0); // percent
         setHighCellTemp(data.high_cell_temp);          // celsius
         setLowCellTemp(data.low_cell_temp);            // celsius
         setBmsTemp(data.bms_temperature);              // celsius
-        setMotorSpeed(data.motor_speed / 10);          // rpm
+        setMotorSpeed(data.motor_speed / 10.0);        // rpm
         setBikeSpeed(data.bike_speed / 100.0);         // mph
         m.unlock();
         // Debug Message
