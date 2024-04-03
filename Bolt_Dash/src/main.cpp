@@ -8,8 +8,7 @@
 #include "import_qml_components_plugins.h"
 #include "import_qml_plugins.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     set_qt_environment();
 
     QGuiApplication app(argc, argv);
@@ -23,6 +22,8 @@ int main(int argc, char *argv[])
                 QCoreApplication::exit(-1);
         },
         Qt::QueuedConnection);
+
+    app.showFullScreen();
 
     engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
     engine.addImportPath(":/");

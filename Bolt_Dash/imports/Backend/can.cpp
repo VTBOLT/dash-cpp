@@ -52,7 +52,7 @@ namespace can {
             switch (frame.can_id) {
             case can_ids.aux_battery:
                 data.aux_voltage = frame.data[0] + (frame.data[1] << 8);
-                data.aux_percent = data.aux_voltage / 25;
+                data.aux_percent = data.aux_voltage / 2.5;
                 break;
             case can_ids.main_battery:
                 data.pack_state_of_charge = frame.data[4];
@@ -83,13 +83,13 @@ namespace can {
             m.unlock();
 
             // Print the can ID and len of data
-            //printf("0x%03X [%d] ", frame.can_id, frame.can_dlc);
+            // printf("0x%03X [%d] ", frame.can_id, frame.can_dlc);
 
             // Print the data in the CAN message
-//            for (i = 0; i < frame.can_dlc; i++)
-                //printf("%02X ", frame.data[i]);
+            //            for (i = 0; i < frame.can_dlc; i++)
+            // printf("%02X ", frame.data[i]);
 
-            //printf("\r\n");
+            // printf("\r\n");
         }
 
         // Close socket

@@ -54,7 +54,7 @@ Rectangle {
         x: 28
         y: 175
         scale: 0.5
-        fullness: backend.packSOC / 100     // Percent to decimal
+        fullness: backend.packSOC     // Percent to decimal
     }
 
     BatterySlider {
@@ -62,7 +62,7 @@ Rectangle {
         x: 98
         y: 175
         scale: 0.5
-        fullness: backend.auxPercent / 100      // Percent to decimal
+        fullness: backend.auxPercent      // Percent to decimal
     }
 
     Text {
