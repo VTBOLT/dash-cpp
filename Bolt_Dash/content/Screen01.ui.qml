@@ -213,7 +213,7 @@ Rectangle {
         text: qsTr("%1 MPH").arg(Math.round(backend.bikeSpeed))
         // font.pixelSize: 125  // For showing speed in mph
         font.pixelSize: 75
-        horizontalAlignment: Text.AlignHCenter
+        horizontalAlignment: Text.AlignHLeft
         font.family: "Nasalization"
     }
 
