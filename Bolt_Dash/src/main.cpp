@@ -23,8 +23,6 @@ int main(int argc, char *argv[]) {
         },
         Qt::QueuedConnection);
 
-    app.showFullScreen();
-
     engine.addImportPath(QCoreApplication::applicationDirPath() + "/qml");
     engine.addImportPath(":/");
 

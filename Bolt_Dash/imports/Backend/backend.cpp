@@ -13,9 +13,9 @@ void Backend::updateVars() {
     while (true) {
         m.lock();
         // The only scaling here is to put the value into the right unit
-        setMotorTemp(data.motor_temperature / 10.0);   // celsius
+        setMotorTemp(data.motor_temperature);          // celsius
         setAuxVoltage(data.aux_voltage / 10);          // volts
-        setAuxPercent(data.aux_percent / 255.0);       // percent
+        setAuxPercent(data.aux_percent / 100.0);       // percent
         setPackSOC(data.pack_state_of_charge / 255.0); // percent
         setHighCellTemp(data.high_cell_temp);          // celsius
         setLowCellTemp(data.low_cell_temp);            // celsius
