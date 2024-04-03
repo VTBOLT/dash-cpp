@@ -1,5 +1,6 @@
 #include "backend.h"
 #include "can.h"
+#include <math.h>
 
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
@@ -13,16 +14,16 @@ void Backend::updateVars() {
     while (true) {
         m.lock();
         // The only scaling here is to put the value into the right unit
-        setMotorTemp(data.motor_temperature / 1000.0); // celsius
-        setAuxVoltage(data.aux_voltage / 10.0);        // volts
-        setAuxPercent(data.aux_percent / 100.0);       // percent
-        setPackSOC(data.pack_state_of_charge / 255.0); // percent
-        setHighCellTemp(data.high_cell_temp / 1000.0); // celsius
-        setLowCellTemp(data.low_cell_temp / 1000.0);   // celsius
-        setBmsTemp(data.bms_temperature / 1000.0);     // celsius
-        setMotorSpeed(data.motor_speed);               // rpm
-        setBikeSpeed(data.bike_speed / 100.0);         // mph
-        setMcTemp(data.mc_temperature / 1000.0);       // celsius
+        setMotorTemp(data.motor_temperature / 1000.0);                  // celsius
+        setAuxVoltage(data.aux_voltage / 10.0);                         // volts
+        setAuxPercent(data.aux_percent / 100.0);                        // percent
+        setPackSOC(data.pack_state_of_charge / 255.0);                  // percent
+        setHighCellTemp(data.high_cell_temp / 1000.0);                  // celsius
+        setLowCellTemp(data.low_cell_temp / 1000.0);                    // celsius
+        setBmsTemp(data.bms_temperature / 1000.0);                      // celsius
+        setMotorSpeed(data.motor_speed);                                // rpm
+        setBikeSpeed(data.motor_speed * 19 / 45 * 27.63 * M_PI * 1056); // mph
+        setMcTemp(data.mc_temperature / 1000.0);                        // celsius
         m.unlock();
         // Debug Message
         std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
