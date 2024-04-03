@@ -3,7 +3,7 @@
 
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
-                                    m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{} {
+                                    m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{} {
     std::thread update_vars(&Backend::updateVars, this);
     update_vars.detach();
 }
@@ -22,6 +22,7 @@ void Backend::updateVars() {
         setBmsTemp(data.bms_temperature / 1000.0);     // celsius
         setMotorSpeed(data.motor_speed / 10.0);        // rpm
         setBikeSpeed(data.bike_speed / 100.0);         // mph
+        setMcTemp(data.mc_temperature / 1000.0);       // celsius
         m.unlock();
         // Debug Message
         std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
@@ -66,6 +67,10 @@ double Backend::motorSpeed() const {
 
 double Backend::bikeSpeed() const {
     return m_bikeSpeed;
+}
+
+double Backend::mcTemp() const {
+    return m_mcTemp;
 }
 // }
 
@@ -131,6 +136,13 @@ void Backend::setBikeSpeed(const double speed) {
     if (m_bikeSpeed != speed) {
         m_bikeSpeed = speed;
         emit bikeSpeedChanged();
+    }
+}
+
+void Backend::setMcTemp(const double temp) {
+    if (m_mcTemp != temp) {
+        m_mcTemp = temp;
+        emit mcTempChanged();
     }
 }
 // }

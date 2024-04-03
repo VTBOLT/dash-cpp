@@ -111,7 +111,7 @@ Rectangle {
         x: 644
         y: 175
         scale: 0.5
-        fullness: backend.bmsTemp / 100 // Abosulte max of 100C
+        fullness: backend.mcTemp / 100 // Abosulte max of 100C
     }
 
     Text {
@@ -120,7 +120,7 @@ Rectangle {
         y: 444
         width: 48
         height: 29
-        text: qsTr("BMS")
+        text: qsTr("MC")
         font.pixelSize: 20
         horizontalAlignment: Text.AlignHCenter
     }

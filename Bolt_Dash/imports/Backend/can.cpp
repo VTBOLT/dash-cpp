@@ -74,6 +74,8 @@ namespace can {
             case can_ids.speed:
                 data.bike_speed = frame.data[2] + frame.data[3] << 8;
                 break;
+            case can_ids.mc_temp:
+                data.mc_temperature = frame.data[0] + frame.data[1] << 8;
             default:
                 unknown_data = new int8_t[frame.can_dlc];
                 for (int i{}; i < frame.can_dlc; i++) {
