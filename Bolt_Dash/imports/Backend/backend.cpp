@@ -19,13 +19,14 @@ void Backend::updateVars() {
         setPackSOC(data.pack_state_of_charge / 255.0); // percent
         setHighCellTemp(data.high_cell_temp);          // celsius
         setLowCellTemp(data.low_cell_temp);            // celsius
-        setBmsTemp(data.bms_temperature);              // celsius
+        setBmsTemp(data.bms_temperature / 1000.0);     // celsius
         setMotorSpeed(data.motor_speed / 10.0);        // rpm
         setBikeSpeed(data.bike_speed / 100.0);         // mph
         m.unlock();
         // Debug Message
         std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        s
     }
 }
 
