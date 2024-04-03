@@ -19,7 +19,7 @@ Rectangle {
 
     Speedometer {
         id: speedometer
-        fullness: backend.motorSpeed / 2619 // Expected max speed of 2619 RPM
+        fullness: backend.motorSpeed / 5500 // Expected max speed of 5500 RPM
         x: 50
         y: 24
     }
@@ -130,7 +130,7 @@ Rectangle {
         x: 568
         y: 175
         scale: 0.5
-        fullness: backend.motorTemp / 100 // Abosulte max of 100C
+        fullness: backend.motorTemp / 115 // Abosulte max of 115C
     }
 
     Text {
