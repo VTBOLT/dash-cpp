@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc ../../qml/Bolt_Dash/libBolt_Dashplugin.a CMakeFiles/Bolt_Dashplugin.dir/Bolt_Dashplugin_autogen/mocs_compilation.cpp.o CMakeFiles/Bolt_Dashplugin.dir/Bolt_Dashplugin_Bolt_DashPlugin.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib ../../qml/Bolt_Dash/libBolt_Dashplugin.a

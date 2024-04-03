@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/QtQuick/Studio/LogicHelper">
-    <file alias="qmldir">/Users/mason/Documents/Code/dash-cpp/build/qml/QtQuick/Studio/LogicHelper/qmldir</file>
-  </qresource>
-</RCC>
-

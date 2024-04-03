@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/Main">
-    <file alias="qmldir">/Users/mason/Documents/Code/dash-cpp/build/qml/Main/qmldir</file>
-  </qresource>
-</RCC>
-

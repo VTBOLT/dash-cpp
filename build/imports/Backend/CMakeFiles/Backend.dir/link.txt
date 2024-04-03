@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc libBackend.a CMakeFiles/Backend.dir/Backend_autogen/mocs_compilation.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib libBackend.a

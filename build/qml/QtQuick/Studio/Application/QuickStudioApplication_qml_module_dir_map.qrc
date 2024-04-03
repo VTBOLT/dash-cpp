@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/QtQuick/Studio/Application">/Users/mason/Documents/Code/dash-cpp/build/qml/QtQuick/Studio/Application</file>
-
-  </qresource>
-</RCC>

@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/QtQuick/Studio/EventSimulator">
-    <file alias="qmldir">/Users/mason/Documents/Code/dash-cpp/build/qml/QtQuick/Studio/EventSimulator/qmldir</file>
-  </qresource>
-</RCC>
-

@@ -1,9 +1,0 @@
-<RCC>
-  <qresource prefix="/Bolt_Dash/">
-    <file alias="Constants.qml">/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/imports/Bolt_Dash/Constants.qml</file>
-    <file alias="DirectoryFontLoader.qml">/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/imports/Bolt_Dash/DirectoryFontLoader.qml</file>
-    <file alias="EventListModel.qml">/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/imports/Bolt_Dash/EventListModel.qml</file>
-    <file alias="EventListSimulator.qml">/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/imports/Bolt_Dash/EventListSimulator.qml</file>
-  </qresource>
-</RCC>
-

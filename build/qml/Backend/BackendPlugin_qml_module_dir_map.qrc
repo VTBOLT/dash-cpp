@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/Backend">/Users/mason/Documents/Code/dash-cpp/build/qml/Backend</file>
-
-  </qresource>
-</RCC>
