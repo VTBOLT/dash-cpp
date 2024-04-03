@@ -119,7 +119,7 @@ Rectangle {
         x: 715
         y: sliderY
         scale: 0.5
-        fullness: (backend.highCellTemp) / 100 // Abosulte max of 100C and divide by 2 for avg
+        fullness: backend.highCellTemp / 100 // Abosulte max of 100C and divide by 2 for avg
     }
 
     Text {
@@ -139,7 +139,7 @@ Rectangle {
         y: valueLabelY
         width: 48
         height: 29
-        text: qsTr("%1C").arg(Math.round((backend.highCellTemp+backend.lowCellTemp) / 2))
+        text: qsTr("%1C").arg(Math.round(backend.highCellTemp))
         font.pixelSize: 20
         horizontalAlignment: Text.AlignHCenter
     }
