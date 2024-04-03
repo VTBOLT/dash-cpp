@@ -77,6 +77,17 @@ Rectangle {
     }
 
     Text {
+        id: packLabel2
+        x: 36
+        y: 473
+        width: 48
+        height: 29
+        text: backend.packSOC
+        font.pixelSize: 20
+        horizontalAlignment: Text.AlignHCenter
+    }
+
+    Text {
         id: auxLabel
         x: 104
         y: 443
