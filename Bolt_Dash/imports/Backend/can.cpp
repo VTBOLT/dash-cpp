@@ -58,24 +58,24 @@ namespace can {
                 data.pack_state_of_charge = frame.data[4];
                 break;
             case can_ids.main_pack_temp:
-                data.high_cell_temp = frame.data[0] + frame.data[1] << 8;
-                data.low_cell_temp = frame.data[3] + frame.data[4] << 8;
+                data.high_cell_temp = frame.data[0] + (frame.data[1] << 8);
+                data.low_cell_temp = frame.data[3] + (frame.data[4] << 8);
                 break;
             case can_ids.motor_temp:
-                data.motor_temperature = frame.data[4] + frame.data[5] << 8;
+                data.motor_temperature = frame.data[4] + (frame.data[5] << 8);
                 break;
             case can_ids.bms_temp:
-                data.bms_temperature = frame.data[4] + frame.data[5] << 8;
+                data.bms_temperature = frame.data[4] + (frame.data[5] << 8);
                 break;
             case can_ids.rpm:
-                data.motor_speed = frame.data[2] + frame.data[3] << 8;
-                data.bike_speed = frame.data[2] + frame.data[3] << 8;
+                data.motor_speed = frame.data[2] + (frame.data[3] << 8);
+                data.bike_speed = frame.data[2] + (frame.data[3] << 8);
                 break;
             case can_ids.speed:
-                data.bike_speed = frame.data[2] + frame.data[3] << 8;
+                data.bike_speed = frame.data[2] + (frame.data[3] << 8);
                 break;
             case can_ids.mc_temp:
-                data.mc_temperature = frame.data[0] + frame.data[1] << 8;
+                data.mc_temperature = frame.data[0] + (frame.data[1] << 8);
             default:
                 unknown_data = new int8_t[frame.can_dlc];
                 for (int i{}; i < frame.can_dlc; i++) {

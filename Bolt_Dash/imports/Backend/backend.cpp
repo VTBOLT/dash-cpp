@@ -20,7 +20,7 @@ void Backend::updateVars() {
         setHighCellTemp(data.high_cell_temp / 1000.0); // celsius
         setLowCellTemp(data.low_cell_temp / 1000.0);   // celsius
         setBmsTemp(data.bms_temperature / 1000.0);     // celsius
-        setMotorSpeed(data.motor_speed / 10.0);        // rpm
+        setMotorSpeed(data.motor_speed);               // rpm
         setBikeSpeed(data.bike_speed / 100.0);         // mph
         setMcTemp(data.mc_temperature / 1000.0);       // celsius
         m.unlock();
