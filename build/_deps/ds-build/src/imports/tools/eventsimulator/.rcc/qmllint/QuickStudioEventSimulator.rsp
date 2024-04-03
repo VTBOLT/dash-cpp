@@ -1,0 +1,13 @@
+--bare
+-I
+/Users/mason/Documents/Code/dash-cpp/build/qml
+-I
+/Users/mason/Documents/Code/dash-cpp/build/qml
+-I
+/opt/homebrew/share/qt/qml
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-build/src/imports/tools/eventsimulator/.rcc/qmake_QtQuick_Studio_EventSimulator.qrc
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-build/src/imports/tools/eventsimulator/.rcc/QuickStudioEventSimulator_raw_qml_0.qrc
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-src/src/imports/tools/eventsimulator/EventSimulator.qml
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-src/src/imports/tools/eventsimulator/EventSimulatorDelegate.qml

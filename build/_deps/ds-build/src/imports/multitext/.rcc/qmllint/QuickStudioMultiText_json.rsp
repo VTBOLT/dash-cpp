@@ -1,0 +1,16 @@
+--bare
+-I
+/Users/mason/Documents/Code/dash-cpp/build/qml
+-I
+/Users/mason/Documents/Code/dash-cpp/build/qml
+-I
+/opt/homebrew/share/qt/qml
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-build/src/imports/multitext/.rcc/qmake_QtQuick_Studio_MultiText.qrc
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-build/src/imports/multitext/.rcc/QuickStudioMultiText_raw_qml_0.qrc
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-src/src/imports/multitext/MultiTextElement.qml
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-src/src/imports/multitext/MultiTextItem.qml
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-src/src/imports/multitext/MultiTextException.qml
+--json
+/Users/mason/Documents/Code/dash-cpp/build/QuickStudioMultiText_qmllint.json

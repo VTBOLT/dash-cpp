@@ -1,0 +1,12 @@
+-I
+/Users/mason/Documents/Code/dash-cpp/build/qml
+-I
+/Users/mason/Documents/Code/dash-cpp/build/qml
+-I
+/opt/homebrew/share/qt/qml
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmake_content.qrc
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/content_raw_qml_0.qrc
+--module
+content

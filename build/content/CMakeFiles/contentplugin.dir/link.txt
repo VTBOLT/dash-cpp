@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc ../qml/content/libcontentplugin.a CMakeFiles/contentplugin.dir/contentplugin_autogen/mocs_compilation.cpp.o CMakeFiles/contentplugin.dir/contentplugin_contentPlugin.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib ../qml/content/libcontentplugin.a

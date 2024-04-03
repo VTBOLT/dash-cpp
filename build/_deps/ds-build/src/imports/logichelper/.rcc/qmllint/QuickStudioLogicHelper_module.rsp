@@ -1,0 +1,12 @@
+-I
+/Users/mason/Documents/Code/dash-cpp/build/qml
+-I
+/Users/mason/Documents/Code/dash-cpp/build/qml
+-I
+/opt/homebrew/share/qt/qml
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-build/src/imports/logichelper/.rcc/qmake_QtQuick_Studio_LogicHelper.qrc
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/_deps/ds-build/src/imports/logichelper/.rcc/QuickStudioLogicHelper_raw_qml_0.qrc
+--module
+QtQuick.Studio.LogicHelper

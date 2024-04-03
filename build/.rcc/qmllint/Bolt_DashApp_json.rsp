@@ -1,0 +1,16 @@
+--bare
+-I
+/Users/mason/Documents/Code/dash-cpp/build
+-I
+/Users/mason/Documents/Code/dash-cpp/build/qml
+-I
+/opt/homebrew/share/qt/qml
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/.rcc/configuration.qrc
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/.rcc/qmake_Main.qrc
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/.rcc/Bolt_DashApp_raw_qml_0.qrc
+/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/main.qml
+--json
+/Users/mason/Documents/Code/dash-cpp/build/Bolt_DashApp_qmllint.json

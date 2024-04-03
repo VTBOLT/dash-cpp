@@ -210,8 +210,9 @@ Rectangle {
         y: 105
         width: 274
         height: 160
-        text: qsTr(backend.bikeSpeed)
-        font.pixelSize: 125
+        text: qsTr("%1RPM").arg(backend.motorSpeed)
+        // font.pixelSize: 125  // For showing speed in mph
+        font.pixelSize: 75
         horizontalAlignment: Text.AlignHCenter
         font.family: "Nasalization"
     }

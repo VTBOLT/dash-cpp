@@ -1,0 +1,4 @@
+module Main
+typeinfo Bolt_DashApp.qmltypes
+prefer :/Main/
+

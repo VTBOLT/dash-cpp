@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/FlowView">/Users/mason/Documents/Code/dash-cpp/build/qml/FlowView</file>
+
+  </qresource>
+</RCC>
