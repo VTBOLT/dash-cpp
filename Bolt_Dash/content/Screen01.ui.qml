@@ -210,7 +210,7 @@ Rectangle {
         y: 105
         width: 274
         height: 160
-        text: qsTr("%1RPM").arg(Math.round(backend.bikeSpeed))
+        text: qsTr("%1 MPH").arg(Math.round(backend.bikeSpeed))
         // font.pixelSize: 125  // For showing speed in mph
         font.pixelSize: 75
         horizontalAlignment: Text.AlignHCenter
