@@ -119,7 +119,7 @@ Rectangle {
         x: 715
         y: sliderY
         scale: 0.5
-        fullness: (backend.highCellTemp+backend.lowCellTemp) / 200 // Abosulte max of 100C and divide by 2 for avg
+        fullness: (backend.highCellTemp) / 100 // Abosulte max of 100C and divide by 2 for avg
     }
 
     Text {
