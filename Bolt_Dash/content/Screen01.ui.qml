@@ -120,7 +120,7 @@ Rectangle {
         y: 444
         width: 48
         height: 29
-        text: qsTr("MC")
+        text: qsTr("BMS")
         font.pixelSize: 20
         horizontalAlignment: Text.AlignHCenter
     }
