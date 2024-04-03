@@ -86,7 +86,7 @@ Rectangle {
         y: valueLabelY
         width: 48
         height: 29
-        text: qsTr("%1\%").arg(Math.round(backend.packSOC))
+        text: qsTr("%1\%").arg(Math.round(backend.packSOC * 100))
         font.pixelSize: 20
         horizontalAlignment: Text.AlignHCenter
     }
@@ -109,7 +109,7 @@ Rectangle {
         y: valueLabelY
         width: 48
         height: 29
-        text: qsTr("%1\%").arg(Math.round(backend.auxPercent))
+        text: qsTr("%1\%").arg(Math.round(backend.auxPercent * 100))
         font.pixelSize: 20
         horizontalAlignment: Text.AlignHCenter
     }
