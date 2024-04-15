@@ -12,7 +12,9 @@ qt6_add_qml_module(content
         BatterySlider.qml
         TempSlider.qml
         WarningSymbol.qml
+        Debug1.qml
     RESOURCES
         fonts/fonts.txt
         fonts/nasalization-rg.otf
+        QML_FILES DebugItem1.ui.qml
 )
