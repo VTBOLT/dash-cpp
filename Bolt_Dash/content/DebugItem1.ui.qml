@@ -21,37 +21,37 @@ Item {
     // Using grid layout for organized display
     GridLayout {
         columns: 2
-        columnSpacing: 20
+        columnSpacing: 10
         rowSpacing: 10
         width: parent.width
         height: parent.height
 
         // Labels and dynamic text for each data item, converting double to string for display
         Label { text: "Motor Temperature:" }
-        Text { text: motorTemp.toString() }
+        Text { text: qsTr("%1°C").arg(backend.motorTemp) }
 
         Label { text: "Aux Voltage:" }
-        Text { text: auxVoltage.toString() }
+        Text { text: qsTr("%1V").arg(auxVoltage) }
 
         Label { text: "Aux Percent:" }
-        Text { text: auxPercent.toString() }
+        Text { text: qsTr("%1\%").arg(auxPercent) }
 
         Label { text: "Pack State of Charge (SOC):" }
-        Text { text: packSOC.toString() }
+        Text { text: qsTr("%1\%").arg(packSOC) }
 
         Label { text: "High Cell Temperature:" }
-        Text { text: highCellTemp.toString() }
+        Text { text: qsTr("%1°C").arg(highCellTemp) }
 
         Label { text: "Low Cell Temperature:" }
-        Text { text: lowCellTemp.toString() }
+        Text { text: qsTr("%1°C").arg(lowCellTemp) }
 
         Label { text: "BMS Temperature:" }
-        Text { text: bmsTemp.toString() }
+        Text { text: qsTr("%1°C").arg(bmsTemp) }
 
         Label { text: "Motor Speed:" }
-        Text { text: motorSpeed.toString() }
+        Text { text: qsTr("%1 RPM").arg(motorSpeed) }
 
         Label { text: "Bike Speed:" }
-        Text { text: bikeSpeed.toString() }
+        Text { text: qsTr("%1 km/h").arg(bikeSpeed) }
     }
 }
