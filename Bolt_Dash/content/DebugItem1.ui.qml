@@ -52,6 +52,6 @@ Item {
         Text { text: qsTr("%1 RPM").arg(motorSpeed) }
 
         Label { text: "Bike Speed:" }
-        Text { text: qsTr("%1 km/h").arg(bikeSpeed) }
+        Text { text: qsTr("%1 mph").arg(bikeSpeed) }
     }
 }
