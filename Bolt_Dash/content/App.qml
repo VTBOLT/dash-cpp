@@ -12,13 +12,13 @@ Window {
     visible: true
     title: "Bolt_Dash"
 
-//    Screen01 {
-//        id: mainScreen
-//    }
+   Screen01 {
+       id: mainScreen
+   }
 
-    Debug1 {
-        id: debug
-    }
+    // Debug1 {
+    //     id: debug
+    // }
 
 }
 
