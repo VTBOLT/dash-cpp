@@ -6,13 +6,12 @@ import QtCharts
 Item {
     Image {
         id: image
-        x: -200
-        y: 50
-        width: 400
-        height: 400
-        source: "../../../OneDrive - Virginia Tech/Pictures/Screenshots/Screenshot 2024-04-10 190810.png"
-        clip: true
-        fillMode: image.PreserveAspectFit
+        x: 436
+        y: 442
+        width: 295
+        height: 164
+        source: "Pictures\leanAngleBack.png"
+        fillMode: Image.PreserveAspectFit
     }
 
 
