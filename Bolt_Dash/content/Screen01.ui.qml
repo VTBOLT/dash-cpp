@@ -20,7 +20,7 @@ Rectangle {
     readonly property int textLabelY: 435
     readonly property int sliderY: 175
     readonly property int valueLabelY: textLabelY+20
-    readonly property int labelTextSize: 27
+    readonly property int labelTextSize: 25
 
     Speedometer {
         id: speedometer
