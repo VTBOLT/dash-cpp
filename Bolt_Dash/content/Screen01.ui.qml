@@ -41,18 +41,6 @@ Rectangle {
         bikeSpeed: 0
     }
 
-    // Remove for production
-    // Slider {
-    //     id: slider
-    //     x: -274
-    //     y: 209
-    //     width: 600
-    //     height: 48
-    //     scale: 0.5
-    //     rotation: -90
-    //     value: 0.5
-    // }
-
     BatterySlider {
         id: packSlider
         x: 28
@@ -69,6 +57,20 @@ Rectangle {
         fullness: backend.auxPercent      // Percent to decimal
     }
 
+    // Max battery percentages
+    Text {
+        x: 36
+        y: sliderY + 60
+        text: qsTr("100%")
+        font.pixelSize: 20
+    }
+    Text {
+        x: 106
+        y: sliderY + 60
+        text: qsTr("100%")
+        font.pixelSize: 20
+    }
+
     Text {
         id: packLabel
         x: 36
@@ -76,18 +78,7 @@ Rectangle {
         width: 48
         height: 29
         text: qsTr("PACK")
-        font.pixelSize: 20
-        horizontalAlignment: Text.AlignHCenter
-    }
-
-    Text {
-        id: packLabel2
-        x: 36
-        y: valueLabelY
-        width: 48
-        height: 29
-        text: qsTr("%1\%").arg(Math.round(backend.packSOC * 100))
-        font.pixelSize: 20
+        font.pixelSize: 30
         horizontalAlignment: Text.AlignHCenter
     }
 
@@ -98,21 +89,10 @@ Rectangle {
         width: 48
         height: 29
         text: qsTr("AUX")
-        font.pixelSize: 20
+        font.pixelSize: 30
         horizontalAlignment: Text.AlignHCenter
     }
 
-
-    Text {
-        id: auxLabel2
-        x: 104
-        y: valueLabelY
-        width: 48
-        height: 29
-        text: qsTr("%1\%").arg(Math.round(backend.auxPercent * 100))
-        font.pixelSize: 20
-        horizontalAlignment: Text.AlignHCenter
-    }
 
     TempSlider {
         id: packTempSlider
@@ -129,19 +109,16 @@ Rectangle {
         width: 48
         height: 29
         text: qsTr("PACK")
-        font.pixelSize: 20
+        font.pixelSize: 30
         horizontalAlignment: Text.AlignHCenter
     }
 
+    // Pack max temp label
     Text {
-        id: packTempLabel2
-        x: 723
-        y: valueLabelY
-        width: 48
-        height: 29
-        text: qsTr("%1C").arg(Math.round(backend.highCellTemp))
+        x: packTempLabel.x
+        y: sliderY + 60
+        text: qsTr("100°C")
         font.pixelSize: 20
-        horizontalAlignment: Text.AlignHCenter
     }
 
     TempSlider {
@@ -159,19 +136,16 @@ Rectangle {
         width: 48
         height: 29
         text: qsTr("MC")
-        font.pixelSize: 20
+        font.pixelSize: 30
         horizontalAlignment: Text.AlignHCenter
     }
 
+    // MC max temp label
     Text {
-        id: mcTempLabel2
-        x: 652
-        y: valueLabelY
-        width: 48
-        height: 29
-        text: qsTr("%1C").arg(Math.round(backend.mcTemp))
+        x: mcTempLabel.x
+        y: sliderY + 60
+        text: qsTr("100°C")
         font.pixelSize: 20
-        horizontalAlignment: Text.AlignHCenter
     }
 
     TempSlider {
@@ -189,19 +163,16 @@ Rectangle {
         width: 48
         height: 29
         text: qsTr("MOTOR")
-        font.pixelSize: 20
+        font.pixelSize: 30
         horizontalAlignment: Text.AlignHCenter
     }
 
+    // Motor max temp label
     Text {
-        id: motorTempLabel2
-        x: 572
-        y: valueLabelY
-        width: 48
-        height: 29
-        text: qsTr("%1C").arg(Math.round(backend.motorTemp))
+        x: motorTempLabel.x
+        y: sliderY + 60
+        text: qsTr("115°C")
         font.pixelSize: 20
-        horizontalAlignment: Text.AlignHCenter
     }
 
     Text {
