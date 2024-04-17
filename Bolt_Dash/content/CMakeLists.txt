@@ -17,5 +17,6 @@ qt6_add_qml_module(content
     RESOURCES
         fonts/fonts.txt
         fonts/nasalization-rg.otf
+        Pictures/leanAngleBack.png
         QML_FILES DebugItem1.ui.qml
 )

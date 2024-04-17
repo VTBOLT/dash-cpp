@@ -6,11 +6,11 @@ import QtCharts
 Item {
     Image {
         id: image
-        x: -200
+        x: -(295/2)
         y: 20
         width: 295
         height: 164
-        source: "Pictures\leanAngleBack.png"
+        source: "Pictures/leanAngleBack.png"
         fillMode: Image.PreserveAspectFit
     }
 }
