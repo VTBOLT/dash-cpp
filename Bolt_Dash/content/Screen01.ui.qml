@@ -221,4 +221,10 @@ Rectangle {
         x: 626
         y: 127
     }
+
+    BoltLeanAngle {
+        id: leanAngle
+        x: Constants.width / 2
+        y: Constants.height / 2
+    }
 }

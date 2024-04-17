@@ -13,6 +13,7 @@ qt6_add_qml_module(content
         TempSlider.qml
         WarningSymbol.qml
         Debug1.qml
+        BoltLeanAngle.qml
     RESOURCES
         fonts/fonts.txt
         fonts/nasalization-rg.otf

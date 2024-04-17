@@ -4,16 +4,10 @@ import QtQuick.Studio.Components
 import QtCharts
 
 Item {
-    width: 1920
-    height: 1080
-    property TextureInput background: null
-
-
-
     Image {
         id: image
-        x: 400
-        y: 600
+        x: -200
+        y: 50
         width: 400
         height: 400
         source: "../../../OneDrive - Virginia Tech/Pictures/Screenshots/Screenshot 2024-04-10 190810.png"
@@ -23,8 +17,8 @@ Item {
 
     ArcItem {
         id: arc1
-        x: 400
-        y: 714
+        x: -200
+        y: 50
         width: 400
         height: 400
         end: 225
