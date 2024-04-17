@@ -14,7 +14,7 @@ Item {
         y: 442
         width: 295
         height: 164
-        source: "../../../OneDrive - Virginia Tech/Pictures/leanAngleBack.png"
+        source: "Pictures\leanAngleBack.png"
         fillMode: Image.PreserveAspectFit
     }
 
