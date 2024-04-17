@@ -8,45 +8,15 @@ Item {
     height: 1080
     property TextureInput background: null
 
-
-
     Image {
         id: image
-        x: 400
-        y: 600
-        width: 400
-        height: 400
-        source: "../../../OneDrive - Virginia Tech/Pictures/Screenshots/Screenshot 2024-04-10 190810.png"
-        clip: true
-        fillMode: image.PreserveAspectFit
+        x: 436
+        y: 442
+        width: 295
+        height: 164
+        source: "../../../OneDrive - Virginia Tech/Pictures/leanAngleBack.png"
+        fillMode: Image.PreserveAspectFit
     }
 
-    ArcItem {
-        id: arc1
-        x: 400
-        y: 714
-        width: 400
-        height: 400
-        end: 225
-        begin: 135
-        layer.enabled: false
-        clip: false
-        strokeColor: "#007550"
-        roundEnd: false
-        roundBegin: false
-        strokeStyle: 1
-        strokeWidth: 75
-        rotation: 180
-        fillColor: "#00000000"
 
-        Rectangle {
-            id: rectangle
-            x: 198
-            y: 275
-            width: 5
-            height: 125
-            color: "#000000"
-            rotation: 0
-        }
-    }
 }
