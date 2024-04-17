@@ -20,6 +20,7 @@ Rectangle {
     readonly property int textLabelY: 435
     readonly property int sliderY: 175
     readonly property int valueLabelY: textLabelY+20
+    readonly property int labelTextSize: 27
 
     Speedometer {
         id: speedometer
@@ -78,7 +79,7 @@ Rectangle {
         width: 48
         height: 29
         text: qsTr("PACK")
-        font.pixelSize: 30
+        font.pixelSize: labelTextSize
         horizontalAlignment: Text.AlignHCenter
     }
 
@@ -89,7 +90,7 @@ Rectangle {
         width: 48
         height: 29
         text: qsTr("AUX")
-        font.pixelSize: 30
+        font.pixelSize: labelTextSize
         horizontalAlignment: Text.AlignHCenter
     }
 
@@ -109,7 +110,7 @@ Rectangle {
         width: 48
         height: 29
         text: qsTr("PACK")
-        font.pixelSize: 30
+        font.pixelSize: labelTextSize
         horizontalAlignment: Text.AlignHCenter
     }
 
@@ -136,7 +137,7 @@ Rectangle {
         width: 48
         height: 29
         text: qsTr("MC")
-        font.pixelSize: 30
+        font.pixelSize: labelTextSize
         horizontalAlignment: Text.AlignHCenter
     }
 
@@ -163,7 +164,7 @@ Rectangle {
         width: 48
         height: 29
         text: qsTr("MOTOR")
-        font.pixelSize: 30
+        font.pixelSize: labelTextSize
         horizontalAlignment: Text.AlignHCenter
     }
 
