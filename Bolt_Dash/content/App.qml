@@ -21,5 +21,8 @@ Window {
     //     id: debug
     // }
 
+    IO {
+        id: io
+    }
 }
 
