@@ -18,7 +18,7 @@ void IO::updateVars() {
 
     while (true) {
         // Debug Message
-        m_buttonStatus = gpioRead(MENU_BUTTON);
+        setButtonStatus(gpioRead(MENU_BUTTON));
         std::cout << "Button: " << buttonStatus() << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
     }
