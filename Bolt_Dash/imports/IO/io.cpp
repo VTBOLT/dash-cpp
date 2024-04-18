@@ -3,13 +3,19 @@
 
 // Create IO class which can be included in QML
 IO::IO(QObject *parent) : QObject(parent), m_buttonStatus{} {
-    gpioInitialise();
     std::thread update_vars(&IO::updateVars, this);
     update_vars.detach();
 }
 
 // Calls the set functions with the values from data
 void IO::updateVars() {
+    if (gpio_Initizalise() == PI_INIT_FAILED) {
+        std::cout << "ERROR: Failed to init pigpio" << std::endl;
+        return;
+    }
+    gpioSetMode(MENU_BUTTON, PI_INPUT);
+    gpioSetPullUpDown(MENU_BUTTON, PI_PUD_UP);
+
     while (true) {
         // Debug Message
         m_buttonStatus = gpioRead(MENU_BUTTON);
