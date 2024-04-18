@@ -26,6 +26,7 @@ target_link_libraries(Bolt_DashApp PRIVATE
     Qt6::Gui
     Qt6::Qml
     Qt6::Quick
+    pigpio
 )
 
 if (BUILD_QDS_COMPONENTS)
