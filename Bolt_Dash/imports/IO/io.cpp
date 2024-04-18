@@ -3,7 +3,6 @@
 
 // Create IO class which can be included in QML
 IO::IO(QObject *parent) : QObject(parent), m_buttonStatus{} {
-    gpioInitialise();
     std::thread update_vars(&IO::updateVars, this);
     update_vars.detach();
 }
