@@ -17,6 +17,7 @@ Window {
 
    Screen01 {
        id: mainScreen
+       visible: !debugMode
    }
 
     Debug1 {
