@@ -9,7 +9,7 @@ IO::IO(QObject *parent) : QObject(parent), m_buttonStatus{} {
 
 // Calls the set functions with the values from data
 void IO::updateVars() {
-    if (gpio_Initizalise() == PI_INIT_FAILED) {
+    if (gpioInitialise() == PI_INIT_FAILED) {
         std::cout << "ERROR: Failed to init pigpio" << std::endl;
         return;
     }
