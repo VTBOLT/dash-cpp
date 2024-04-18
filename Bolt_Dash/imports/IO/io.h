@@ -18,6 +18,7 @@ class IO : public QObject {
 public:
     explicit IO(QObject *parent = nullptr);
     bool buttonStatus();
+    void setButtonStatus();
 
 signals:
     void buttonStatusChanged();
