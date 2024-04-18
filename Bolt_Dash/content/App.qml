@@ -4,6 +4,7 @@
 import QtQuick 6.2
 import Bolt_Dash
 import Backend
+import IO
 
 Window {
     width: mainScreen.width
