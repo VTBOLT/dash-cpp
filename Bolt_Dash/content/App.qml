@@ -9,6 +9,8 @@ import IO
 Window {
     width: mainScreen.width
     height: mainScreen.height
+    property bool debugMode: false
+    
 
     visible: true
     title: "Bolt_Dash"
@@ -17,12 +19,17 @@ Window {
        id: mainScreen
    }
 
-    // Debug1 {
-    //     id: debug
-    // }
+    Debug1 {
+        id: debug
+        visible: debugMode
+    }
 
     IO {
         id: io
+
+        onButtonTapped: {
+            debugMode = !debugMode
+        }
     }
 }
 
