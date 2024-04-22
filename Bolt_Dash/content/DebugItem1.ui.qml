@@ -34,10 +34,10 @@ Item {
         Text { text: qsTr("%1V").arg(auxVoltage) }
 
         Label { text: "Aux Percent:" }
-        Text { text: qsTr("%1\%").arg(auxPercent) }
+        Text { text: qsTr("%1\%").arg(auxPercent*100) }
 
         Label { text: "Pack State of Charge (SOC):" }
-        Text { text: qsTr("%1\%").arg(packSOC) }
+        Text { text: qsTr("%1\%").arg(packSOC*100) }
 
         Label { text: "High Cell Temperature:" }
         Text { text: qsTr("%1°C").arg(highCellTemp) }
