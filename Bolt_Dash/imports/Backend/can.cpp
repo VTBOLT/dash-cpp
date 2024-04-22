@@ -62,7 +62,7 @@ namespace can {
                 data.low_cell_temp = frame.data[1];
                 break;
             case can_ids.motor_temp:
-                data.motor_temperature = frame.data[0] << 8;
+                data.motor_temperature = frame.data[0];
                 data.motor_temperature += frame.data[1];
                 break;
             case can_ids.bms_temp:
@@ -86,13 +86,13 @@ namespace can {
             m.unlock();
 
             // Print the can ID and len of data
-            //printf("0x%03X [%d] ", frame.can_id, frame.can_dlc);
+            // printf("0x%03X [%d] ", frame.can_id, frame.can_dlc);
 
             // Print the data in the CAN message
-//            for (i = 0; i < frame.can_dlc; i++)
-                //printf("%02X ", frame.data[i]);
+            //            for (i = 0; i < frame.can_dlc; i++)
+            // printf("%02X ", frame.data[i]);
 
-            //printf("\r\n");
+            // printf("\r\n");
         }
 
         // Close socket
