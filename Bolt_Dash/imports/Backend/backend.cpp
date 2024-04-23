@@ -150,6 +150,13 @@ void Backend::setMcTemp(const double temp) {
         emit mcTempChanged();
     }
 }
+
+void Backend::setBmsFault(const bool fault) {
+    if (m_bmsFault != fault) {
+        m_bmsFault = fault;
+        emit bmsFaultChanged();
+    }
+}
 // }
 
 std::thread can_thread(can::run);
