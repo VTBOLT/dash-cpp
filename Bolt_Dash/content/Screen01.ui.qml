@@ -17,10 +17,11 @@ Rectangle {
 
     color: Constants.backgroundColor
 
-    readonly property int textLabelY: 435
-    readonly property int sliderY: 175
-    readonly property int valueLabelY: textLabelY+20
+    readonly property int sliderY: 160
+    readonly property int textLabelY: sliderY + 260
+    readonly property int valueLabelY: textLabelY+25
     readonly property int labelTextSize: 25
+    readonly property int valueLabelTextSize: 20
 
     Speedometer {
         id: speedometer
@@ -60,16 +61,18 @@ Rectangle {
 
     // Max battery percentages
     Text {
-        x: 36
-        y: sliderY + 60
-        text: qsTr("100%")
-        font.pixelSize: 20
+        x: packSlider.x + (packSlider.width/4)
+        y: valueLabelY
+        text: qsTr("%1\%").arg(backend.packSOC)
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: valueLabelTextSize
     }
     Text {
-        x: 106
-        y: sliderY + 60
-        text: qsTr("100%")
-        font.pixelSize: 20
+       x: auxSlider.x + (auxSlider.width/4)
+       y: valueLabelY
+       text: qsTr("%1\%").arg(backend.auxPercent)
+       horizontalAlignment: Text.AlignHCenter
+       font.pixelSize: valueLabelTextSize
     }
 
     Text {
@@ -116,10 +119,10 @@ Rectangle {
 
     // Pack max temp label
     Text {
-        x: packTempLabel.x
-        y: sliderY + 60
-        text: qsTr("100°C")
-        font.pixelSize: 20
+        x: packTempSlider.x + (packTempSlider.width/4)
+        y: valueLabelY
+        text: qsTr("%1°C").arg(backend.highCellTemp)
+        font.pixelSize: valueLabelTextSize
     }
 
     TempSlider {
@@ -143,10 +146,10 @@ Rectangle {
 
     // MC max temp label
     Text {
-        x: mcTempLabel.x
-        y: sliderY + 60
-        text: qsTr("100°C")
-        font.pixelSize: 20
+        x: mCTempSlider.x + (mCTempSlider.width/4)
+        y: valueLabelY
+        text: qsTr("%1°C").arg(backend.mcTemp)
+        font.pixelSize: valueLabelTextSize
     }
 
     TempSlider {
@@ -170,10 +173,10 @@ Rectangle {
 
     // Motor max temp label
     Text {
-        x: motorTempLabel.x
-        y: sliderY + 60
-        text: qsTr("115°C")
-        font.pixelSize: 20
+        x: motorTempSlider.x + (motorTempSlider.width/4)
+        y: valueLabelY
+        text: qsTr("%1°C").arg(backend.motorTemp)
+        font.pixelSize: valueLabelTextSize
     }
 
     Text {

@@ -17,6 +17,8 @@
 #include <linux/can.h>
 #include <linux/can/raw.h>
 
+#define BMS_FAULT_MASK 0b0010000
+
 struct our_candata {
     uint8_t aux_voltage{};
     uint8_t aux_percent{};
@@ -28,6 +30,7 @@ struct our_candata {
     uint16_t mc_temperature{};
     int16_t motor_speed{};
     int16_t bike_speed{};
+    uint8_t bms_error{};
 };
 
 // ID's for each CAN thing
