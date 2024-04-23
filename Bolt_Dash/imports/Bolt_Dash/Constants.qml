@@ -19,6 +19,7 @@ QtObject {
                                               })
 
     readonly property color backgroundColor: "#c2c2c2"
+    readonly property color errColor: "#ff0000"
 
 
     property StudioApplication application: StudioApplication {

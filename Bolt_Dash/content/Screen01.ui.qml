@@ -15,7 +15,7 @@ Rectangle {
     width: Constants.width
     height: Constants.height
 
-    color: Constants.backgroundColor
+    color: backend.bmsFault ? Constants.errColor : Constants.backgroundColor
 
     readonly property int sliderY: 160
     readonly property int textLabelY: sliderY + 260
@@ -189,12 +189,6 @@ Rectangle {
         font.pixelSize: 125  // For showing speed in mph
         horizontalAlignment: Text.AlignHLeft
         font.family: "Nasalization"
-    }
-
-    WarningSymbol {
-        id: warningSymbol
-        x: 626
-        y: 127
     }
 
     BoltLeanAngle {

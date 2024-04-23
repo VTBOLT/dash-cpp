@@ -11,7 +11,6 @@ qt6_add_qml_module(content
         Speedometer.qml
         BatterySlider.qml
         TempSlider.qml
-        WarningSymbol.qml
         Debug1.qml
         BoltLeanAngle.qml
     RESOURCES
