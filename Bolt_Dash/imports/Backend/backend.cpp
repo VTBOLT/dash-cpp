@@ -22,6 +22,8 @@ void Backend::updateVars() {
         setBmsTemp(data.bms_temperature);              // celsius
         setMotorSpeed(data.motor_speed);               // rpm
         setBikeSpeed(data.bike_speed / 100.0);         // mph
+        setBmsFault(data.bms_error);
+        setMcTemp(data.mc_temperature / 10.0); // celsius
         m.unlock();
         // Debug Message
         // std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
@@ -65,6 +67,14 @@ double Backend::motorSpeed() const {
 
 double Backend::bikeSpeed() const {
     return m_bikeSpeed;
+}
+
+double Backend::mcTemp() const {
+    return m_mcTemp;
+}
+
+bool Backend::bmsFault() const {
+    return m_bmsFault;
 }
 // }
 

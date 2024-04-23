@@ -3,12 +3,12 @@
 
 #include <chrono>
 #include <iostream>
+#include <mutex>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <thread>
 #include <unistd.h>
-#include <mutex>
 
 #include <net/if.h>
 #include <sys/ioctl.h>
@@ -16,6 +16,8 @@
 
 #include <linux/can.h>
 #include <linux/can/raw.h>
+
+#define BMS_FAULT_MASK 0b0010000
 
 struct our_candata {
     uint8_t aux_voltage{};
@@ -27,6 +29,7 @@ struct our_candata {
     uint16_t bms_temperature{};
     int16_t motor_speed{};
     int16_t bike_speed{};
+    uint8_t bms_error{};
 };
 
 // ID's for each CAN thing

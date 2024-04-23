@@ -17,6 +17,12 @@ Rectangle {
 
     color: Constants.backgroundColor
 
+    readonly property int sliderY: 160
+    readonly property int textLabelY: sliderY + 260
+    readonly property int valueLabelY: textLabelY+25
+    readonly property int labelTextSize: 25
+    readonly property int valueLabelTextSize: 20
+
     Speedometer {
         id: speedometer
         fullness: backend.motorSpeed / 5500 // Expected max speed of 5500 RPM
@@ -62,7 +68,23 @@ Rectangle {
         x: 98
         y: 175
         scale: 0.5
-        fullness: backend.auxPercent / 100      // Percent to decimal
+        fullness: backend.auxPercent      // Percent to decimal
+    }
+
+    // Max battery percentages
+    Text {
+        x: packSlider.x + (packSlider.width/4)
+        y: valueLabelY
+        text: qsTr("%1\%").arg(backend.packSOC)
+        horizontalAlignment: Text.AlignHCenter
+        font.pixelSize: valueLabelTextSize
+    }
+    Text {
+       x: auxSlider.x + (auxSlider.width/4)
+       y: valueLabelY
+       text: qsTr("%1\%").arg(backend.auxPercent)
+       horizontalAlignment: Text.AlignHCenter
+       font.pixelSize: valueLabelTextSize
     }
 
     Text {
@@ -106,6 +128,14 @@ Rectangle {
         horizontalAlignment: Text.AlignHCenter
     }
 
+    // Pack max temp label
+    Text {
+        x: packTempSlider.x + (packTempSlider.width/4)
+        y: valueLabelY
+        text: qsTr("%1°C").arg(backend.highCellTemp)
+        font.pixelSize: valueLabelTextSize
+    }
+
     TempSlider {
         id: mCTempSlider
         x: 644
@@ -125,6 +155,14 @@ Rectangle {
         horizontalAlignment: Text.AlignHCenter
     }
 
+    // MC max temp label
+    Text {
+        x: mCTempSlider.x + (mCTempSlider.width/4)
+        y: valueLabelY
+        text: qsTr("%1°C").arg(backend.mcTemp)
+        font.pixelSize: valueLabelTextSize
+    }
+
     TempSlider {
         id: motorTempSlider
         x: 568
@@ -142,6 +180,14 @@ Rectangle {
         text: qsTr("MOTOR")
         font.pixelSize: 20
         horizontalAlignment: Text.AlignHCenter
+    }
+
+    // Motor max temp label
+    Text {
+        x: motorTempSlider.x + (motorTempSlider.width/4)
+        y: valueLabelY
+        text: qsTr("%1°C").arg(backend.motorTemp)
+        font.pixelSize: valueLabelTextSize
     }
 
     Text {
