@@ -14,16 +14,13 @@ Item {
         source: "Pictures/leanAngleBack.png"
         fillMode: Image.PreserveAspectFit
     }
-    Path{
-        startX:100;startY:150
-        PathLine:{
-            x:100
-            y:100
-        }
-        PathSvg{ path: "L 150 50 L 100 150 z" }
-    }
-    Path {
-        startX: 50; startY: 50
-        PathSvg { path: "L 150 50 L 100 150 z" }
+    Rectangle{
+        width: 5
+        height: 150
+        x: width/2 -5
+        y: 60
+        rotation: -45
+        transformOrigin:Item.Bottom
+        
     }
 }
