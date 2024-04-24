@@ -22,12 +22,13 @@ Item {
         id: root
         width: parent.width
         height: parent.height
-        radius: 10
+        radius: 15
         border.color: "#616161"
         border.width: 10
 
         Rectangle {
             id: rectangle
+            radius: 15
             x: 10
             y: 10
             width: 680*fullness

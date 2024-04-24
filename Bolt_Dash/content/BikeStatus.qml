@@ -17,8 +17,8 @@ Item {
 	Rectangle {
 		id: rect
 		anchors.centerIn: parent
-		width: 250
-		height: 75
+		width: 375
+		height: 90
 		radius: 15
 		color: {
 			switch(status) {
@@ -44,9 +44,9 @@ Item {
 					case BikeStatus.Status.STANDBY:
 						return "STANDBY"
 					case BikeStatus.Status.ACCESSORY:
-						return "ACCESSORY"
+						return "ACC"
 					case BikeStatus.Status.CHECKING:
-						return "CHECKING"
+						return "WAITING"
 					case BikeStatus.Status.FAULT:
 						return "FAULT"
 					case BikeStatus.Status.READY:
@@ -57,8 +57,7 @@ Item {
 			}
 			color: "white"
 			font.bold: true
-			bottomPadding: 10
-			font.pixelSize: 55
+			font.pixelSize: 0.8*parent.height
 		}
 	}
 }

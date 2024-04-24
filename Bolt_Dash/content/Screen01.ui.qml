@@ -22,6 +22,10 @@ Rectangle {
     readonly property int valueLabelY: textLabelY+25
     readonly property int labelTextSize: 25
     readonly property int valueLabelTextSize: 20
+    readonly property int mphLabelTextSize: 125
+    readonly property int mphLabelX: 50
+    readonly property int mphLabelY: 80
+    readonly property int bikeStatusX: 575
 
     Speedometer {
         id: speedometer
@@ -181,12 +185,12 @@ Rectangle {
 
     Text {
         id: speedoLabel
-        x: 50
-        y: 80
+        x: mphLabelX
+        y: mphLabelY
         width: 274
         height: 160
         text: qsTr("%1").arg(Math.round(backend.bikeSpeed))
-        font.pixelSize: 125  // For showing speed in mph
+        font.pixelSize: mphLabelTextSize // For showing speed in mph
         horizontalAlignment: Text.AlignHLeft
         font.family: "Nasalization"
     }
@@ -199,8 +203,8 @@ Rectangle {
 
     BikeStatus {
         id: bikeStatus
-        x: 640
+        x: bikeStatusX
         y: speedoLabel.y + 75
-        status: BikeStatus.Status.FAULT
+        status: BikeStatus.Status.STANDBY
     }
 }

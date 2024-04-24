@@ -18,6 +18,7 @@ Item {
 
     Rectangle {
         id: enclosing
+        radius: 15
         x: 0
         y: 0
         width: 60
@@ -28,6 +29,7 @@ Item {
 
     Rectangle {
         id: level
+        radius: 15
         x: 0
         y: 0
         width: 60
