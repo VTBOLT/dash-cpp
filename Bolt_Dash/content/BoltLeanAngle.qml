@@ -5,6 +5,7 @@ import QtCharts
 import QtQuick.Shapes
 
 Item {
+    property int ang: 30
     Image {
         id: image
         x: -(295/2)
@@ -14,16 +15,13 @@ Item {
         source: "Pictures/leanAngleBack.png"
         fillMode: Image.PreserveAspectFit
     }
-    Path{
-        startX:100;startY:150
-        PathLine:{
-            x:100
-            y:100
-        }
-        PathSvg{ path: "L 150 50 L 100 150 z" }
-    }
-    Path {
-        startX: 50; startY: 50
-        PathSvg { path: "L 150 50 L 100 150 z" }
+
+    Rectangle{
+        width: 5
+        height: 150
+        x: -width/2
+        y: 60
+        transformOrigin: Item.Bottom
+        rotation: 30
     }
 }
