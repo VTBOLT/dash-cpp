@@ -62,7 +62,7 @@ Rectangle {
 		// packTemp: backend.highCellTemp
 		// mcTemp: backend.mcTemp
 		// motorTemp: backend.motorTemp
-		packTemp: 100
+		packTemp: -10
 		mcTemp: 85
 		motorTemp: 0.9*115
 	}

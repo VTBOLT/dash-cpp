@@ -35,7 +35,7 @@ Item {
 			id: mcSlider
 			x: packSlider.x + horizSpacing + sliderWidth
 			label: "MC"
-			fullness: mcTemp / 100.0
+			fullness: mcTemp / 100
 			value: mcTemp
 			imageUrl: "Pictures/controller_temp.svg"
 			imageWidth: 45
@@ -46,7 +46,7 @@ Item {
 			id: motorSlider
 			x: mcSlider.x + horizSpacing + sliderWidth
 			label: "MOTOR"
-			fullness: motorTemp / 115.0
+			fullness: motorTemp / 115
 			value: motorTemp
 			imageUrl: "Pictures/motor_temp.svg"
 			imageWidth: 40

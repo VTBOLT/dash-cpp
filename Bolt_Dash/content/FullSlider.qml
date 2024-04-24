@@ -17,7 +17,7 @@ Item {
 		x: 0
 		y: -(height*scale)/2 + padding
 		scale: 0.5
-		fullness: parent.fullness // Abosulte max of 100C and divide by 2 for avg
+		fullness: parent.fullness > 1 ? 1 : parent.fullness < 0 ? 0 : parent.fullness // Abosulte max of 100C and divide by 2 for avg
 	}
 
 	// Text {
