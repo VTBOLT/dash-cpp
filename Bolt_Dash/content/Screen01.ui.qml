@@ -25,13 +25,14 @@ Rectangle {
 	readonly property int mphLabelTextSize: 125
 	readonly property int mphLabelX: 50
 	readonly property int mphLabelY: 80
-	readonly property int bikeStatusX: 575
+	readonly property int bikeStatusX: 400
+	readonly property int verticalSpacing: 10
 
 	Speedometer {
 		id: speedometer
 		fullness: backend.motorSpeed / 5500 // Expected max speed of 5500 RPM
 		x: 50
-		y: 24
+		y: 25
 	}
 
 	Backend {
@@ -58,7 +59,7 @@ Rectangle {
 	TemperatureIsland {
 		id: temps 
 		x: 550
-		y: 225
+		y: bikeStatus.y + bikeStatus.height + verticalSpacing
 		// packTemp: backend.highCellTemp
 		// mcTemp: backend.mcTemp
 		// motorTemp: backend.motorTemp
@@ -69,9 +70,7 @@ Rectangle {
 	Text {
 		id: speedoLabel
 		x: mphLabelX
-		y: mphLabelY
-		width: 274
-		height: 160
+		y: speedometer.y + speedometer.height/2 + 7 +verticalSpacing
 		text: qsTr("%1").arg(Math.round(backend.bikeSpeed))
 		color: Constants.textColor
 		font.pixelSize: mphLabelTextSize // For showing speed in mph
@@ -88,7 +87,7 @@ Rectangle {
 	BikeStatus {
 		id: bikeStatus
 		x: bikeStatusX
-		y: speedoLabel.y + 75
-		status: BikeStatus.Status.DRIVE
+		y: speedometer.y + speedometer.height + verticalSpacing
+		status: BikeStatus.Status.CHECKING
 	}
 }

@@ -1,14 +1,14 @@
 import QtQuick
 
 Item {
-	width: 240
+	width: 200
 	height: 250
 
 	property int packTemp: 0
 	property int mcTemp: 0
 	property int motorTemp: 0
 	readonly property int padding: 10
-	readonly property int horizSpacing: 40
+	readonly property int horizSpacing: 35
 	readonly property int sliderWidth: 30
 
 
@@ -22,7 +22,7 @@ Item {
 
 		FullSlider {
 			id: packSlider
-			x: 20
+			x: 5
 			label: "PACK"
 			fullness: packTemp / 70
 			value: packTemp

@@ -7,6 +7,9 @@ Item {
     readonly property string green: "#09bd0f"
 	property int status: BikeStatus.Status.STANDBY
 	
+	width: 350
+	height: 90
+
 	enum Status {
 		STANDBY,
 		ACCESSORY,
@@ -19,8 +22,8 @@ Item {
 	Rectangle {
 		id: rect
 		anchors.centerIn: parent
-		width: 375
-		height: 90
+		width: parent.width
+		height: parent.height
 		radius: 15
 		color: {
 			switch(status) {
