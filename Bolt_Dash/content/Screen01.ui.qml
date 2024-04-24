@@ -80,6 +80,7 @@ Rectangle {
 
 	BoltLeanAngle {
 		id: leanAngle
+		ang: 69
 		x: Constants.width / 2
 		y: Constants.height / 2
 	}
