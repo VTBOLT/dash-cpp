@@ -3,15 +3,15 @@ import QtQuick
 Item {
 	property string label: ""
 	property string imageUrl: ""
+	property color textColor: "black"
     property double fullness: 0.5
 	property int value: 0
 	property int imageWidth: 50
 	property int imageHeight: 50
-	property color textColor: "white"
+	readonly property int padding: 5
 
-	height: packTempSlider.height*packTempSlider.scale + packTempLabel.height + valueLabel.height + padding*2
-	width: packTempSlider.width*packTempSlider.scale + padding*2
-
+	height: packTempSlider.height*packTempSlider.scale + packTempLabel.height + valueLabel.height
+	width: packTempSlider.width*packTempSlider.scale + padding
 
 	TempSlider {
 		id: packTempSlider
@@ -25,7 +25,7 @@ Item {
 	Text {
 		id: valueLabel
 		x: packTempSlider.x - width/2 + packTempSlider.width/2
-		y: packTempSlider.height*packTempSlider.scale + height/2
+		y: packTempSlider.height*packTempSlider.scale + height/2 + padding
 		text: qsTr("%1°C").arg(value)
 		font.bold: true
 		font.pixelSize: valueLabelTextSize

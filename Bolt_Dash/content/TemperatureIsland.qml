@@ -18,7 +18,7 @@ Item {
 		radius: 15
 		width: parent.width
 		height: parent.height
-		color: "black"
+		color: "white"
 
 		FullSlider {
 			id: packSlider
@@ -56,7 +56,7 @@ Item {
 		// Redline
 		Rectangle {
 			x: 15
-			y: 0.1*(packSlider.height*packSlider.scale) + height/2
+			y: 0.1*(packSlider.height*packSlider.scale) + height/3
 			width: parent.width - 30
 			height: 5
 			color: "red"
