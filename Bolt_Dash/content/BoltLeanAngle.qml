@@ -18,10 +18,6 @@ Item {
         fillMode: Image.PreserveAspectFit
     }
 
-    Rectangle{
-
-    }
-
     Rectangle {
         id: correctDial
         width: 5
