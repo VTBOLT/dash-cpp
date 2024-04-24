@@ -11,6 +11,7 @@ Item {
 		radius: 15
 		width: 175
 		height: 125
+		color: "black"
 
 		Image {
 			x: parent.width/2 - width/2
@@ -30,7 +31,7 @@ Item {
 					radius: 8
 					width: parent.width
 					height: parent.height
-					color: "white"
+					color: "black"
 				}
 
 				Rectangle {
@@ -46,6 +47,7 @@ Item {
 			x: parent.width/2 - width/2
 			y: parent.height - height/2 - 20
 			horizontalAlignment: Text.AignHCenter
+			color: "white"
 			text: qsTr("%1\%").arg(soc)
 			font.pixelSize: 25
 		}
