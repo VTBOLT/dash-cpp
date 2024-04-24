@@ -3,6 +3,8 @@ import QtQuick.Controls
 import QtQuick.Shapes
 
 Item {
+	readonly property color staticBG: "#5F5F5F"
+    readonly property string green: "#09bd0f"
 	property int status: BikeStatus.Status.STANDBY
 	
 	enum Status {
@@ -23,17 +25,14 @@ Item {
 		color: {
 			switch(status) {
 				case BikeStatus.Status.STANDBY:
-					return "#212121"
 				case BikeStatus.Status.ACCESSORY:
-					return "#212121"
 				case BikeStatus.Status.CHECKING:
-					return "#212121"
+				case BikeStatus.Status.READY:
+					return staticBG
 				case BikeStatus.Status.FAULT:
 					return "red"
-				case BikeStatus.Status.READY:
-					return "#212121"
 				case BikeStatus.Status.DRIVE:
-					return "green"
+					return green
 			}
 		}
 

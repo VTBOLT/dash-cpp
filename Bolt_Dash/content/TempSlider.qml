@@ -24,17 +24,18 @@ Item {
         width: 60
         height: 350
         border.width: 3
-        color: `#${integerToHex(9 + (fullness * 223))}${integerToHex(189-(fullness*177))}${integerToHex(15+(fullness*-3))}`;
+        color: "white";
     }
 
     Rectangle {
-        radius: 10
         id: level
+        radius: 10
         x: 0
-        y: 0
+        y: 350-(350*fullness) > 0 ? 350-(350*fullness) : 0
         width: 60
-        height: 350-(350*fullness)
-        color: "white"
+        height: (350*fullness)
+        // color: `#${integerToHex(9 + (fullness * 223))}${integerToHex(189-(fullness*177))}${integerToHex(15+(fullness*-3))}`;
+        color: fullness > 0.9 ? red : green;
         border.width: 3
     }
 }

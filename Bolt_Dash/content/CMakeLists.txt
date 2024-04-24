@@ -14,10 +14,19 @@ qt6_add_qml_module(content
         Debug1.qml
         BoltLeanAngle.qml
         BikeStatus.qml
+        BatteryReadout.qml
+        FullBatterySlider.qml
+        TemperatureIsland.qml
+        FullSlider.qml
     RESOURCES
         fonts/fonts.txt
         fonts/nasalization-rg.otf
         Pictures/leanAngleBack.png
         Pictures/motorcycleIcon.png
+        Pictures/battery-twotone-0-svgrepo-com.svg
+        Pictures/battery.svg
+        Pictures/battery_temp.svg
+        Pictures/controller_temp.svg
+        Pictures/motor_temp.svg
         QML_FILES DebugItem1.ui.qml
 )
