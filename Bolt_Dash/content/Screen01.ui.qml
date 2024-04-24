@@ -181,8 +181,8 @@ Rectangle {
 
     Text {
         id: speedoLabel
-        x: 263
-        y: 105
+        x: 50
+        y: 80
         width: 274
         height: 160
         text: qsTr("%1").arg(Math.round(backend.bikeSpeed))
@@ -195,5 +195,12 @@ Rectangle {
         id: leanAngle
         x: Constants.width / 2
         y: Constants.height / 2
+    }
+
+    BikeStatus {
+        id: bikeStatus
+        x: 640
+        y: speedoLabel.y + 75
+        status: BikeStatus.Status.FAULT
     }
 }

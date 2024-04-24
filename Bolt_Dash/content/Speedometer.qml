@@ -18,13 +18,6 @@ Item {
     height: 75
     property double fullness: 0.5;
 
-    Connections {
-        target: container
-        onSpeedoPercentChanged: {
-            curveCanvas.requestPaint();
-        }
-    }
-
     Rectangle {
         id: root
         width: parent.width

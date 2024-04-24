@@ -13,9 +13,11 @@ qt6_add_qml_module(content
         TempSlider.qml
         Debug1.qml
         BoltLeanAngle.qml
+        BikeStatus.qml
     RESOURCES
         fonts/fonts.txt
         fonts/nasalization-rg.otf
         Pictures/leanAngleBack.png
+        Pictures/motorcycleIcon.png
         QML_FILES DebugItem1.ui.qml
 )
