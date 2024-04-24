@@ -5,7 +5,9 @@ import QtCharts
 import QtQuick.Shapes
 
 Item {
-    property int ang: 30
+    property int ang: 60
+    width: 500
+    height: 500
     Image {
         id: image
         x: -(295/2)
@@ -17,11 +19,16 @@ Item {
     }
 
     Rectangle{
+
+    }
+
+    Rectangle {
+        id: correctDial
         width: 5
         height: 150
         x: -width/2
         y: 60
         transformOrigin: Item.Bottom
-        rotation: 30
+        rotation: ang
     }
 }
