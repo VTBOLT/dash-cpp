@@ -15,6 +15,7 @@ class Backend : public QObject {
     Q_PROPERTY(double auxVoltage READ auxVoltage WRITE setAuxVoltage NOTIFY auxVoltageChanged);
     Q_PROPERTY(double auxPercent READ auxPercent WRITE setAuxPercent NOTIFY auxPercentChanged);
     Q_PROPERTY(double packSOC READ packSOC WRITE setPackSOC NOTIFY packSOCChanged);
+    Q_PROPERTY(double packVoltage READ packVoltage WRITE setPackVoltage NOTIFY packVoltageChanged);
     Q_PROPERTY(double highCellTemp READ highCellTemp WRITE setHighCellTemp NOTIFY highCellTempChanged);
     Q_PROPERTY(double lowCellTemp READ lowCellTemp WRITE setLowCellTemp NOTIFY lowCellTempChanged);
     Q_PROPERTY(double bmsTemp READ bmsTemp WRITE setBmsTemp NOTIFY bmsTempChanged);
@@ -29,6 +30,7 @@ public:
     double auxVoltage() const;
     double auxPercent() const;
     double packSOC() const;
+    double packVoltage() const;
     double highCellTemp() const;
     double lowCellTemp() const;
     double bmsTemp() const;
@@ -41,6 +43,7 @@ public:
     void setAuxVoltage(const double cap);
     void setAuxPercent(const double cap);
     void setPackSOC(const double soc);
+    void setPackVoltage(const double voltage);
     void setHighCellTemp(const double temp);
     void setLowCellTemp(const double temp);
     void setBmsTemp(const double temp);
@@ -54,6 +57,7 @@ signals:
     void auxVoltageChanged();
     void auxPercentChanged();
     void packSOCChanged();
+    void packVoltageChanged();
     void highCellTempChanged();
     void lowCellTempChanged();
     void bmsTempChanged();
@@ -68,6 +72,7 @@ private:
     double m_auxVoltage;
     double m_auxPercent;
     double m_packSOC;
+    double m_packVoltage;
     double m_highCellTemp;
     double m_lowCellTemp;
     double m_bmsTemp;

@@ -17,6 +17,7 @@ Item {
     property double bmsTemp: 0.0
     property double motorSpeed: 0.0
     property double bikeSpeed: 0.0
+    property double packVoltage: 0.0
 
     // Using grid layout for organized display
     GridLayout {
@@ -38,6 +39,9 @@ Item {
 
         Text { text: "Pack State of Charge (SOC):" }
         Text { text: qsTr("%1\%").arg(packSOC*100) }
+
+        Text { text: "PackVoltage:" }
+        Text { text: qsTr("%1V").arg(packVoltage) }
 
         Text { text: "High Cell Temperature:" }
         Text { text: qsTr("%1°C").arg(highCellTemp) }

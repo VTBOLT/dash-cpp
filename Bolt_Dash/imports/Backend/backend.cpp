@@ -14,10 +14,11 @@ void Backend::updateVars() {
     while (true) {
         m.lock();
         // The only scaling here is to put the value into the right unit
-        setMotorTemp(data.motor_temperature / 10.0);                    // celsius
-        setAuxVoltage(data.aux_voltage / 10.0);                         // volts
-        setAuxPercent(data.aux_percent / 100.0);                        // percent
-        setPackSOC(data.pack_state_of_charge / 200.0);                  // percent
+        setMotorTemp(data.motor_temperature / 10.0);   // celsius
+        setAuxVoltage(data.aux_voltage / 10.0);        // volts
+        setAuxPercent(data.aux_percent / 100.0);       // percent
+        setPackSOC(data.pack_state_of_charge / 200.0); // percent
+        setPackVoltage(data.pack_voltage);
         setHighCellTemp(data.high_cell_temp);                           // celsius
         setLowCellTemp(data.low_cell_temp);                             // celsius
         setBmsTemp(data.bms_temperature);                               // celsius
@@ -48,6 +49,10 @@ double Backend::auxPercent() const {
 
 double Backend::packSOC() const {
     return m_packSOC;
+}
+
+double Backend::packVoltage() const {
+    return m_packVoltage;
 }
 
 double Backend::highCellTemp() const {
@@ -106,6 +111,13 @@ void Backend::setPackSOC(const double soc) {
     if (m_packSOC != soc) {
         m_packSOC = soc;
         emit packSOCChanged();
+    }
+}
+
+void Backend::setPackVoltage(const double voltage) {
+    if (m_packVoltage != voltage) {
+        m_packVoltage = voltage;
+        emit packVoltageChanged();
     }
 }
 

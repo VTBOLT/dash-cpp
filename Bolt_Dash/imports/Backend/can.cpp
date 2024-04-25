@@ -54,9 +54,10 @@ namespace can {
                 data.aux_voltage = frame.data[0] + (frame.data[1] << 8);
                 data.aux_percent = data.aux_voltage / 2.5;
                 break;
-            case can_ids.info_1:
+            case can_ids.info:
                 data.pack_state_of_charge = frame.data[4];
                 data.bms_error = frame.data[5] & BMS_FAULT_MASK;
+                data.pack_voltage = frame.data[2] + (frame.data[3] << 8);
                 break;
             case can_ids.main_pack_temp:
                 data.high_cell_temp = frame.data[0] + (frame.data[1] << 8);

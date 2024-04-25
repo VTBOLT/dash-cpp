@@ -23,6 +23,7 @@ struct our_candata {
     uint8_t aux_voltage{};
     uint8_t aux_percent{};
     uint8_t pack_state_of_charge{};
+    uint8_t pack_voltage{};
     uint16_t high_cell_temp{};
     uint16_t low_cell_temp{};
     int16_t motor_temperature{};
@@ -36,7 +37,7 @@ struct our_candata {
 // ID's for each CAN thing
 constexpr struct {
     canid_t aux_battery{0x700};
-    canid_t info_1{0x6B0};
+    canid_t info{0x6B0};
     canid_t main_pack_temp{0x6B4};
     canid_t motor_temp{0xA2};
     canid_t bms_temp{0x6B1};
