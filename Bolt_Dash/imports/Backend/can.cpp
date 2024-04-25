@@ -61,7 +61,7 @@ namespace can {
                 break;
             case can_ids.main_pack_temp:
                 data.high_cell_temp = frame.data[0] + (frame.data[1] << 8);
-                data.low_cell_temp = frame.data[3] + (frame.data[4] << 8);
+                data.low_cell_temp = frame.data[2] + (frame.data[3] << 8);
                 break;
             case can_ids.motor_temp:
                 data.motor_temperature = frame.data[4] + (frame.data[5] << 8);
