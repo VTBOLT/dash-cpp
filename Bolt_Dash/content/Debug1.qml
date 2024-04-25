@@ -8,6 +8,7 @@ Item {
         auxVoltage: 0
         auxPercent: 0
         packSOC: 0
+        packVoltage: 0
         highCellTemp: 0
         lowCellTemp: 0
         bmsTemp: 0
@@ -21,6 +22,7 @@ Item {
         auxVoltage: backend.auxVoltage
         auxPercent: backend.auxPercent
         packSOC: backend.packSOC
+        packVoltage: backend.packVoltage
         highCellTemp: backend.highCellTemp
         lowCellTemp: backend.lowCellTemp
         bmsTemp: backend.bmsTemp
