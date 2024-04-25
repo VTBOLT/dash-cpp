@@ -18,7 +18,7 @@ void Backend::updateVars() {
         setAuxVoltage(data.aux_voltage / 10.0);        // volts
         setAuxPercent(data.aux_percent / 100.0);       // percent
         setPackSOC(data.pack_state_of_charge / 200.0); // percent
-        setPackVoltage(data.pack_voltage);
+        setPackVoltage(data.pack_voltage * 10);
         setHighCellTemp(data.high_cell_temp);                           // celsius
         setLowCellTemp(data.low_cell_temp);                             // celsius
         setBmsTemp(data.bms_temperature);                               // celsius

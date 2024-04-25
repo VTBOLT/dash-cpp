@@ -21,6 +21,7 @@ qt6_add_qml_module(content
     RESOURCES
         fonts/fonts.txt
         fonts/nasalization-rg.otf
+        fonts/MesloLGSDZNerdFontMono-Regular.ttf
         Pictures/leanAngleBack.png
         Pictures/motorcycleIcon.png
         Pictures/battery-twotone-0-svgrepo-com.svg
