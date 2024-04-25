@@ -59,7 +59,7 @@ Item {
 			}
 			color: "white"
 			font.bold: true
-			font.pixelSize: 0.8*parent.height
+			font.pixelSize: 0.75*parent.height
 		}
 	}
 }
