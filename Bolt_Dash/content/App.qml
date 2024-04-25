@@ -9,7 +9,7 @@ import IO
 Window {
     width: mainScreen.width
     height: mainScreen.height
-    property bool debugMode: false
+    property bool debugMode: true
     
 
     visible: true
