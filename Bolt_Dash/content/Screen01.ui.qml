@@ -53,7 +53,7 @@ Rectangle {
 		x: 50
 		y: 300
 		// soc: 50
-		soc: backend.packSOC
+		soc: backend.packSOC * 100
 	}
 
 	TemperatureIsland {
