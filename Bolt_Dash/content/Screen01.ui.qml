@@ -75,7 +75,7 @@ Rectangle {
 		color: Constants.textColor
 		font.pixelSize: mphLabelTextSize // For showing speed in mph
 		horizontalAlignment: Text.AlignHLeft
-		font.family: "Nasalization"
+//		font.family: "Nasalization"
 	}
 
 	BoltLeanAngle {
