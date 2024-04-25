@@ -64,8 +64,8 @@ Rectangle {
 		// mcTemp: backend.mcTemp
 		// motorTemp: backend.motorTemp
 		packTemp: -10
-		mcTemp: 30
-		motorTemp: 115
+		mcTemp: 69
+		motorTemp: 0.9*115
 	}
 	Text {
 		id: speedoLabel
