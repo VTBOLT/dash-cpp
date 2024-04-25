@@ -56,9 +56,9 @@ Item {
 		// Redline
 		Rectangle {
 			x: 15
-			y: 0.1*(packSlider.height*packSlider.scale) + height/3
+			y: 19
 			width: parent.width - 30
-			height: 5
+			height: 6
 			color: "red"
 		}
 	}

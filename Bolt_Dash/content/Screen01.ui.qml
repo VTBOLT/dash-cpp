@@ -22,7 +22,7 @@ Rectangle {
 	readonly property int valueLabelY: textLabelY+25
 	readonly property int labelTextSize: 25
 	readonly property int valueLabelTextSize: 20
-	readonly property int mphLabelTextSize: 125
+	readonly property int mphLabelTextSize: 150
 	readonly property int mphLabelX: 50
 	readonly property int mphLabelY: 80
 	readonly property int bikeStatusX: 400
@@ -45,7 +45,7 @@ Rectangle {
 		lowCellTemp: 0
 		bmsTemp: 0
 		motorSpeed: 0
-		bikeSpeed: 0
+		bikeSpeed: 125
 	}
 
 	BatteryReadout {
@@ -64,14 +64,15 @@ Rectangle {
 		// mcTemp: backend.mcTemp
 		// motorTemp: backend.motorTemp
 		packTemp: -10
-		mcTemp: 85
-		motorTemp: 0.9*115
+		mcTemp: 30
+		motorTemp: 115
 	}
 	Text {
 		id: speedoLabel
 		x: mphLabelX
 		y: speedometer.y + speedometer.height/2 + 7 +verticalSpacing
-		text: qsTr("%1").arg(Math.round(backend.bikeSpeed))
+		text: "125"
+		// text: qsTr("%1").arg(Math.round(backend.bikeSpeed))
 		color: Constants.textColor
 		font.pixelSize: mphLabelTextSize // For showing speed in mph
 		horizontalAlignment: Text.AlignHLeft
@@ -80,7 +81,7 @@ Rectangle {
 
 	BoltLeanAngle {
 		id: leanAngle
-		ang: 69
+		ang: 39
 		x: Constants.width / 2
 		y: Constants.height / 2
 	}

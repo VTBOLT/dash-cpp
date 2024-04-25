@@ -23,7 +23,8 @@ Item {
         y: 0
         width: parent.width
         height: parent.height - bubble.height/2
-        color: "black";
+        color: "white";
+        border.width: 3
     }
 
     Rectangle {
@@ -34,7 +35,8 @@ Item {
         width: parent.width
         height: (parent.height*fullness)
         // color: `#${integerToHex(9 + (fullness * 223))}${integerToHex(189-(fullness*177))}${integerToHex(15+(fullness*-3))}`;
-        color: fullness > 0.9 ? red : green;
+        color: fullness > 0.9 ? red : "black";
+        border.width: 3
     }
 
     Rectangle {
@@ -44,6 +46,7 @@ Item {
         height: 100
         width: 100
         radius: width/2
-        color: green
+        color: fullness > 0.9 ? red : "black"
+        border.width: 3
     }
 }
