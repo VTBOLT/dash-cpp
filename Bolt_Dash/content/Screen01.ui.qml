@@ -71,8 +71,7 @@ Rectangle {
 		id: speedoLabel
 		x: mphLabelX
 		y: speedometer.y + speedometer.height/2 + 7 +verticalSpacing
-		text: "125"
-		// text: qsTr("%1").arg(Math.round(backend.bikeSpeed))
+		text: qsTr("%1").arg(Math.round(backend.bikeSpeed))
 		color: Constants.textColor
 		font.pixelSize: mphLabelTextSize // For showing speed in mph
 		horizontalAlignment: Text.AlignHLeft
