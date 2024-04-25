@@ -52,20 +52,20 @@ Rectangle {
 		id: batteryReadout
 		x: 50
 		y: 300
-		soc: 50
-		// soc: backend.packSOC
+		// soc: 50
+		soc: backend.packSOC
 	}
 
 	TemperatureIsland {
 		id: temps 
 		x: 550
 		y: bikeStatus.y + bikeStatus.height + verticalSpacing
-		// packTemp: backend.highCellTemp
-		// mcTemp: backend.mcTemp
-		// motorTemp: backend.motorTemp
-		packTemp: -10
-		mcTemp: 69
-		motorTemp: 0.9*115
+		packTemp: backend.highCellTemp
+		mcTemp: backend.mcTemp
+		motorTemp: backend.motorTemp
+		// packTemp: -10
+		// mcTemp: 69
+		// motorTemp: 0.9*115
 	}
 	Text {
 		id: speedoLabel
