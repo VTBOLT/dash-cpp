@@ -25,7 +25,7 @@ Rectangle {
 	readonly property int mphLabelTextSize: 150
 	readonly property int mphLabelX: 50
 	readonly property int mphLabelY: 80
-	readonly property int bikeStatusX: 400
+	readonly property int bikeStatusX: 0
 	readonly property int verticalSpacing: 10
 
 	Speedometer {
@@ -61,7 +61,7 @@ Rectangle {
 	TemperatureIsland {
 		id: temps 
 		x: 550
-		y: bikeStatus.y + bikeStatus.height + verticalSpacing
+		y: speedometer.y + speedometer.height + verticalSpacing
 		packTemp: backend.highCellTemp
 		mcTemp: backend.mcTemp
 		motorTemp: backend.motorTemp
@@ -91,7 +91,7 @@ Rectangle {
 	BikeStatus {
 		id: bikeStatus
 		x: bikeStatusX
-		y: speedometer.y + speedometer.height + verticalSpacing
-		status: BikeStatus.Status.CHECKING
+		y: Constants.height - height
+		status: BikeStatus.Status.DRIVE
 	}
 }

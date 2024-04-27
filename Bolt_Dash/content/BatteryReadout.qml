@@ -4,7 +4,7 @@ import QtQuick.Shapes
 Item {
 	readonly property int batteryBorder: 5
     readonly property string red: "#e80c0c"
-    readonly property string green: "#09bd0f"
+    readonly property string green: "#54c45e"
 	property int soc
 	property double voltage
 	
