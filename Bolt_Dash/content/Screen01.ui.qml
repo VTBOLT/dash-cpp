@@ -50,10 +50,12 @@ Rectangle {
 
 	BatteryReadout {
 		id: batteryReadout
-		x: 50
+		x: 0
 		y: 300
-		// soc: 50
-		soc: backend.packSOC * 100
+		soc: 50
+		voltage: 541.2
+		// soc: backend.packSOC * 100
+		// voltage: backend.packVoltage
 	}
 
 	TemperatureIsland {
@@ -81,8 +83,9 @@ Rectangle {
 	BoltLeanAngle {
 		id: leanAngle
 		ang: 39
-		x: Constants.width / 2
-		y: Constants.height / 2
+		x: ((Constants.width - width*scale/1.5) / 2)
+		y: (Constants.height) / 2
+		scale: 0.6
 	}
 
 	BikeStatus {
