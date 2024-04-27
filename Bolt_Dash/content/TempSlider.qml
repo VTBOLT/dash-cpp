@@ -38,6 +38,7 @@ Item {
         // color: `#${integerToHex(9 + (fullness * 223))}${integerToHex(189-(fullness*177))}${integerToHex(15+(fullness*-3))}`;
         color: fullness > 0.9 ? red : "white";
         border.width: 3
+        border.color: "white"
     }
 
     Rectangle {

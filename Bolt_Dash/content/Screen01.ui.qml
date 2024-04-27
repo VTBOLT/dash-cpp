@@ -27,6 +27,7 @@ Rectangle {
 	readonly property int mphLabelY: 80
 	readonly property int bikeStatusX: 0
 	readonly property int verticalSpacing: 10
+	readonly property int temperatureIslandY: 290
 
 	Speedometer {
 		id: speedometer
@@ -52,22 +53,22 @@ Rectangle {
 		id: batteryReadout
 		x: 0
 		y: 300
-		soc: 50
-		voltage: 541.2
-		// soc: backend.packSOC * 100
-		// voltage: backend.packVoltage
+		// soc: 50
+		// voltage: 541.2
+		soc: backend.packSOC * 100
+		voltage: backend.packVoltage
 	}
 
 	TemperatureIsland {
 		id: temps 
-		x: 550
-		y: speedometer.y + speedometer.height + verticalSpacing
-		packTemp: backend.highCellTemp
-		mcTemp: backend.mcTemp
-		motorTemp: backend.motorTemp
-		// packTemp: -10
-		// mcTemp: 69
-		// motorTemp: 0.9*115
+		x: 500
+		y: temperatureIslandY
+		// packTemp: backend.highCellTemp
+		// mcTemp: backend.mcTemp
+		// motorTemp: backend.motorTemp
+		packTemp: 0
+		mcTemp: 100
+		motorTemp: 0.9*115
 	}
 	Text {
 		id: speedoLabel
@@ -77,7 +78,6 @@ Rectangle {
 		color: Constants.textColor
 		font.pixelSize: mphLabelTextSize // For showing speed in mph
 		horizontalAlignment: Text.AlignHLeft
-//		font.family: "Nasalization"
 	}
 
 	BoltLeanAngle {

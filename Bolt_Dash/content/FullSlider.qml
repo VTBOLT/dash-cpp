@@ -9,6 +9,8 @@ Item {
 	property int imageWidth: 50
 	property int imageHeight: 50
 	readonly property int padding: 5
+	readonly property int valueLabelTextSize: 30
+	
 
 	height: packTempSlider.height*packTempSlider.scale + packTempLabel.height + valueLabel.height
 	width: packTempSlider.width*packTempSlider.scale + padding
@@ -24,12 +26,23 @@ Item {
 	// current temp label
 	Text {
 		id: valueLabel
-		x: packTempSlider.x - width/2 + packTempSlider.width/2
-		y: packTempSlider.height*packTempSlider.scale + height/2 + padding
-		text: qsTr("%1°C").arg(value)
+		x: packTempSlider.width
+		y: height/2
+		text: qsTr("%1").arg(value)
 		font.bold: true
 		font.pixelSize: valueLabelTextSize
 		color: textColor
+	}
+
+	Text {
+		id: unitLabel
+		x: valueLabel.x
+		y: valueLabel.y + valueLabel.height
+		text: qsTr("°C")
+		font.bold: true
+		color: textColor
+		font.pixelSize: 20
+	
 	}
 
 	Image {

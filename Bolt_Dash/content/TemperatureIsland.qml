@@ -1,7 +1,7 @@
 import QtQuick
 
 Item {
-	width: 200
+	width: 500
 	height: 250
 
 	property int packTemp: 0
@@ -9,20 +9,22 @@ Item {
 	property int motorTemp: 0
 	readonly property int padding: 10
 	readonly property int horizSpacing: 35
-	readonly property int sliderWidth: 30
+	readonly property int sliderWidth: 55
 
 
 	Rectangle {
 		x: 0
 		y: 0
-		radius: 15
+		radius: 0
 		width: parent.width
 		height: parent.height
-		color: "black"
+		color: "transparent"
+		border.width: 2
+		border.color: "white"
 
 		FullSlider {
 			id: packSlider
-			x: 5
+			x: 3*padding
 			label: "PACK"
 			fullness: packTemp / 70
 			value: packTemp
@@ -58,7 +60,7 @@ Item {
 			x: 15
 			y: 13
 			width: parent.width - 30
-			height: 6
+			height: 2
 			color: "red"
 		}
 	}
