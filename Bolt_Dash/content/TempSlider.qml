@@ -2,8 +2,8 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 
 Item {
-    width: 60
-    height: 300
+    width: 40
+    height: 275
     readonly property string red: "#e80c0c"
     readonly property string green: "#09bd0f"
     property double fullness: 0.5;
@@ -23,8 +23,9 @@ Item {
         y: 0
         width: parent.width
         height: parent.height - bubble.height
-        color: "white";
+        color: "black";
         border.width: 3
+        border.color: "white"
     }
 
     Rectangle {
@@ -35,7 +36,7 @@ Item {
         width: parent.width
         height: (enclosing.height*fullness)
         // color: `#${integerToHex(9 + (fullness * 223))}${integerToHex(189-(fullness*177))}${integerToHex(15+(fullness*-3))}`;
-        color: fullness > 0.9 ? red : "black";
+        color: fullness > 0.9 ? red : "white";
         border.width: 3
     }
 
@@ -46,7 +47,7 @@ Item {
         height: 100
         width: 100
         radius: width/2
-        color: fullness > 0.9 ? red : "black"
+        color: fullness > 0.9 ? red : "white"
         border.width: 3
     }
 
@@ -54,7 +55,7 @@ Item {
     Rectangle {
         id: bubblebg
         x: enclosing.x
-        y: bubble.y - enclosing.radius/2
+        y: bubble.y - enclosing.radius/2 - 1
         // radius: level.radius
         height: 50
         width: enclosing.width

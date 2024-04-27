@@ -13,7 +13,10 @@ if (Qt6_VERSION VERSION_GREATER_EQUAL 6.3)
     qt_standard_project_setup()
 endif()
 
-qt_add_executable(Bolt_DashApp src/main.cpp)
+qt_add_executable(Bolt_DashApp src/main.cpp
+    backend.h backend.cpp
+    can.cpp
+    can.h)
 
 qt_add_resources(Bolt_DashApp "configuration"
     PREFIX "/"
@@ -29,9 +32,9 @@ target_link_libraries(Bolt_DashApp PRIVATE
     pigpio
 )
 
-if (BUILD_QDS_COMPONENTS)
-    include(${CMAKE_CURRENT_SOURCE_DIR}/qmlcomponents)
-endif()
+# if (BUILD_QDS_COMPONENTS)
+#     include(${CMAKE_CURRENT_SOURCE_DIR}/qmlcomponents)
+# endif()
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/qmlmodules)
 

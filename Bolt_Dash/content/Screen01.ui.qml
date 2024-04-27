@@ -84,7 +84,7 @@ Rectangle {
 		id: leanAngle
 		ang: 39
 		x: ((Constants.width - width*scale/1.5) / 2)
-		y: (Constants.height) / 2
+		y: (Constants.height - height/2*scale) / 2
 		scale: 0.6
 	}
 

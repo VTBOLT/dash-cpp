@@ -3,7 +3,7 @@ import QtQuick
 Item {
 	property string label: ""
 	property string imageUrl: ""
-	property color textColor: "black"
+	property color textColor: "white"
     property double fullness: 0.5
 	property int value: 0
 	property int imageWidth: 50
@@ -35,7 +35,7 @@ Item {
 	Image {
 		id: packTempLabel
 		x: packTempSlider.x - width/2 + packTempSlider.width/2
-		y: (250 - (valueLabel.y + valueLabel.height)) / 2 + (valueLabel.y + valueLabel.height) - height/2
+		y: packTempSlider.height*packTempSlider.scale - height - padding
 		source: imageUrl
 		width: imageWidth
 		height: imageHeight

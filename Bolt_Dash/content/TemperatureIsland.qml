@@ -18,7 +18,7 @@ Item {
 		radius: 15
 		width: parent.width
 		height: parent.height
-		color: "white"
+		color: "black"
 
 		FullSlider {
 			id: packSlider
@@ -27,8 +27,8 @@ Item {
 			fullness: packTemp / 70
 			value: packTemp
 			imageUrl: "Pictures/battery_temp.svg"
-			imageWidth: 45
-			imageHeight: 40
+			imageWidth: 35
+			imageHeight: 30
 		}
 
 		FullSlider {
@@ -38,8 +38,8 @@ Item {
 			fullness: mcTemp / 100
 			value: mcTemp
 			imageUrl: "Pictures/controller_temp.svg"
-			imageWidth: 35
-			imageHeight: 35
+			imageWidth: 30
+			imageHeight: 30
 		}
 
 		FullSlider {
@@ -49,8 +49,8 @@ Item {
 			fullness: motorTemp / 115
 			value: motorTemp
 			imageUrl: "Pictures/motor_temp.svg"
-			imageWidth: 50
-			imageHeight: 60
+			imageWidth: 30
+			imageHeight: 25
 		}
 
 		// Redline

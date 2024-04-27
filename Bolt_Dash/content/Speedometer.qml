@@ -8,7 +8,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Shapes 2.15
 import Bolt_Dash 1.0
-import QtQuick.Studio.Components
+// import QtQuick.Components
 
 
 Item {
