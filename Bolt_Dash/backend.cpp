@@ -2,7 +2,7 @@
 #include "can.h"
 #include <math.h>
 
-#define RPM_TO_SPEED (19 / 45 * 27.63 * M_PI / 1056)
+#define RPM_TO_SPEED (19.0 / 45.0 * 27.63 * M_PI / 1056)
 
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
