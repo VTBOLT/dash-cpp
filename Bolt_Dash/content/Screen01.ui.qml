@@ -30,7 +30,7 @@ Rectangle {
 
 	Speedometer {
 		id: speedometer
-		fullness: backend.motorSpeed / 5500 // Expected max speed of 5500 RPM
+		fullness: backend.motorSpeed / 6000 // Expected max speed of 5500 RPM
 		x: 50
 		y: 25
 	}
@@ -84,7 +84,7 @@ Rectangle {
 		id: bikeStatus
 		x: bikeStatusX
 		y: Constants.height - height
-		status: BikeStatus.Status.DRIVE
+		status: BikeStatus.Status.STANDBY
 	}
 
 	FaultMotorStatus {

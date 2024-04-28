@@ -85,7 +85,7 @@ Item {
 				model: 5
 				Rectangle {
 					required property int index
-					color: root.status == index ? (root.status == BikeStatus.Status.DRIVE ? root.green : "red") : "black"
+					color: root.status == index ? (root.status == BikeStatus.Status.DRIVE ? root.green : "white") : "black"
 					Layout.preferredWidth: parent.width / parent.columns - parent.columnSpacing
 					height: parent.height
 					Text {

@@ -25,6 +25,7 @@ Item {
 		FullSlider {
 			id: packSlider
 			x: 3*padding
+			y: 15
 			label: "PACK"
 			fullness: packTemp / 70
 			value: packTemp
@@ -36,6 +37,7 @@ Item {
 		FullSlider {
 			id: mcSlider
 			x: packSlider.x + horizSpacing + sliderWidth
+			y: packSlider.y
 			label: "MC"
 			fullness: mcTemp / 100
 			value: mcTemp
@@ -47,6 +49,7 @@ Item {
 		FullSlider {
 			id: motorSlider
 			x: mcSlider.x + horizSpacing + sliderWidth
+			y: packSlider.y
 			label: "MOTOR"
 			fullness: motorTemp / 115
 			value: motorTemp
@@ -56,12 +59,12 @@ Item {
 		}
 
 		// Redline
-		Rectangle {
-			x: 25
-			y: 13
-			width: 200
-			height: 3
-			color: "red"
-		}
+		// Rectangle {
+		// 	x: 25
+		// 	y: 13
+		// 	width: 200
+		// 	height: 3
+		// 	color: "red"
+		// }
 	}
 }

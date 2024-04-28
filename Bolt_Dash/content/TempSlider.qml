@@ -3,7 +3,7 @@ import QtQuick.Controls 2.15
 
 Item {
     width: 40
-    height: 275
+    height: 250
     readonly property string red: "#e80c0c"
     readonly property string green: "#09bd0f"
     property double fullness: 0.5;
