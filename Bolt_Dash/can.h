@@ -26,6 +26,8 @@ struct our_candata {
     int16_t motor_speed{};
     int16_t bike_speed{};
     uint8_t bms_error{};
+    uint8_t mc_fault{};
+    uint8_t motor_on{};
 };
 
 // ID's for each CAN thing
@@ -38,13 +40,15 @@ constexpr struct {
     canid_t mc_temp{0xA1};
     canid_t rpm{0xA5};
     canid_t speed{0x00};
+    canid_t mc_faults{0x0AB};
+    canid_t internal_states{0x0AA};
 } can_ids;
 
 extern std::mutex m;
 extern our_candata data;
 
 namespace can {
-int run();
+    int run();
 }
 
 #endif // CAN_H

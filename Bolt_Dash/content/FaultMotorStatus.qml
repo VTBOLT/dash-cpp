@@ -12,7 +12,7 @@ Item {
     readonly property int padding: 10
     readonly property color good: green
     readonly property color bad: red 
-    readonly property color off: green//"black"   
+    readonly property color off: "black"   
     id: root 
 
     // Motor On

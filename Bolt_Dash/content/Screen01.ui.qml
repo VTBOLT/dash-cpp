@@ -8,7 +8,6 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 import QtQuick 6.2
 import QtQuick.Controls 6.2
 import Bolt_Dash
-import Backend
 
 Rectangle {
 	id: rectangle
@@ -41,19 +40,6 @@ Rectangle {
 		y: speedometer.y
 	}
 
-	Backend {
-		id: backend
-		motorTemp: 0
-		auxVoltage: 0
-		auxPercent: 0
-		packSOC: 0
-		highCellTemp: 0
-		lowCellTemp: 0
-		bmsTemp: 0
-		motorSpeed: 0
-		bikeSpeed: 125
-	}
-
 	BatteryReadout {
 		id: batteryReadout
 		x: 0
@@ -68,18 +54,18 @@ Rectangle {
 		id: temps 
 		x: 500
 		y: temperatureIslandY
-		// packTemp: backend.highCellTemp
-		// mcTemp: backend.mcTemp
-		// motorTemp: backend.motorTemp
-		packTemp: 0
-		mcTemp: 100
-		motorTemp: 0.9*115
+		packTemp: backend.highCellTemp
+		mcTemp: backend.mcTemp
+		motorTemp: backend.motorTemp
+		//packTemp: 0
+		//mcTemp: 100
+		//motorTemp: 0.9*115
 	}
 	Text {
 		id: speedoLabel
 		x: mphLabelX
 		y: speedometer.y + speedometer.height/2 + 7 +verticalSpacing
-		text: qsTr("125").arg(Math.round(backend.bikeSpeed))
+		text: qsTr("%1").arg(Math.round(backend.bikeSpeed))
 		color: Constants.textColor
 		font.pixelSize: mphLabelTextSize // For showing speed in mph
 		horizontalAlignment: Text.AlignHLeft
@@ -104,5 +90,8 @@ Rectangle {
 	FaultMotorStatus {
 		x: Constants.width - width
 		y: speedometer.y + speedometer.height + 40
+		motorOn: backend.motorOn
+		mcFault: backend.mcFault
+		bmsFault: backend.bmsFault
 	}
 }
