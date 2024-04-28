@@ -136,7 +136,7 @@ Item {
                 x: bmsFaultIndicatorConnector.startX-10; y: bmsFaultIndicator.y+3*bmsFaultIndicator.height/5
             }
             PathCurve {
-                x: bmsFaultIndicator.x+bmsFaultIndicator.width; y: bmsFaultIndicator.y+2*bmsFaultIndicator.height/3
+                x: bmsFaultIndicator.x+bmsFaultIndicator.width - 1; y: bmsFaultIndicator.y+2*bmsFaultIndicator.height/3
             }
         }
     }
@@ -199,7 +199,7 @@ Item {
                 x: mcFaultIndicatorConnector.startX-10; y: mcFaultIndicator.y+3*mcFaultIndicator.height/5
             }
             PathCurve {
-                x: mcFaultIndicator.x + mcFaultIndicator.width; y: mcFaultIndicator.y+2*mcFaultIndicator.height/3
+                x: mcFaultIndicator.x + mcFaultIndicator.width - 2; y: mcFaultIndicator.y+2*mcFaultIndicator.height/3
             }
         }
     }
