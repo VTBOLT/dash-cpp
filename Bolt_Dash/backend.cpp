@@ -7,7 +7,7 @@
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
                                     m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{},
-                                    m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{} {
+                                    m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{}, m_bikeStatus{} {
     std::thread update_vars(&Backend::updateVars, this);
     update_vars.detach();
 }
@@ -31,6 +31,7 @@ void Backend::updateVars() {
         setBmsFault(data.bms_error);
         setMotorOn(data.motor_on);
         setMcFault(data.mc_fault);
+        setBikeStatus(data.bike_status);
         m.unlock();
         // Debug Message
         // std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
@@ -94,6 +95,10 @@ bool Backend::mcFault() const {
 
 bool Backend::motorOn() const {
     return m_motorOn;
+}
+
+int Backend::bikeStatus() const {
+    return m_bikeStatus;
 }
 
 // }
@@ -195,6 +200,13 @@ void Backend::setMotorOn(const bool on) {
     if (m_motorOn != on) {
         m_motorOn = on;
         emit motorOnChanged();
+    }
+}
+
+void Backend::setBikeStatus(const int status) {
+    if (m_bikeStatus != status) {
+        m_bikeStatus = status;
+        emit bikeStatusChanged();
     }
 }
 // }

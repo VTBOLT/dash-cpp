@@ -28,6 +28,7 @@ struct our_candata {
     uint8_t bms_error{};
     uint8_t mc_fault{};
     uint8_t motor_on{};
+    uint8_t bike_status{};
 };
 
 // ID's for each CAN thing
@@ -42,6 +43,7 @@ constexpr struct {
     canid_t speed{0x00};
     canid_t mc_faults{0x0AB};
     canid_t internal_states{0x0AA};
+    canid_t bike_status{0x0E1};
 } can_ids;
 
 extern std::mutex m;

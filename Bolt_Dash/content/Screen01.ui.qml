@@ -84,7 +84,7 @@ Rectangle {
 		id: bikeStatus
 		x: bikeStatusX
 		y: Constants.height - height
-		status: BikeStatus.Status.STANDBY
+		status: backend.bikeStatus
 	}
 
 	FaultMotorStatus {

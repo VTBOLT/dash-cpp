@@ -88,6 +88,24 @@ namespace can {
             case can_ids.internal_states:
                 data.motor_on = frame.data[0] == 6;
                 break;
+            case can_ids.bike_status:
+                switch (frame.data[0]) {
+                case 1 << 0:
+                    data.bike_status = 1;
+                    break;
+                case 1 << 1:
+                    data.bike_status = 2;
+                    break;
+                case 1 << 2:
+                    data.bike_status = 3;
+                    break;
+                case 1 << 3:
+                    data.bike_status = 4;
+                    break;
+                default:
+                    data.bike_status = 0;
+                }
+                break;
             default:
                 unknown_data = new int8_t[frame.can_dlc];
                 for (int i{}; i < frame.can_dlc; i++) {
