@@ -36,6 +36,11 @@ Rectangle {
 		y: 25
 	}
 
+	SpeedometerDecorations {
+		x: speedometer.x
+		y: speedometer.y
+	}
+
 	Backend {
 		id: backend
 		motorTemp: 0
@@ -74,24 +79,30 @@ Rectangle {
 		id: speedoLabel
 		x: mphLabelX
 		y: speedometer.y + speedometer.height/2 + 7 +verticalSpacing
-		text: qsTr("%1").arg(Math.round(backend.bikeSpeed))
+		text: qsTr("125").arg(Math.round(backend.bikeSpeed))
 		color: Constants.textColor
 		font.pixelSize: mphLabelTextSize // For showing speed in mph
 		horizontalAlignment: Text.AlignHLeft
 	}
 
-	BoltLeanAngle {
-		id: leanAngle
-		ang: 39
-		x: ((Constants.width - width*scale/1.5) / 2)
-		y: (Constants.height - height/2*scale) / 2
-		scale: 0.6
-	}
+	// :(
+	// BoltLeanAngle {
+	// 	id: leanAngle
+	// 	ang: 39
+	// 	x: ((Constants.width - width*scale/1.5) / 2)
+	// 	y: (Constants.height - height/2*scale) / 2
+	// 	scale: 0.6
+	// }
 
 	BikeStatus {
 		id: bikeStatus
 		x: bikeStatusX
 		y: Constants.height - height
 		status: BikeStatus.Status.DRIVE
+	}
+
+	FaultMotorStatus {
+		x: Constants.width - width
+		y: speedometer.y + speedometer.height + 40
 	}
 }

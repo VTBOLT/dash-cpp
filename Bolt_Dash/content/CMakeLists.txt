@@ -29,5 +29,8 @@ qt6_add_qml_module(content
         Pictures/battery_temp.svg
         Pictures/controller_temp.svg
         Pictures/motor_temp.svg
+        Pictures/Virginia_Tech_Hokies_logo.svg
         QML_FILES DebugItem1.ui.qml
+        QML_FILES FaultMotorStatus.qml
+        QML_FILES SpeedometerDecorations.qml
 )
