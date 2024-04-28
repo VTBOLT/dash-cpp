@@ -2,6 +2,8 @@
 #include "can.h"
 #include <math.h>
 
+#define RPM_TO_SPEED (19 / 45 * 27.63 * M_PI / 1056)
+
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
                                     m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{},
@@ -20,12 +22,12 @@ void Backend::updateVars() {
         setAuxPercent(data.aux_percent / 100.0);       // percent
         setPackSOC(data.pack_state_of_charge / 200.0); // percent
         setPackVoltage(data.pack_voltage / 10.0);
-        setHighCellTemp(data.high_cell_temp);                           // celsius
-        setLowCellTemp(data.low_cell_temp);                             // celsius
-        setBmsTemp(data.bms_temperature);                               // celsius
-        setMotorSpeed(data.motor_speed);                                // rpm
-        setBikeSpeed(data.motor_speed * 19 / 45 * 27.63 * M_PI / 1056); // mph
-        setMcTemp(data.mc_temperature / 10.0);                          // celsius
+        setHighCellTemp(data.high_cell_temp);          // celsius
+        setLowCellTemp(data.low_cell_temp);            // celsius
+        setBmsTemp(data.bms_temperature);              // celsius
+        setMotorSpeed(data.motor_speed);               // rpm
+        setBikeSpeed(data.motor_speed * RPM_TO_SPEED); // mph
+        setMcTemp(data.mc_temperature / 10.0);         // celsius
         setBmsFault(data.bms_error);
         setMotorOn(data.motor_on);
         setMcFault(data.mc_fault);

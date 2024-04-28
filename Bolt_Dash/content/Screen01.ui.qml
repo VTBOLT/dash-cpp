@@ -57,9 +57,9 @@ Rectangle {
 		packTemp: backend.highCellTemp
 		mcTemp: backend.mcTemp
 		motorTemp: backend.motorTemp
-		//packTemp: 0
-		//mcTemp: 100
-		//motorTemp: 0.9*115
+		// packTemp: 0.89*70
+		// mcTemp: 91
+		// motorTemp: 0.9*115
 	}
 	Text {
 		id: speedoLabel

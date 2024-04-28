@@ -57,10 +57,10 @@ Item {
 
 		// Redline
 		Rectangle {
-			x: 15
+			x: 25
 			y: 13
-			width: parent.width - 30
-			height: 2
+			width: 200
+			height: 3
 			color: "red"
 		}
 	}
