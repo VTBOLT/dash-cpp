@@ -7,7 +7,7 @@
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
                                     m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{},
-                                    m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{}, m_bikeStatus{} {
+                                    m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{}, m_bikeStatus{}, m_packCurrent{} {
     std::thread update_vars(&Backend::updateVars, this);
     update_vars.detach();
 }
@@ -21,7 +21,8 @@ void Backend::updateVars() {
         setAuxVoltage(data.aux_voltage / 10.0);        // volts
         setAuxPercent(data.aux_percent / 100.0);       // percent
         setPackSOC(data.pack_state_of_charge / 200.0); // percent
-        setPackVoltage(data.pack_voltage / 10.0);
+        setPackVoltage(data.pack_voltage / 10.0);      // Voltage
+        setPackCurrent(data.pack_current / 10.0);      // amps
         setHighCellTemp(data.high_cell_temp);          // celsius
         setLowCellTemp(data.low_cell_temp);            // celsius
         setBmsTemp(data.bms_temperature);              // celsius
@@ -99,6 +100,10 @@ bool Backend::motorOn() const {
 
 int Backend::bikeStatus() const {
     return m_bikeStatus;
+}
+
+double Backend::packCurrent() const {
+    return m_packCurrent;
 }
 
 // }
@@ -207,6 +212,13 @@ void Backend::setBikeStatus(const int status) {
     if (m_bikeStatus != status) {
         m_bikeStatus = status;
         emit bikeStatusChanged();
+    }
+}
+
+void Backend::setPackCurrent(const double current) {
+    if (m_packCurrent != current) {
+        m_packCurrent = current;
+        emit packCurrentChanged();
     }
 }
 // }
