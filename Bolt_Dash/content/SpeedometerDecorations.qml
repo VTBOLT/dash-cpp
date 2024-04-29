@@ -3,7 +3,7 @@ import QtQuick.Shapes
 
 Item {
 	id: root
-	readonly property int leftLineWidth: 100
+    readonly property int leftLineWidth: 200
 	readonly property int rightLineWidth: 125
 
 	Shape {
@@ -13,9 +13,9 @@ Item {
 			strokeColor: "white"
 			strokeWidth: 2
 			fillColor: "transparent"
-			startX: 0
+            startX: -100
 			startY: 225
-			PathLine { x: leftLinePath.startX + root.leftLineWidth; y: leftLinePath.startY }
+            PathLine { x: leftLinePath.startX + root.leftLineWidth; y: leftLinePath.startY }
 		}
 	}
 

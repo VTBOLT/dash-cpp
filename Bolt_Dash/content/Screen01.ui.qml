@@ -16,7 +16,7 @@ Rectangle {
 
 	color: backend.bmsFault ? Constants.errColor : Constants.backgroundColor
 
-	readonly property maxCurrent: 250
+    readonly property int maxCurrent: 250
 
 	readonly property int sliderY: 160
 	readonly property int textLabelY: sliderY + 260
