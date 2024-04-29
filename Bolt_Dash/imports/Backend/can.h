@@ -17,7 +17,7 @@
 #include <linux/can.h>
 #include <linux/can/raw.h>
 
-#define BMS_FAULT_MASK 0b0010000
+#define BMS_FAULT_MASK (1 << 3)
 
 struct our_candata {
     uint8_t aux_voltage{};

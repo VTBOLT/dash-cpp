@@ -56,7 +56,7 @@ namespace can {
                 break;
             case can_ids.info:
                 data.pack_state_of_charge = frame.data[4];
-                data.bms_error = frame.data[5] & BMS_FAULT_MASK;
+                data.bms_error = frame.data[6] & BMS_FAULT_MASK;
                 data.pack_voltage = frame.data[2] + (frame.data[3] << 8);
                 break;
             case can_ids.main_pack_temp:
