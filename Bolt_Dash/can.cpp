@@ -69,7 +69,6 @@ namespace can {
                 break;
             case can_ids.motor_temp:
                 data.motor_temperature = frame.data[4] + (frame.data[5] << 8);
-                data.mc_temperature = frame.data[0] + (frame.data[1] << 8);
                 break;
             case can_ids.bms_temp:
                 data.bms_temperature = frame.data[4] + (frame.data[5] << 8);
@@ -82,7 +81,10 @@ namespace can {
                 data.bike_speed = frame.data[2] + (frame.data[3] << 8);
                 break;
             case can_ids.mc_temp:
-                // data.mc_temperature = frame.data[0] + (frame.data[1] << 8);
+                uint16_t r1 = frame.data[0] + (frame.data[1] << 8);
+                uint16_t r2 = frame.data[2] + (frame.data[3] << 8);
+                uint16_t r3 = frame.data[4] + (frame.data[5] << 8);
+                data.mc_temperature = r1 > r2 ? r1 : (r2 > r3 ? r2 : r3);
                 break;
             case can_ids.mc_faults:
                 data.mc_fault = frame.data[0] || frame.data[1] || frame.data[2] || frame.data[3] || frame.data[4] || frame.data[5] || frame.data[6] || frame.data[7];

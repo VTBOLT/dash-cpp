@@ -39,7 +39,7 @@ constexpr struct {
     canid_t main_pack_temp{0x6B4};
     canid_t motor_temp{0xA2};
     canid_t bms_temp{0x6B1};
-    canid_t mc_temp{0xA1};
+    canid_t mc_temp{0xA0};
     canid_t rpm{0xA5};
     canid_t speed{0x00};
     canid_t mc_faults{0x0AB};
