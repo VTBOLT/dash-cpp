@@ -24,6 +24,7 @@ struct our_candata {
     uint8_t aux_percent{};
     uint8_t pack_state_of_charge{};
     uint16_t pack_voltage{};
+    uint16_t pack_current{};
     uint16_t high_cell_temp{};
     uint16_t low_cell_temp{};
     int16_t motor_temperature{};

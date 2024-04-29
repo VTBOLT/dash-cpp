@@ -23,6 +23,7 @@ class Backend : public QObject {
     Q_PROPERTY(double bikeSpeed READ bikeSpeed WRITE setBikeSpeed NOTIFY bikeSpeedChanged);
     Q_PROPERTY(double mcTemp READ mcTemp WRITE setMcTemp NOTIFY mcTempChanged);
     Q_PROPERTY(bool bmsFault READ bmsFault WRITE setBmsFault NOTIFY bmsFaultChanged);
+    Q_PROPERTY(double packCurrent READ packCurrent WRITE setPackCurrent NOTIFY packCurrentChanged);
 
 public:
     explicit Backend(QObject *parent = nullptr);
@@ -38,6 +39,7 @@ public:
     double bikeSpeed() const;
     double mcTemp() const;
     bool bmsFault() const;
+    double packCurrent() const;
 
     void setMotorTemp(const double temp);
     void setAuxVoltage(const double cap);
@@ -51,6 +53,7 @@ public:
     void setBikeSpeed(const double speed);
     void setMcTemp(const double temp);
     void setBmsFault(const bool fault);
+    void setPackCurrent(const double current);
 
 signals:
     void motorTempChanged();
@@ -65,6 +68,7 @@ signals:
     void bikeSpeedChanged();
     void mcTempChanged();
     void bmsFaultChanged();
+    void packCurrentChanged();
 
 private:
     void updateVars();
@@ -80,6 +84,7 @@ private:
     double m_bikeSpeed;
     double m_mcTemp;
     bool m_bmsFault;
+    double m_packCurrent;
 };
 
 #endif // BACKEND_H
