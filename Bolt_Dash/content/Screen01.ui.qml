@@ -16,7 +16,7 @@ Rectangle {
 
 	color: backend.bmsFault ? Constants.errColor : Constants.backgroundColor
 
-    readonly property int maxCurrent: 250
+    readonly property int maxCurrent: 350
 
 	readonly property int sliderY: 160
 	readonly property int textLabelY: sliderY + 260
@@ -33,7 +33,7 @@ Rectangle {
 	Speedometer {
 		id: speedometer
 		// fullness: backend.motorSpeed / 6000 // Expected max speed of 5500 RPM
-		fullness: backend.packCurrent / maxCurrent
+		fullness: Math.abs(backend.packCurrent) / maxCurrent
 		x: 50
 		y: 25
 	}
