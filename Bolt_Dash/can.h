@@ -44,7 +44,6 @@ constexpr struct {
     canid_t speed{0x00};
     canid_t mc_faults{0x0AB};
     canid_t internal_states{0x0AA};
-    canid_t bike_status{0x0E1};
 } can_ids;
 
 extern std::mutex m;

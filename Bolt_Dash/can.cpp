@@ -80,36 +80,49 @@ namespace can {
             case can_ids.speed:
                 data.bike_speed = frame.data[2] + (frame.data[3] << 8);
                 break;
-            case can_ids.mc_temp:
+            case can_ids.mc_temp: {
                 uint16_t r1 = frame.data[0] + (frame.data[1] << 8);
                 uint16_t r2 = frame.data[2] + (frame.data[3] << 8);
                 uint16_t r3 = frame.data[4] + (frame.data[5] << 8);
                 data.mc_temperature = r1 > r2 ? r1 : (r2 > r3 ? r2 : r3);
                 break;
+            };
             case can_ids.mc_faults:
                 data.mc_fault = frame.data[0] || frame.data[1] || frame.data[2] || frame.data[3] || frame.data[4] || frame.data[5] || frame.data[6] || frame.data[7];
                 break;
-            case can_ids.internal_states:
-                data.motor_on = frame.data[0] == 6;
-                break;
-            case can_ids.bike_status:
-                switch (frame.data[0]) {
-                case 1 << 0:
+            case can_ids.internal_states: {
+                // Get state of bike
+                uint16_t status = frame.data[0] + (frame.data[1] << 8);
+                switch (status) {
+                // I don't actually think this does anything, but this may be when accessories exist
+                case 0:
                     data.bike_status = 1;
                     break;
-                case 1 << 1:
+                // If 1, 2, or 3, VSM is in one of the precharge states
+                case 1:
+                case 2:
+                case 3:
                     data.bike_status = 2;
                     break;
-                case 1 << 2:
+                // 4 or 5, MC is ready but not active yet
+                case 4:
+                case 5:
                     data.bike_status = 3;
                     break;
-                case 1 << 3:
+                // 6, Motor is on an can be moved
+                case 6:
                     data.bike_status = 4;
                     break;
+                // Kind of obsolete b/c this is not a visible status, but if 7, there is a fault
+                case 7:
+                    data.bike_status = 5;
+                    break;
                 default:
-                    data.bike_status = 0;
+                    break;
                 }
+                data.motor_on = frame.data[0] == 6;
                 break;
+            };
             default:
                 unknown_data = new int8_t[frame.can_dlc];
                 for (int i{}; i < frame.can_dlc; i++) {
@@ -119,7 +132,21 @@ namespace can {
             m.unlock();
 
             // Print the can ID and len of data
-            // printf("0x%03X [%d] ", frame.can_id, frame.can_dlc);
+            // printf("0x%03X [%d] ", frame.can_id, frame.can_dlc);                // switch (status) {
+            // case 0:
+            //     break;
+            // // If 1, 2, or 3, VSM is in one of the precharge states
+            // case 1:
+            // case 2:
+            // case 3:
+            //     data.bike_status = 0;
+            //     break;
+            // case 5:
+            //     data.bike_status = 1;
+            //     break;
+            // default:
+            //     break;
+            // }
 
             // Print the data in the CAN message
             //            for (i = 0; i < frame.can_dlc; i++)
