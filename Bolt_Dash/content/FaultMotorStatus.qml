@@ -1,4 +1,5 @@
 import QtQuick 2.15
+import QtQuick.Controls
 import QtQuick.Shapes 
 
 Item {
@@ -79,26 +80,40 @@ Item {
     }
 
     // BMS Fault
-    Rectangle {
+    Button {
         id: bmsFaultIndicator
         x: motorOnIndicator.x + motorOnIndicator.width + padding
         y: 7
         width: 50
         height: width
-        radius: width/2
-        color: "transparent"
-        border.width: 5
-        border.color: "white"
-
-        // Indicator circle
-        Rectangle {
-            readonly property int offset: 12
-            x: offset
-            y: offset
-            width: parent.width - offset*2
+        onClicked: {
+            bmsFault = !bmsFault
+            bmsFaultDetails.show()
+        }
+        flat: true
+        indicator: Rectangle {
+            // id: bmsFaultIndicator
+            // x: motorOnIndicator.x + motorOnIndicator.width + padding
+            // y: 7
+            x: 0
+            y: 0
+            width: 50
             height: width
             radius: width/2
-            color: bmsFault ? bad : off
+            color: "transparent"
+            border.width: 5
+            border.color: "white"
+
+            // Indicator circle
+            Rectangle {
+                readonly property int offset: 12
+                x: offset
+                y: offset
+                width: parent.width - offset*2
+                height: width
+                radius: width/2
+                color: bmsFault ? bad : off
+            }
         }
     }
 
@@ -202,5 +217,9 @@ Item {
                 x: mcFaultIndicator.x + mcFaultIndicator.width - 2; y: mcFaultIndicator.y+2*mcFaultIndicator.height/3
             }
         }
+    }
+
+    BMSFaultDetails {
+        id: bmsFaultDetails
     }
 }
