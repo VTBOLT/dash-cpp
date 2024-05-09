@@ -33,7 +33,7 @@ void Backend::updateVars() {
         setMotorSpeed(data.motor_speed);               // rpm
         setBikeSpeed(data.motor_speed * RPM_TO_SPEED); // mph
         setMcTemp(data.mc_temperature / 10.0);         // celsius
-        setBmsFault(data.bms_error);
+        setBmsFault(data.bms_fault);
         setMotorOn(data.motor_on);
         setMcFault(data.mc_fault);
         setBikeStatus(data.bike_status);

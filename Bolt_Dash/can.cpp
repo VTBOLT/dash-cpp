@@ -59,7 +59,7 @@ namespace can {
                 break;
             case can_ids.info:
                 data.pack_state_of_charge = frame.data[4];
-                data.bms_error = frame.data[5] & BMS_FAULT_MASK;
+                data.bms_fault = frame.data[5] & BMS_FAULT_MASK;
                 data.pack_current = frame.data[0] + (frame.data[1] << 8);
                 data.pack_voltage = frame.data[2] + (frame.data[3] << 8);
                 break;
@@ -123,6 +123,15 @@ namespace can {
                 data.motor_on = frame.data[0] == 6;
                 break;
             };
+            case can_ids.bms_error_codes:
+                // aaaaaaaabbbbbbbbccccccc
+                // a: DTC codes 2 bits 9-16
+                // b: DTC codes 2 bits 1-8
+                // c: DTC codes 1 bits 1-8
+                data.bms_error_codes = (frame.data[2]) + (frame.data[0] << 8) + (frame.data[1] << 16);
+                data.bms_error = data.bms_error_codes & ALL_BMS_ERRORS;
+                data.bms_warning = data.bms_error_codes & ALL_BMS_WARNINGS;
+                break;
             default:
                 unknown_data = new int8_t[frame.can_dlc];
                 for (int i{}; i < frame.can_dlc; i++) {
