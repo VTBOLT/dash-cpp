@@ -1,6 +1,7 @@
 #ifndef BACKEND_H
 #define BACKEND_H
 
+#include "qtmetamacros.h"
 #include <QObject>
 #include <QString>
 #include <qqml.h>
@@ -26,6 +27,8 @@ class Backend : public QObject {
     Q_PROPERTY(int bikeStatus READ bikeStatus WRITE setBikeStatus NOTIFY bikeStatusChanged);
     Q_PROPERTY(double packCurrent READ packCurrent WRITE setPackCurrent NOTIFY packCurrentChanged);
     Q_PROPERTY(uint32_t bmsErrorCodes READ bmsErrorCodes WRITE setBmsErrorCodes NOTIFY bmsErrorCodesChanged);
+    Q_PROPERTY(bool bmsError READ bmsError WRITE setBmsError NOTIFY bmsErrorChanged);
+    Q_PROPERTY(bool bmsWarning READ bmsWarning WRITE setBmsWarning NOTIFY bmsWarningChanged);
     Q_PROPERTY(std::vector<QString> bmsErrorCodesString READ bmsErrorCodesString NOTIFY bmsErrorCodesStringChanged);
 
 public:
@@ -46,6 +49,8 @@ public:
     bool motorOn() const;
     int bikeStatus() const;
     double packCurrent() const;
+    bool bmsError() const;
+    bool bmsWarning() const;
     uint32_t bmsErrorCodes() const;
     std::vector<QString> bmsErrorCodesString() const;
 
@@ -65,6 +70,8 @@ public:
     void setMotorOn(const bool on);
     void setBikeStatus(const int status);
     void setPackCurrent(const double current);
+    void setBmsError(const bool error);
+    void setBmsWarning(const bool warning);
     void setBmsErrorCodes(const uint32_t warnings);
     void setBmsErrorCodesString(const std::vector<QString> warnings);
 
@@ -85,6 +92,8 @@ signals:
     void motorOnChanged();
     void bikeStatusChanged();
     void packCurrentChanged();
+    void bmsErrorChanged();
+    void bmsWarningChanged();
     void bmsErrorCodesChanged();
     void bmsErrorCodesStringChanged();
 
@@ -107,6 +116,8 @@ private:
     bool m_motorOn;
     int m_bikeStatus;
     double m_packCurrent;
+    bool m_bmsError;
+    bool m_bmsWarning;
     uint32_t m_bmsErrorCodes;
     std::vector<QString> m_bmsErrorCodesString;
 };

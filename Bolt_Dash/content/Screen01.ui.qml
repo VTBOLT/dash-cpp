@@ -95,6 +95,7 @@ Rectangle {
 		y: speedometer.y + speedometer.height + 40
 		motorOn: backend.motorOn
 		mcFault: backend.mcFault
-		bmsFault: backend.bmsFault
+		bmsError: backend.bmsError
+		bmsWarning: backend.bmsWarning
 	}
 }

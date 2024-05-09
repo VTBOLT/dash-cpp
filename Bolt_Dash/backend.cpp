@@ -1,8 +1,8 @@
 #include "backend.h"
 #include "can.h"
 #include "web.h"
-#include <thread>
 #include <chrono>
+#include <thread>
 
 #define RPM_TO_SPEED (19.0 / 45.0 * 27.63 * M_PI / 1056)
 
@@ -10,7 +10,7 @@
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
                                     m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{},
                                     m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{}, m_bikeStatus{}, m_packCurrent{}, m_bmsErrorCodes{},
-                                    m_bmsErrorCodesString{} {
+                                    m_bmsErrorCodesString{}, m_bmsError{}, m_bmsWarning{} {
     std::thread update_vars(&Backend::updateVars, this);
     update_vars.detach();
 
@@ -40,7 +40,9 @@ void Backend::updateVars() {
         setMcFault(data.mc_fault);
         setBikeStatus(data.bike_status);
         setBmsErrorCodes(data.bms_error_codes);
-        std::vector<QString> warnings = getErrorCodeStrings(0xFFFFFFFF);
+        setBmsError(data.bms_error);
+        setBmsWarning(data.bms_warning);
+        std::vector<QString> warnings = getErrorCodeStrings(data.bms_error_codes);
         setBmsErrorCodesString(warnings);
         m.unlock();
         // Debug Message
@@ -194,6 +196,14 @@ double Backend::packCurrent() const {
     return m_packCurrent;
 }
 
+bool Backend::bmsError() const {
+    return m_bmsError;
+}
+
+bool Backend::bmsWarning() const {
+    return m_bmsWarning;
+}
+
 uint32_t Backend::bmsErrorCodes() const {
     return m_bmsErrorCodes;
 }
@@ -315,6 +325,20 @@ void Backend::setPackCurrent(const double current) {
     if (m_packCurrent != current) {
         m_packCurrent = current;
         emit packCurrentChanged();
+    }
+}
+
+void Backend::setBmsError(const bool error) {
+    if (m_bmsError != error) {
+        m_bmsError = error;
+        emit bmsErrorChanged();
+    }
+}
+
+void Backend::setBmsWarning(const bool warning) {
+    if (m_bmsWarning != warning) {
+        m_bmsWarning = warning;
+        emit bmsWarningChanged();
     }
 }
 

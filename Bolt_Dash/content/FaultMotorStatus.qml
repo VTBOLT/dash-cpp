@@ -6,13 +6,15 @@ Item {
     width: 400
     height: 150
     property bool motorOn: false
-    property bool bmsFault: false
+    property bool bmsError: false
+    property bool bmsWarning: false
     property bool mcFault: false
     readonly property string red: "#e80c0c"
     readonly property string green: "#54c45e"
     readonly property int padding: 10
     readonly property color good: green
     readonly property color bad: red 
+    readonly property color warn: "orange"
     readonly property color off: "black"   
     id: root 
 
@@ -87,7 +89,7 @@ Item {
         width: 50
         height: width
         onClicked: {
-            bmsFault = !bmsFault
+            bmsError = !bmsError
             bmsFaultDetails.show()
         }
         flat: true
@@ -112,7 +114,7 @@ Item {
                 width: parent.width - offset*2
                 height: width
                 radius: width/2
-                color: bmsFault ? bad : off
+                color: bmsError ? bad : (bmsWarning ? warn : off)
             }
         }
     }
