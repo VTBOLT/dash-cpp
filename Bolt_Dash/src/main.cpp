@@ -6,10 +6,11 @@
 #include <QQmlContext>
 
 #include "app_environment.h"
+#include "backend.h"
+#include "can.h"
 #include "import_qml_components_plugins.h"
 #include "import_qml_plugins.h"
 #include "qfont.h"
-#include "backend.h"
 
 int main(int argc, char *argv[]) {
     set_qt_environment();

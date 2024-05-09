@@ -1,19 +1,21 @@
 #include "backend.h"
 #include "can.h"
 #include "web.h"
+#include <thread>
+#include <chrono>
 
 #define RPM_TO_SPEED (19.0 / 45.0 * 27.63 * M_PI / 1056)
 
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
                                     m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{},
-                                    m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{}, m_bikeStatus{}, m_packCurrent{} {
+                                    m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{}, m_bikeStatus{}, m_packCurrent{}, m_bmsErrorCodes{},
+                                    m_bmsErrorCodesString{} {
     std::thread update_vars(&Backend::updateVars, this);
     update_vars.detach();
 
     std::thread run_app(&web::runApp);
     run_app.detach();
-    // web::runApp();
 }
 
 // Calls the set functions with the values from data
@@ -37,11 +39,93 @@ void Backend::updateVars() {
         setMotorOn(data.motor_on);
         setMcFault(data.mc_fault);
         setBikeStatus(data.bike_status);
+        setBmsErrorCodes(data.bms_error_codes);
+        std::vector<QString> warnings = getErrorCodeStrings(0xFFFFFFFF);
+        setBmsErrorCodesString(warnings);
         m.unlock();
         // Debug Message
         // std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
+}
+
+std::vector<QString> Backend::getErrorCodeStrings(uint32_t errorCodes) {
+    std::vector<QString> warnings;
+    // Warnings
+    if (errorCodes & bms_warnings.discharge_limit_enforcement) {
+        warnings.push_back("Discharge Limit Enforcement");
+    }
+    if (errorCodes & bms_warnings.cell_balancing_stuck_off) {
+        warnings.push_back("Cell Balancing Stuck Off");
+    }
+    if (errorCodes & bms_warnings.weak_cell) {
+        warnings.push_back("Weak Cell");
+    }
+    if (errorCodes & bms_warnings.current_sensor) {
+        warnings.push_back("Current Sensor");
+    }
+    if (errorCodes & bms_warnings.weak_pack) {
+        warnings.push_back("Weak Pack");
+    }
+    if (errorCodes & bms_warnings.fan_monitor) {
+        warnings.push_back("Fan Monitor");
+    }
+    // Errors
+    if (errorCodes & bms_errors.charger_safety_relay) {
+        warnings.push_back("Charger Safety Relay");
+    }
+    if (errorCodes & bms_errors.internal_hardware) {
+        warnings.push_back("Internal Hardware");
+    }
+    if (errorCodes & bms_errors.internal_heatsink_thermistor) {
+        warnings.push_back("Internal Heatsink Thermistor");
+    }
+    if (errorCodes & bms_errors.internal_software) {
+        warnings.push_back("Internal Software");
+    }
+    if (errorCodes & bms_errors.highest_cell_voltage_too_high) {
+        warnings.push_back("Highest Cell Voltage Too Low");
+    }
+    if (errorCodes & bms_errors.lowest_cell_voltage_too_low) {
+        warnings.push_back("Lowest Cell Voltage Too Low");
+    }
+    if (errorCodes & bms_errors.pack_too_hot) {
+        warnings.push_back("Pack Too Hot");
+    }
+    if (errorCodes & bms_errors.internal_communication) {
+        warnings.push_back("Internal Communication");
+    }
+    if (errorCodes & bms_errors.low_cell_voltage) {
+        warnings.push_back("Low Cell Voltage");
+    }
+    if (errorCodes & bms_errors.open_wiring) {
+        warnings.push_back("Open Wiring");
+    }
+    if (errorCodes & bms_errors.highest_cell_voltage_over_5v) {
+        warnings.push_back("Highest Cell Voltage Over 5v");
+    }
+    if (errorCodes & bms_errors.cell_asic_fault) {
+        warnings.push_back("Cell ASIC Fault");
+    }
+    if (errorCodes & bms_errors.thermistor_fault) {
+        warnings.push_back("Thermistor Fault");
+    }
+    if (errorCodes & bms_errors.external_communication) {
+        warnings.push_back("External Communication");
+    }
+    if (errorCodes & bms_errors.redundant_power_supply) {
+        warnings.push_back("Redundant Power Supply");
+    }
+    if (errorCodes & bms_errors.high_voltage_isolation) {
+        warnings.push_back("High Voltage Isolation");
+    }
+    if (errorCodes & bms_errors.input_power_supply) {
+        warnings.push_back("Input Power Supply");
+    }
+    if (errorCodes & bms_errors.charge_limit_enforcement) {
+        warnings.push_back("Charge Limit Enforcement");
+    }
+    return warnings;
 }
 
 // Functions to get variable values
@@ -108,6 +192,14 @@ int Backend::bikeStatus() const {
 
 double Backend::packCurrent() const {
     return m_packCurrent;
+}
+
+uint32_t Backend::bmsErrorCodes() const {
+    return m_bmsErrorCodes;
+}
+
+std::vector<QString> Backend::bmsErrorCodesString() const {
+    return m_bmsErrorCodesString;
 }
 
 // }
@@ -223,6 +315,20 @@ void Backend::setPackCurrent(const double current) {
     if (m_packCurrent != current) {
         m_packCurrent = current;
         emit packCurrentChanged();
+    }
+}
+
+void Backend::setBmsErrorCodes(const uint32_t warnings) {
+    if (m_bmsErrorCodes != warnings) {
+        m_bmsErrorCodes = warnings;
+        emit bmsErrorCodesChanged();
+    }
+}
+
+void Backend::setBmsErrorCodesString(const std::vector<QString> warnings) {
+    if (m_bmsErrorCodesString != warnings) {
+        m_bmsErrorCodesString = warnings;
+        emit bmsErrorCodesStringChanged();
     }
 }
 // }

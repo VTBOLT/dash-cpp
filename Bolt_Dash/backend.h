@@ -3,10 +3,8 @@
 
 #include <QObject>
 #include <QString>
-#include <chrono>
-#include <iostream>
 #include <qqml.h>
-#include <thread>
+#include <vector>
 
 class Backend : public QObject {
     Q_OBJECT
@@ -27,6 +25,8 @@ class Backend : public QObject {
     Q_PROPERTY(bool motorOn READ motorOn WRITE setMotorOn NOTIFY motorOnChanged);
     Q_PROPERTY(int bikeStatus READ bikeStatus WRITE setBikeStatus NOTIFY bikeStatusChanged);
     Q_PROPERTY(double packCurrent READ packCurrent WRITE setPackCurrent NOTIFY packCurrentChanged);
+    Q_PROPERTY(uint32_t bmsErrorCodes READ bmsErrorCodes WRITE setBmsErrorCodes NOTIFY bmsErrorCodesChanged);
+    Q_PROPERTY(std::vector<QString> bmsErrorCodesString READ bmsErrorCodesString NOTIFY bmsErrorCodesStringChanged);
 
 public:
     explicit Backend(QObject *parent = nullptr);
@@ -46,6 +46,8 @@ public:
     bool motorOn() const;
     int bikeStatus() const;
     double packCurrent() const;
+    uint32_t bmsErrorCodes() const;
+    std::vector<QString> bmsErrorCodesString() const;
 
     void setMotorTemp(const double temp);
     void setAuxVoltage(const double cap);
@@ -63,6 +65,8 @@ public:
     void setMotorOn(const bool on);
     void setBikeStatus(const int status);
     void setPackCurrent(const double current);
+    void setBmsErrorCodes(const uint32_t warnings);
+    void setBmsErrorCodesString(const std::vector<QString> warnings);
 
 signals:
     void motorTempChanged();
@@ -81,9 +85,12 @@ signals:
     void motorOnChanged();
     void bikeStatusChanged();
     void packCurrentChanged();
+    void bmsErrorCodesChanged();
+    void bmsErrorCodesStringChanged();
 
 private:
     void updateVars();
+    std::vector<QString> getErrorCodeStrings(uint32_t errorCodes);
     double m_motorTemp;
     double m_auxVoltage;
     double m_auxPercent;
@@ -100,6 +107,8 @@ private:
     bool m_motorOn;
     int m_bikeStatus;
     double m_packCurrent;
+    uint32_t m_bmsErrorCodes;
+    std::vector<QString> m_bmsErrorCodesString;
 };
 
 #endif // BACKEND_H

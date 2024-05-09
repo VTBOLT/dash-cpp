@@ -3,3 +3,4 @@
 **.user
 *.qtds.**
 **/CMakeCache.txt
+.clangd

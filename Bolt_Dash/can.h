@@ -50,7 +50,7 @@ constexpr struct {
     canid_t internal_states{0x0AA};
 } can_ids;
 
-struct {
+constexpr struct {
     uint32_t discharge_limit_enforcement{1 << 0};
     uint32_t cell_balancing_stuck_off{1 << 9};
     uint32_t weak_cell{1 << 10};
@@ -78,12 +78,10 @@ constexpr struct {
     uint32_t high_voltage_isolation{1 << 21};
     uint32_t input_power_supply{1 << 22};
     uint32_t charge_limit_enforcement{1 << 23};
-
 } bms_errors;
 
 const uint32_t ALL_BMS_ERRORS = bms_errors.charger_safety_relay | bms_errors.internal_hardware | bms_errors.internal_heatsink_thermistor | bms_errors.internal_software | bms_errors.highest_cell_voltage_too_high | bms_errors.lowest_cell_voltage_too_low | bms_errors.pack_too_hot | bms_errors.internal_communication | bms_errors.low_cell_voltage | bms_errors.open_wiring | bms_errors.highest_cell_voltage_over_5v | bms_errors.cell_asic_fault | bms_errors.thermistor_fault | bms_errors.external_communication | bms_errors.redundant_power_supply | bms_errors.high_voltage_isolation | bms_errors.input_power_supply | bms_errors.charge_limit_enforcement;
 const uint32_t ALL_BMS_WARNINGS = bms_warnings.discharge_limit_enforcement | bms_warnings.cell_balancing_stuck_off | bms_warnings.weak_cell | bms_warnings.current_sensor | bms_warnings.weak_pack | bms_warnings.fan_monitor;
-
 extern std::mutex m;
 extern our_candata data;
 
