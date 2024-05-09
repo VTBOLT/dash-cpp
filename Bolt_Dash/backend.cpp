@@ -1,6 +1,6 @@
 #include "backend.h"
 #include "can.h"
-#include <math.h>
+#include "web.h"
 
 #define RPM_TO_SPEED (19.0 / 45.0 * 27.63 * M_PI / 1056)
 
@@ -10,6 +10,10 @@ Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage
                                     m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{}, m_bikeStatus{}, m_packCurrent{} {
     std::thread update_vars(&Backend::updateVars, this);
     update_vars.detach();
+
+    std::thread run_app(&web::runApp);
+    run_app.detach();
+    // web::runApp();
 }
 
 // Calls the set functions with the values from data

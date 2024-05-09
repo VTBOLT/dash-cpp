@@ -17,6 +17,8 @@ qt_add_executable(Bolt_DashApp src/main.cpp
     backend.h backend.cpp
     can.cpp
     can.h
+    web.h
+    web.cpp
 )
 
 qt_add_resources(Bolt_DashApp "configuration"
