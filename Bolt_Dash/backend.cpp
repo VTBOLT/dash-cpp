@@ -1,10 +1,9 @@
 #include "backend.h"
 #include "can.h"
+#include "constants.h"
 #include "web.h"
 #include <chrono>
 #include <thread>
-
-#define RPM_TO_SPEED (19.0 / 45.0 * 27.63 * M_PI / 1056)
 
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
@@ -23,18 +22,19 @@ void Backend::updateVars() {
     while (true) {
         m.lock();
         // The only scaling here is to put the value into the right unit
-        setMotorTemp(data.motor_temperature / 10.0);   // celsius
-        setAuxVoltage(data.aux_voltage / 10.0);        // volts
-        setAuxPercent(data.aux_percent / 100.0);       // percent
-        setPackSOC(data.pack_state_of_charge / 200.0); // percent
-        setPackVoltage(data.pack_voltage / 10.0);      // Voltage
-        setPackCurrent(data.pack_current / 10.0);      // amps
-        setHighCellTemp(data.high_cell_temp);          // celsius
-        setLowCellTemp(data.low_cell_temp);            // celsius
-        setBmsTemp(data.bms_temperature);              // celsius
-        setMotorSpeed(data.motor_speed);               // rpm
-        setBikeSpeed(data.motor_speed * RPM_TO_SPEED); // mph
-        setMcTemp(data.mc_temperature / 10.0);         // celsius
+        // all scaling defined in constants.h
+        setMotorTemp(data.motor_temperature * MOTOR_TEMPERATURE_SCALE);     // celsius
+        setAuxVoltage(data.aux_voltage * AUX_VOLTAGE_SCALE);                // volts
+        setAuxPercent(data.aux_percent * AUX_PERCENT_SCALE);                // percent
+        setPackSOC(data.pack_state_of_charge * PACK_STATE_OF_CHARGE_SCALE); // percent
+        setPackVoltage(data.pack_voltage * PACK_VOLTAGE_SCALE);             // Voltage
+        setPackCurrent(data.pack_current * PACK_CURRENT_SCALE);             // amps
+        setHighCellTemp(data.high_cell_temp * HIGH_CELL_TEMP_SCALE);        // celsius
+        setLowCellTemp(data.low_cell_temp * LOW_CELL_TEMP_SCALE);           // celsius
+        setBmsTemp(data.bms_temperature * BMS_TEMPERATURE_SCALE);           // celsius
+        setMotorSpeed(data.motor_speed * MOTOR_SPEED_SCALE);                // rpm
+        setBikeSpeed(data.motor_speed * BIKE_SPEED_SCALE);                  // mph
+        setMcTemp(data.mc_temperature * MC_TEMPERATURE_SCALE);              // celsius
         setBmsFault(data.bms_fault);
         setMotorOn(data.motor_on);
         setMcFault(data.mc_fault);
