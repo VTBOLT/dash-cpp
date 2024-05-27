@@ -8,7 +8,7 @@ import IO
 Window {
     width: mainScreen.width
     height: mainScreen.height
-    property bool debugMode: false
+    property bool debugMode: true
     
 
     visible: true
@@ -30,6 +30,15 @@ Window {
         onButtonTapped: {
             debugMode = !debugMode
         }
+    }
+
+    Rectangle {
+        visible: true
+        color: "transparent"
+        border.color: "red"
+        border.width: 1
+        height: Constants.height
+        width: Constants.width
     }
 }
 
