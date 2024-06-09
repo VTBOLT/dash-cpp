@@ -34,9 +34,9 @@ qt6_add_qml_module(content
         QML_FILES DebugItem1.ui.qml
         QML_FILES FaultMotorStatus.qml
         QML_FILES SpeedometerDecorations.qml
-        QML_FILES DebugHelpers/DebugMain.qml
-        QML_FILES DebugHelpers/DebugMotor.qml
-        QML_FILES DebugHelpers/DebugOverview.qml
-        QML_FILES DebugHelpers/DebugBMS.qml
-        QML_FILES DebugHelpers/DebugPDU.qml
+        QML_FILES DebugMain.qml
+        QML_FILES DebugMotor.qml
+        QML_FILES DebugOverview.qml
+        QML_FILES DebugBMS.qml
+        QML_FILES DebugPDU.qml
 )

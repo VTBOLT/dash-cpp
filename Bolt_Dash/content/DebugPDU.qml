@@ -3,8 +3,6 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import Bolt_Dash
 
-import ".."
-
 Item {
 	width: Constants.width
     height: Constants.height

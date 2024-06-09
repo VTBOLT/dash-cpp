@@ -1,8 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Shapes
 
-import "DebugHelpers"
-
 Item {
     DebugItem1 {
         visible: menu.selected == DebugMain.Selected.OVERVIEW
