@@ -19,6 +19,11 @@ qt_add_executable(Bolt_DashApp src/main.cpp
     can.h
     web.h
     web.cpp
+    src/includes/source/NMEAParser.cpp
+    src/includes/source/GPSService.cpp
+    src/includes/source/GPSFix.cpp
+    src/includes/source/NMEACommand.cpp
+    src/includes/source/NumberConversion.cpp
 )
 
 qt_add_resources(Bolt_DashApp "configuration"
@@ -26,6 +31,8 @@ qt_add_resources(Bolt_DashApp "configuration"
     FILES
         qtquickcontrols2.conf
 )
+
+target_include_directories(Bolt_DashApp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/includes/headers)
 
 target_link_libraries(Bolt_DashApp PRIVATE
     Qt6::Core
