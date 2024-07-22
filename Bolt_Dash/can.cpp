@@ -1,14 +1,42 @@
 #include "can.h"
 
+#include <cstdlib>
 #include <stdio.h>
 #include <string.h>
 
 using namespace std::chrono_literals;
 
+#define FRAMES_TO_AVERAGE 10
+#define CELL_VOLTAGE_SCALING 0.0001
+#define SAFEST_HIGH_CELL_VOLTAGE 4.25
+#define SAFEST_LOW_CELL_VOLTAGE 3.0
+
 std::mutex m;
 our_candata data{};
 
 namespace can {
+    // Circular buffers to store the last 10 values of the highest and lowest cell voltages
+    int lastLowestCellVoltages[FRAMES_TO_AVERAGE]{};
+    int lastHighestCellVoltages[FRAMES_TO_AVERAGE]{};
+    int lastLowestCellVoltageIndex = 0;
+    int lastHighestCellVoltageIndex = 0;
+
+    // Average lowest and highest cell voltages
+    int getAverageLowestCellVoltage() {
+        int sum = 0;
+        for (int i = 0; i < FRAMES_TO_AVERAGE; i++) {
+            sum += lastLowestCellVoltages[i];
+        }
+        return sum / FRAMES_TO_AVERAGE;
+    }
+    int getAverageHighestCellVoltage() {
+        int sum = 0;
+        for (int i = 0; i < FRAMES_TO_AVERAGE; i++) {
+            sum += lastHighestCellVoltages[i];
+        }
+        return sum / FRAMES_TO_AVERAGE;
+    }
+
     int run() {
         // Where the data will be stored to be send to the front end
         int s, i;
@@ -66,6 +94,15 @@ namespace can {
             case can_ids.main_pack_temp:
                 data.high_cell_temp = frame.data[0] + (frame.data[1] << 8);
                 data.low_cell_temp = frame.data[2] + (frame.data[3] << 8);
+                break;
+            case can_ids.cell_max_min_voltages:
+                data.highest_cell_voltage = frame.data[2] + (frame.data[3] << 8);
+                data.lowest_cell_voltage = frame.data[4] + (frame.data[5] << 8);
+                // Update circular buffers
+                lastLowestCellVoltages[lastLowestCellVoltageIndex] = data.lowest_cell_voltage;
+                lastHighestCellVoltages[lastHighestCellVoltageIndex] = data.highest_cell_voltage;
+                lastLowestCellVoltageIndex = (lastLowestCellVoltageIndex + 1) % FRAMES_TO_AVERAGE;
+                lastHighestCellVoltageIndex = (lastHighestCellVoltageIndex + 1) % FRAMES_TO_AVERAGE;
                 break;
             case can_ids.motor_temp:
                 data.motor_temperature = frame.data[4] + (frame.data[5] << 8);
@@ -131,6 +168,14 @@ namespace can {
                 data.bms_error_codes = (frame.data[2]) + (frame.data[0] << 8) + (frame.data[1] << 16);
                 data.bms_error = data.bms_error_codes & ALL_BMS_ERRORS;
                 data.bms_warning = data.bms_error_codes & ALL_BMS_WARNINGS;
+
+                // Clear warnings if they are no longer relevant
+                if (data.bms_error_codes & bms_errors.highest_cell_voltage_too_high && (getAverageHighestCellVoltage() * CELL_VOLTAGE_SCALING) <= SAFEST_HIGH_CELL_VOLTAGE) {
+                    data.bms_warning &= ~bms_errors.highest_cell_voltage_too_high;
+                }
+                if (data.bms_error_codes & bms_errors.lowest_cell_voltage_too_low && (getAverageLowestCellVoltage() * CELL_VOLTAGE_SCALING) >= SAFEST_LOW_CELL_VOLTAGE) {
+                    data.bms_warning &= ~bms_errors.lowest_cell_voltage_too_low;
+                }
                 break;
             default:
                 unknown_data = new int8_t[frame.can_dlc];
