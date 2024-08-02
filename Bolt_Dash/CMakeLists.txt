@@ -19,11 +19,14 @@ qt_add_executable(Bolt_DashApp src/main.cpp
     can.h
     web.h
     web.cpp
+    gpsprocessing.cpp
     src/includes/source/NMEAParser.cpp
     src/includes/source/GPSService.cpp
     src/includes/source/GPSFix.cpp
     src/includes/source/NMEACommand.cpp
     src/includes/source/NumberConversion.cpp
+    nmea_decoder.cpp
+
 )
 
 qt_add_resources(Bolt_DashApp "configuration"
