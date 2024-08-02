@@ -4,6 +4,8 @@
 #include <vector>
 #include <cmath>
 
+#pragma once
+
 struct GPSData {
     double latitude = 0.0;
     double longitude = 0.0;
