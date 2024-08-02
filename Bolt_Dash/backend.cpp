@@ -81,13 +81,13 @@ std::vector<QString> Backend::getErrorCodeStrings(uint32_t errorCodes) {
         warnings.push_back("Fan Monitor");
     }
     // Errors
-    if (errorCodes & bms_errors.charger_safety_relay) {
+    if (errorCodes & bms_warnings.charger_safety_relay) {
         warnings.push_back("Charger Safety Relay");
     }
     if (errorCodes & bms_errors.internal_hardware) {
         warnings.push_back("Internal Hardware");
     }
-    if (errorCodes & bms_errors.internal_heatsink_thermistor) {
+    if (errorCodes & bms_warnings.internal_heatsink_thermistor) {
         warnings.push_back("Internal Heatsink Thermistor");
     }
     if (errorCodes & bms_errors.internal_software) {
@@ -108,7 +108,7 @@ std::vector<QString> Backend::getErrorCodeStrings(uint32_t errorCodes) {
     if (errorCodes & bms_errors.low_cell_voltage) {
         warnings.push_back("Low Cell Voltage");
     }
-    if (errorCodes & bms_errors.open_wiring) {
+    if (errorCodes & bms_warnings.open_wiring) {
         warnings.push_back("Open Wiring");
     }
     if (errorCodes & bms_errors.highest_cell_voltage_over_5v) {
@@ -117,10 +117,10 @@ std::vector<QString> Backend::getErrorCodeStrings(uint32_t errorCodes) {
     if (errorCodes & bms_errors.cell_asic_fault) {
         warnings.push_back("Cell ASIC Fault");
     }
-    if (errorCodes & bms_errors.thermistor_fault) {
+    if (errorCodes & bms_warnings.thermistor_fault) {
         warnings.push_back("Thermistor Fault");
     }
-    if (errorCodes & bms_errors.external_communication) {
+    if (errorCodes & bms_warnings.external_communication) {
         warnings.push_back("External Communication");
     }
     if (errorCodes & bms_errors.redundant_power_supply) {
@@ -132,7 +132,7 @@ std::vector<QString> Backend::getErrorCodeStrings(uint32_t errorCodes) {
     if (errorCodes & bms_errors.input_power_supply) {
         warnings.push_back("Input Power Supply");
     }
-    if (errorCodes & bms_errors.charge_limit_enforcement) {
+    if (errorCodes & bms_warnings.charge_limit_enforcement) {
         warnings.push_back("Charge Limit Enforcement");
     }
     return warnings;
