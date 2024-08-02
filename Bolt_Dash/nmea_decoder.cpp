@@ -82,7 +82,7 @@ void printGPSData(const GPSData& data) {
     std::cout << "------------------------" << std::endl;
 }
 
-int main() {
+int nmmeaMain() {
     std::string nmea;
     while (std::getline(std::cin, nmea)) {
         if (nmea.substr(0, 6) == "$GPGGA" || nmea.substr(0, 6) == "$GPRMC") {
