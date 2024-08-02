@@ -6,7 +6,7 @@
 
 #include "nmea_decoder.cpp"
 
-const char* SERIAL_PORT = "/dev/ttyAMA0";  // Serial port for GPS
+const char* SERIAL_PORT = "/dev/ttyS0";  // Serial port for GPS
 const int BAUD_RATE = B9600;  // Baud rate for GPS communication
 
 int initializeGPS() {
