@@ -1,15 +1,15 @@
 #include "backend.h"
 #include "can.h"
 #include "constants.h"
+#include "gpsprocessing.h"
 #include "web.h"
-#include "gpsprocessing.cpp"
 #include <chrono>
+#include <cstring>
+#include <fcntl.h>
 #include <fstream>
 #include <iostream>
 #include <thread>
-#include <cstring>
 #include <unistd.h>
-#include <fcntl.h>
 
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
@@ -22,7 +22,8 @@ Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage
     std::thread run_app(&web::runApp);
     run_app.detach();
 
-    parserStuff();
+    std::thread run_gps(&parserStuff);
+    run_gps.detach();
 }
 
 // Calls the set functions with the values from data
@@ -364,8 +365,5 @@ void Backend::setBmsErrorCodesString(const std::vector<QString> warnings) {
     }
 }
 // }
-
-
-
 
 std::thread can_thread(can::run);

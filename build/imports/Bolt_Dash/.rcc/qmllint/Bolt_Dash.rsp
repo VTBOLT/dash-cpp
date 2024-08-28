@@ -1,0 +1,13 @@
+--bare
+-I
+/Users/mason/Documents/Code/dash-cpp/build/imports
+-I
+/opt/homebrew/share/qt/qml
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/imports/Bolt_Dash/.rcc/qmake_Bolt_Dash.qrc
+--resource
+/Users/mason/Documents/Code/dash-cpp/build/imports/Bolt_Dash/.rcc/Bolt_Dash_raw_qml_0.qrc
+/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/imports/Bolt_Dash/Constants.qml
+/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/imports/Bolt_Dash/DirectoryFontLoader.qml
+/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/imports/Bolt_Dash/EventListModel.qml
+/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/imports/Bolt_Dash/EventListSimulator.qml

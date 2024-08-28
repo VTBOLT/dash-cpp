@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/Main/">
+    <file alias="main.qml">/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/main.qml</file>
+  </qresource>
+</RCC>
+

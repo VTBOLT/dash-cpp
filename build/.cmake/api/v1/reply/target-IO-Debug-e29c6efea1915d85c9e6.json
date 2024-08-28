@@ -1,0 +1,137 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "imports/IO/libIO.a"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"_qt_internal_add_library",
+			"qt6_add_library",
+			"qt_add_library"
+		],
+		"files" : 
+		[
+			"/opt/homebrew/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"imports/IO/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 2682,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 2564,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2659,
+				"parent" : 3
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "/Users/mason/Documents/Code/dash-cpp/build/imports/IO/IO_autogen/include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "IO_autogen_timestamp_deps::@6adf3e82e1b4a763410e"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "IO_autogen::@6adf3e82e1b4a763410e"
+		}
+	],
+	"id" : "IO::@6adf3e82e1b4a763410e",
+	"name" : "IO",
+	"nameOnDisk" : "libIO.a",
+	"paths" : 
+	{
+		"build" : "imports/IO",
+		"source" : "imports/IO"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files\\Generated",
+			"sourceIndexes" : 
+			[
+				0,
+				1
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/imports/IO/IO_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/imports/IO/IO_autogen/timestamp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/imports/IO/IO_autogen/timestamp.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

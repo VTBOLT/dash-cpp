@@ -1,0 +1,1353 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "content/libcontent.a"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"_qt_internal_add_library",
+			"qt6_add_library",
+			"qt_add_library",
+			"add_dependencies",
+			"qt6_target_qml_sources",
+			"qt6_add_qml_module",
+			"target_link_libraries",
+			"target_include_directories",
+			"_qt_internal_qml_type_registration",
+			"target_sources",
+			"qt6_extract_metatypes",
+			"__qt_propagate_generated_resource",
+			"_qt_internal_process_resource",
+			"qt6_add_resources",
+			"_qt_internal_target_enable_qmlcachegen",
+			"_qt_internal_expose_deferred_files_to_ide",
+			"qt6_finalize_target"
+		],
+		"files" : 
+		[
+			"/opt/homebrew/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"content/CMakeLists.txt",
+			"/opt/homebrew/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"/opt/homebrew/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:743:EVAL"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 2682,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 2564,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2659,
+				"parent" : 3
+			},
+			{
+				"command" : 6,
+				"file" : 1,
+				"line" : 5,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 647,
+				"parent" : 5
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 2730,
+				"parent" : 6
+			},
+			{
+				"command" : 7,
+				"file" : 2,
+				"line" : 392,
+				"parent" : 5
+			},
+			{
+				"command" : 9,
+				"file" : 2,
+				"line" : 541,
+				"parent" : 5
+			},
+			{
+				"command" : 8,
+				"file" : 2,
+				"line" : 3057,
+				"parent" : 9
+			},
+			{
+				"command" : 8,
+				"file" : 2,
+				"line" : 3082,
+				"parent" : 9
+			},
+			{
+				"command" : 11,
+				"file" : 2,
+				"line" : 2882,
+				"parent" : 9
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 1415,
+				"parent" : 12
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 3048,
+				"parent" : 9
+			},
+			{
+				"command" : 14,
+				"file" : 2,
+				"line" : 590,
+				"parent" : 5
+			},
+			{
+				"command" : 13,
+				"file" : 0,
+				"line" : 337,
+				"parent" : 15
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 2390,
+				"parent" : 16
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 2004,
+				"parent" : 17
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 15,
+				"file" : 2,
+				"line" : 2618,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 1239,
+				"parent" : 20
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2514,
+				"parent" : 6
+			},
+			{
+				"command" : 10,
+				"file" : 2,
+				"line" : 2666,
+				"parent" : 6
+			},
+			{
+				"command" : 14,
+				"file" : 2,
+				"line" : 2749,
+				"parent" : 6
+			},
+			{
+				"command" : 13,
+				"file" : 0,
+				"line" : 337,
+				"parent" : 63
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 2390,
+				"parent" : 64
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 2004,
+				"parent" : 65
+			},
+			{
+				"file" : 1,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 17,
+				"file" : 3,
+				"line" : 1,
+				"parent" : 67
+			},
+			{
+				"command" : 16,
+				"file" : 0,
+				"line" : 768,
+				"parent" : 68
+			},
+			{
+				"command" : 10,
+				"file" : 0,
+				"line" : 2117,
+				"parent" : 69
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 8,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_QMLBUILTINS_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_QMLINTEGRATION_LIB"
+				},
+				{
+					"backtrace" : 8,
+					"define" : "QT_QML_LIB"
+				}
+			],
+			"frameworks" : 
+			[
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtCore.framework"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtQml.framework"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtNetwork.framework"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/content_autogen/include"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/content"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtQml.framework/Versions/A/Headers/6.7.0"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtQml.framework/Versions/A/Headers/6.7.0/QtQml"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtCore.framework/Versions/A/Headers/6.7.0"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtCore.framework/Versions/A/Headers/6.7.0/QtCore"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtCore.framework/Headers"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/share/qt/mkspecs/macx-clang"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/include"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/include/QtQmlBuiltins/6.7.0"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/include/QtQmlBuiltins/6.7.0/QtQmlBuiltins"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/include/QtQmlBuiltins"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtQml.framework/Headers"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/include/QtQmlIntegration"
+				},
+				{
+					"backtrace" : 11,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtNetwork.framework/Headers"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					8
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				2,
+				3,
+				5,
+				6,
+				8,
+				10,
+				12,
+				14,
+				16,
+				18,
+				20,
+				22,
+				24,
+				26,
+				28,
+				30,
+				32,
+				34,
+				36,
+				38,
+				40,
+				42,
+				44,
+				46,
+				47
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 7,
+			"id" : "content_tooling::@73a38b9e525c9c2ae262"
+		},
+		{
+			"id" : "content_autogen_timestamp_deps::@73a38b9e525c9c2ae262"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "content_autogen::@73a38b9e525c9c2ae262"
+		}
+	],
+	"id" : "content::@73a38b9e525c9c2ae262",
+	"name" : "content",
+	"nameOnDisk" : "libcontent.a",
+	"paths" : 
+	{
+		"build" : "content",
+		"source" : "content"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files\\Generated",
+			"sourceIndexes" : 
+			[
+				0,
+				62
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				1,
+				4,
+				7,
+				9,
+				11,
+				13,
+				15,
+				17,
+				19,
+				21,
+				23,
+				25,
+				27,
+				29,
+				31,
+				33,
+				35,
+				37,
+				39,
+				41,
+				43,
+				45,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				92,
+				93,
+				94,
+				95
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				2,
+				3,
+				5,
+				6,
+				8,
+				10,
+				12,
+				14,
+				16,
+				18,
+				20,
+				22,
+				24,
+				26,
+				28,
+				30,
+				32,
+				34,
+				36,
+				38,
+				40,
+				42,
+				44,
+				46,
+				47
+			]
+		},
+		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				54,
+				55
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/content_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 13,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/meta_types/qt6content_debug_metatypes.json.gen",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 14,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/content_qmltyperegistrations.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 18,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qrc_qmake_content.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 19,
+			"path" : "content/App.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 21,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_qmlcache_loader.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 22,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_App_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 23,
+			"path" : "content/Screen01.ui.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 24,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_Screen01.ui_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 25,
+			"path" : "content/Speedometer.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 26,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_Speedometer_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 27,
+			"path" : "content/BatterySlider.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 28,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_BatterySlider_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 29,
+			"path" : "content/TempSlider.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 30,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_TempSlider_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 31,
+			"path" : "content/Debug1.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 32,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_Debug1_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 33,
+			"path" : "content/BoltLeanAngle.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 34,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_BoltLeanAngle_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 35,
+			"path" : "content/BikeStatus.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 36,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_BikeStatus_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 37,
+			"path" : "content/BatteryReadout.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 38,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_BatteryReadout_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 39,
+			"path" : "content/FullBatterySlider.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 40,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_FullBatterySlider_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 41,
+			"path" : "content/TemperatureIsland.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 42,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_TemperatureIsland_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 43,
+			"path" : "content/FullSlider.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 44,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_FullSlider_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 45,
+			"path" : "content/BMSFaultDetails.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 46,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_BMSFaultDetails_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 47,
+			"path" : "content/DebugItem1.ui.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 48,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugItem1.ui_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 49,
+			"path" : "content/FaultMotorStatus.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 50,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_FaultMotorStatus_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 51,
+			"path" : "content/SpeedometerDecorations.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 52,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_SpeedometerDecorations_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 53,
+			"path" : "content/DebugMain.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 54,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugMain_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 55,
+			"path" : "content/DebugMotor.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 56,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugMotor_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 57,
+			"path" : "content/DebugOverview.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 58,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugOverview_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 59,
+			"path" : "content/DebugBMS.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 60,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugBMS_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 61,
+			"path" : "content/DebugPDU.qml",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 62,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugPDU_qml.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 66,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qrc_content_raw_qml_0.cpp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 70,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmake_content.qrc",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/qmldir",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/content_raw_qml_0.qrc",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/fonts/fonts.txt",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/fonts/nasalization-rg.otf",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/fonts/MesloLGSDZNerdFontMono-Regular.ttf",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/Pictures/leanAngleBack.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/Pictures/motorcycleIcon.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/Pictures/battery-twotone-0-svgrepo-com.svg",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/Pictures/battery.svg",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/Pictures/battery_temp.svg",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/Pictures/controller_temp.svg",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/Pictures/motor_temp.svg",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 70,
+			"path" : "content/Pictures/Virginia_Tech_Hokies_logo.svg",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/content_autogen/timestamp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/meta_types/qt6content_debug_metatypes.json.gen.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/content_qmltyperegistrations.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qrc_qmake_content.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_qmlcache_loader.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_App_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_Screen01.ui_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_Speedometer_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_BatterySlider_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_TempSlider_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_Debug1_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_BoltLeanAngle_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_BikeStatus_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_BatteryReadout_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_FullBatterySlider_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_TemperatureIsland_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_FullSlider_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_BMSFaultDetails_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugItem1.ui_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_FaultMotorStatus_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_SpeedometerDecorations_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugMain_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugMotor_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugOverview_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugBMS_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qmlcache/content_DebugPDU_qml.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/.rcc/qrc_content_raw_qml_0.cpp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/content_autogen/timestamp.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/meta_types/content_json_file_list.txt.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/content/meta_types/qt6content_debug_metatypes.json.rule",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 8,
+			"path" : "/opt/homebrew/share/qt/metatypes/qt6qml_release_metatypes.json",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 8,
+			"path" : "/opt/homebrew/share/qt/metatypes/qt6core_release_metatypes.json",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 8,
+			"path" : "/opt/homebrew/share/qt/metatypes/qt6qmlbuiltins_release_metatypes.json",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 8,
+			"path" : "/opt/homebrew/share/qt/metatypes/qt6network_release_metatypes.json",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

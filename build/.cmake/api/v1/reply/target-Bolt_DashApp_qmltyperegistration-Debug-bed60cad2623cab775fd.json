@@ -1,0 +1,138 @@
+{
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"_qt_internal_qml_type_registration",
+			"qt6_add_qml_module",
+			"include"
+		],
+		"files" : 
+		[
+			"/opt/homebrew/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"qmlmodules",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 52,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 4,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 541,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 3018,
+				"parent" : 4
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "Bolt_DashApp_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "Bolt_DashApp_qmltyperegistration::@6890427a1f51a3e7e1df",
+	"name" : "Bolt_DashApp_qmltyperegistration",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				4,
+				5,
+				6
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/CMakeFiles/Bolt_DashApp_qmltyperegistration",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/CMakeFiles/Bolt_DashApp_qmltyperegistration.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/bolt_dashapp_qmltyperegistrations.cpp.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/meta_types/qt6bolt_dashapp_debug_metatypes.json.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/meta_types/qt6bolt_dashapp_debug_metatypes.json.gen.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/meta_types/Bolt_DashApp_json_file_list.txt.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/Bolt_DashApp_autogen/timestamp.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

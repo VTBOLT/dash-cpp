@@ -1,0 +1,423 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "imports/IO/libIOPluginplugin.dylib"
+		}
+	],
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"_qt_internal_add_library",
+			"qt6_add_plugin",
+			"qt6_add_qml_plugin",
+			"qt6_add_qml_module",
+			"target_link_libraries",
+			"set_target_properties",
+			"include",
+			"find_package",
+			"target_compile_definitions",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"/opt/homebrew/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"/opt/homebrew/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"imports/IO/CMakeLists.txt",
+			"/opt/homebrew/lib/cmake/Qt6Qml/Qt6QmlTargets.cmake",
+			"/opt/homebrew/lib/cmake/Qt6Qml/Qt6QmlConfig.cmake",
+			"/opt/homebrew/lib/cmake/Qt6/Qt6Config.cmake",
+			"CMakeLists.txt",
+			"/opt/homebrew/lib/cmake/Qt6Core/Qt6CoreTargets.cmake",
+			"/opt/homebrew/lib/cmake/Qt6Core/Qt6CoreConfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 2,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 625,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 2022,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 2451,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2659,
+				"parent" : 4
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 2223,
+				"parent" : 2
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 2227,
+				"parent" : 2
+			},
+			{
+				"file" : 6
+			},
+			{
+				"command" : 8,
+				"file" : 6,
+				"line" : 10,
+				"parent" : 8
+			},
+			{
+				"file" : 5,
+				"parent" : 9
+			},
+			{
+				"command" : 8,
+				"file" : 5,
+				"line" : 167,
+				"parent" : 10
+			},
+			{
+				"file" : 4,
+				"parent" : 11
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 56,
+				"parent" : 12
+			},
+			{
+				"file" : 3,
+				"parent" : 13
+			},
+			{
+				"command" : 6,
+				"file" : 3,
+				"line" : 62,
+				"parent" : 14
+			},
+			{
+				"command" : 8,
+				"file" : 5,
+				"line" : 167,
+				"parent" : 10
+			},
+			{
+				"file" : 8,
+				"parent" : 16
+			},
+			{
+				"command" : 7,
+				"file" : 8,
+				"line" : 57,
+				"parent" : 17
+			},
+			{
+				"file" : 7,
+				"parent" : 18
+			},
+			{
+				"command" : 6,
+				"file" : 7,
+				"line" : 62,
+				"parent" : 19
+			},
+			{
+				"command" : 9,
+				"file" : 0,
+				"line" : 2518,
+				"parent" : 3
+			},
+			{
+				"command" : 10,
+				"file" : 1,
+				"line" : 2216,
+				"parent" : 2
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "IOPluginplugin_EXPORTS"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "QT_DEPRECATED_WARNINGS"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 21,
+					"define" : "QT_PLUGIN"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QMLBUILTINS_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QMLINTEGRATION_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_QML_LIB"
+				}
+			],
+			"frameworks" : 
+			[
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtQml.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtCore.framework"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtNetwork.framework"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "/Users/mason/Documents/Code/dash-cpp/build/imports/IO/IOPluginplugin_autogen/include"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtQml.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtCore.framework/Headers"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/share/qt/mkspecs/macx-clang"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/include"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/include/QtQmlIntegration"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/include/QtQmlBuiltins"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/opt/homebrew/lib/QtNetwork.framework/Headers"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					6
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "IOPluginplugin_autogen_timestamp_deps::@6adf3e82e1b4a763410e"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "IOPluginplugin_autogen::@6adf3e82e1b4a763410e"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "IOPlugin::@6adf3e82e1b4a763410e"
+		}
+	],
+	"id" : "IOPluginplugin::@6adf3e82e1b4a763410e",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-Xlinker",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-no_warn_duplicate_libraries",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-F/opt/homebrew/lib",
+				"role" : "frameworkPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/Users/mason/Documents/Code/dash-cpp/build/imports/IO -Wl,-rpath,/opt/homebrew/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "libIOPlugin.dylib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/opt/homebrew/lib/QtQml.framework/Versions/A/QtQml",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "/opt/homebrew/lib/libQt6QmlBuiltins.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "/opt/homebrew/lib/QtNetwork.framework/Versions/A/QtNetwork",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 15,
+				"fragment" : "/opt/homebrew/lib/QtCore.framework/Versions/A/QtCore",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 20,
+				"fragment" : "-framework IOKit",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 20,
+				"fragment" : "-framework DiskArbitration",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "IOPluginplugin",
+	"nameOnDisk" : "libIOPluginplugin.dylib",
+	"paths" : 
+	{
+		"build" : "imports/IO",
+		"source" : "imports/IO"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files\\Generated",
+			"sourceIndexes" : 
+			[
+				0,
+				2
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				3
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/imports/IO/IOPluginplugin_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 22,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/imports/IO/IOPluginplugin_IOPlugin.cpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/imports/IO/IOPluginplugin_autogen/timestamp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/Users/mason/Documents/Code/dash-cpp/build/imports/IO/IOPluginplugin_autogen/timestamp.rule",
+			"sourceGroupIndex" : 2
+		}
+	],
+	"type" : "MODULE_LIBRARY"
+}

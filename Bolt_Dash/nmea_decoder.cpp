@@ -1,22 +1,6 @@
-#include <iostream>
-#include <sstream>
-#include <string>
-#include <vector>
-#include <cmath>
+#include "nmea_decoder.h"
 
-#pragma once
-
-struct GPSData {
-    double latitude = 0.0;
-    double longitude = 0.0;
-    std::string time = "";
-    std::string date = "";
-    double altitude = 0.0;
-    int satellites = 0;
-    std::string fix = "Invalid";
-};
-
-std::vector<std::string> split(const std::string& s, char delimiter) {
+std::vector<std::string> split(const std::string &s, char delimiter) {
     std::vector<std::string> tokens;
     std::string token;
     std::istringstream tokenStream(s);
@@ -26,7 +10,7 @@ std::vector<std::string> split(const std::string& s, char delimiter) {
     return tokens;
 }
 
-double convertToDecimalDegrees(const std::string& value, const std::string& direction) {
+double convertToDecimalDegrees(const std::string &value, const std::string &direction) {
     double degree = std::stod(value.substr(0, value.find('.') - 2));
     double minutes = std::stod(value.substr(value.find('.') - 2));
     double decimalDegrees = degree + (minutes / 60.0);
@@ -38,7 +22,7 @@ double convertToDecimalDegrees(const std::string& value, const std::string& dire
     return decimalDegrees;
 }
 
-GPSData decodeNMEA(const std::string& nmea) {
+GPSData decodeNMEA(const std::string &nmea) {
     GPSData data;
     std::vector<std::string> parts = split(nmea, ',');
 
@@ -53,10 +37,10 @@ GPSData decodeNMEA(const std::string& nmea) {
             }
             data.fix = (parts[6] == "1" || parts[6] == "2") ? "Valid" : "Invalid";
             data.satellites = std::stoi(parts[7]);
-            data.altitude = std::stod(parts[9]);
+            // data.altitude = std::stod(parts[9]);
+            data.altitude = 0;
         }
-    }
-    else if (parts[0] == "$GPRMC") {
+    } else if (parts[0] == "$GPRMC") {
         if (parts.size() >= 12) {
             data.time = parts[1].substr(0, 2) + ":" + parts[1].substr(2, 2) + ":" + parts[1].substr(4, 2);
             if (!parts[3].empty() && !parts[4].empty()) {
@@ -73,7 +57,7 @@ GPSData decodeNMEA(const std::string& nmea) {
     return data;
 }
 
-void printGPSData(const GPSData& data) {
+void printGPSData(const GPSData &data) {
     std::cout << "Time: " << data.time << std::endl;
     std::cout << "Date: " << data.date << std::endl;
     std::cout << "Latitude: " << data.latitude << std::endl;

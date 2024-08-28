@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libIO.a CMakeFiles/IO.dir/IO_autogen/mocs_compilation.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libIO.a

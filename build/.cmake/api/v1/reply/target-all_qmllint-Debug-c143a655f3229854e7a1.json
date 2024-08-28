@@ -1,0 +1,208 @@
+{
+	"backtrace" : 7,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"_qt_internal_add_all_qmllint_target",
+			"_qt_internal_target_enable_qmllint",
+			"qt6_target_qml_sources",
+			"qt6_add_qml_module",
+			"include",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"/opt/homebrew/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"qmlmodules",
+			"CMakeLists.txt",
+			"content/CMakeLists.txt",
+			"imports/Bolt_Dash/CMakeLists.txt",
+			"imports/IO/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 52,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 4,
+				"parent" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 647,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 2532,
+				"parent" : 4
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 1043,
+				"parent" : 5
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 1136,
+				"parent" : 6
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 1139,
+				"parent" : 6
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 3,
+				"line" : 5,
+				"parent" : 9
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 647,
+				"parent" : 10
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 2532,
+				"parent" : 11
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 1043,
+				"parent" : 12
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 1139,
+				"parent" : 13
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 10,
+				"parent" : 15
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 647,
+				"parent" : 16
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 2532,
+				"parent" : 17
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 1043,
+				"parent" : 18
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 1139,
+				"parent" : 19
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 4,
+				"file" : 5,
+				"line" : 6,
+				"parent" : 21
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 647,
+				"parent" : 22
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 2285,
+				"parent" : 23
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 1043,
+				"parent" : 24
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 1139,
+				"parent" : 25
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 8,
+			"id" : "Bolt_DashApp_qmllint::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 14,
+			"id" : "content_qmllint::@73a38b9e525c9c2ae262"
+		},
+		{
+			"backtrace" : 20,
+			"id" : "Bolt_Dash_qmllint::@4896ae50d004c4a48929"
+		},
+		{
+			"backtrace" : 26,
+			"id" : "IOPlugin_qmllint::@6adf3e82e1b4a763410e"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets/QmlLinter"
+	},
+	"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+	"name" : "all_qmllint",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

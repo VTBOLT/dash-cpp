@@ -1,0 +1,31 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"imports/IO/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "IOPlugin_autogen_timestamp_deps::@6adf3e82e1b4a763410e",
+	"isGeneratorProvided" : true,
+	"name" : "IOPlugin_autogen_timestamp_deps",
+	"paths" : 
+	{
+		"build" : "imports/IO",
+		"source" : "imports/IO"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

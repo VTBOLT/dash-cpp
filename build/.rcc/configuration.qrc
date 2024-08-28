@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="qtquickcontrols2.conf">/Users/mason/Documents/Code/dash-cpp/Bolt_Dash/qtquickcontrols2.conf</file>
+  </qresource>
+</RCC>
+

@@ -1,13 +1,7 @@
-#include <iostream>
-#include <cstring>
-#include <unistd.h>
-#include <fcntl.h>
-#include <termios.h>
+#include "gpsprocessing.h"
 
-#include "nmea_decoder.cpp"
-
-const char* SERIAL_PORT = "/dev/ttyS0";  // Serial port for GPS
-const int BAUD_RATE = B9600;  // Baud rate for GPS communication
+const char *SERIAL_PORT = "/dev/ACM0"; // Serial port for GPS
+const int BAUD_RATE = B9600;           // Baud rate for GPS communication
 
 int initializeGPS() {
     int fd = open(SERIAL_PORT, O_RDWR | O_NOCTTY | O_NDELAY);
@@ -46,13 +40,13 @@ int parserStuff() {
         char gps_buffer[256];
         int n = read(gps_fd, gps_buffer, sizeof(gps_buffer));
         if (n > 0) {
-            gps_buffer[n] = 0;  // Null-terminate the string
-            std::cout << "GPS Data: " << gps_buffer;
+            gps_buffer[n] = 0; // Null-terminate the string
+            // std::cout << "GPS Data: " << gps_buffer;
             GPSData currentData = decodeNMEA(gps_buffer);
             printGPSData(currentData);
         }
 
-        usleep(100000);  // Sleep for 100ms
+        usleep(100000); // Sleep for 100ms
     }
 
     close(gps_fd);

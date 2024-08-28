@@ -1,0 +1,158 @@
+{
+	"backtrace" : 5,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"_qt_internal_qml_type_registration",
+			"qt6_add_qml_module",
+			"include",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"/opt/homebrew/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"qmlmodules",
+			"CMakeLists.txt",
+			"content/CMakeLists.txt",
+			"imports/Bolt_Dash/CMakeLists.txt",
+			"imports/IO/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 52,
+				"parent" : 0
+			},
+			{
+				"file" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 4,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 541,
+				"parent" : 3
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 3025,
+				"parent" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 3028,
+				"parent" : 4
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 5,
+				"parent" : 7
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 541,
+				"parent" : 8
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 3028,
+				"parent" : 9
+			},
+			{
+				"file" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 10,
+				"parent" : 11
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 541,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 3028,
+				"parent" : 13
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 2,
+				"file" : 5,
+				"line" : 6,
+				"parent" : 15
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 541,
+				"parent" : 16
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 3028,
+				"parent" : 17
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 6,
+			"id" : "Bolt_DashApp_qmltyperegistration::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "content_qmltyperegistration::@73a38b9e525c9c2ae262"
+		},
+		{
+			"backtrace" : 14,
+			"id" : "Bolt_Dash_qmltyperegistration::@4896ae50d004c4a48929"
+		},
+		{
+			"backtrace" : 18,
+			"id" : "IOPlugin_qmltyperegistration::@6adf3e82e1b4a763410e"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+	"name" : "all_qmltyperegistrations",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

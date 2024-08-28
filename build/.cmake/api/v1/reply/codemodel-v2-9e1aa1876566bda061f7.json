@@ -1,0 +1,650 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-c763ad29e698621ff67d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						38,
+						39,
+						40,
+						41
+					]
+				},
+				{
+					"build" : "content",
+					"jsonFile" : "directory-content-Debug-61a361743d88a3b42c45.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "content",
+					"targetIndexes" : 
+					[
+						42,
+						43,
+						44,
+						45,
+						46,
+						47,
+						48,
+						49,
+						50,
+						51,
+						52,
+						53,
+						54,
+						55,
+						56,
+						57
+					]
+				},
+				{
+					"build" : "imports",
+					"childIndexes" : 
+					[
+						3,
+						4
+					],
+					"jsonFile" : "directory-imports-Debug-615074570c3908afab44.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "imports"
+				},
+				{
+					"build" : "imports/Bolt_Dash",
+					"jsonFile" : "directory-imports.Bolt_Dash-Debug-826bc3c800d0ab2caed0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "imports/Bolt_Dash",
+					"targetIndexes" : 
+					[
+						0,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24
+					]
+				},
+				{
+					"build" : "imports/IO",
+					"jsonFile" : "directory-imports.IO-Debug-292cee666d28555cd386.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 0,
+					"source" : "imports/IO",
+					"targetIndexes" : 
+					[
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						58
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "Bolt_DashApp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						38,
+						39,
+						40,
+						41,
+						42,
+						43,
+						44,
+						45,
+						46,
+						47,
+						48,
+						49,
+						50,
+						51,
+						52,
+						53,
+						54,
+						55,
+						56,
+						57,
+						58
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dash::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dash-Debug-a243f40dd973bf6c21d7.json",
+					"name" : "Bolt_Dash",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Bolt_DashApp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Bolt_DashApp-Debug-eb462bdc3b44739a892a.json",
+					"name" : "Bolt_DashApp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Bolt_DashApp_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Bolt_DashApp_autogen-Debug-ecac5cdf9083af5a0e90.json",
+					"name" : "Bolt_DashApp_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Bolt_DashApp_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Bolt_DashApp_autogen_timestamp_deps-Debug-dd6fa5d8215e24bf5e96.json",
+					"name" : "Bolt_DashApp_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Bolt_DashApp_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Bolt_DashApp_qmlimportscan-Debug-c50036dcb3d9905198cb.json",
+					"name" : "Bolt_DashApp_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Bolt_DashApp_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Bolt_DashApp_qmllint-Debug-86360ad26642c7135a80.json",
+					"name" : "Bolt_DashApp_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Bolt_DashApp_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Bolt_DashApp_qmllint_json-Debug-e6f29d11dfb6cf4124b2.json",
+					"name" : "Bolt_DashApp_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Bolt_DashApp_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Bolt_DashApp_qmllint_module-Debug-09c57076607543db8839.json",
+					"name" : "Bolt_DashApp_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Bolt_DashApp_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Bolt_DashApp_qmltyperegistration-Debug-bed60cad2623cab775fd.json",
+					"name" : "Bolt_DashApp_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Bolt_DashApp_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Bolt_DashApp_tooling-Debug-b5a316b22109d18669c5.json",
+					"name" : "Bolt_DashApp_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dash_autogen::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dash_autogen-Debug-441b69b2d2859eb87ef9.json",
+					"name" : "Bolt_Dash_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dash_autogen_timestamp_deps::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dash_autogen_timestamp_deps-Debug-088cb1adfedc1814c818.json",
+					"name" : "Bolt_Dash_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dash_qmllint::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dash_qmllint-Debug-8f84f953a3c3747dcfa4.json",
+					"name" : "Bolt_Dash_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dash_qmllint_json::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dash_qmllint_json-Debug-b9482acbc0f5cb9eee92.json",
+					"name" : "Bolt_Dash_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dash_qmllint_module::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dash_qmllint_module-Debug-5161ed4a6133ec9c44db.json",
+					"name" : "Bolt_Dash_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dash_qmltyperegistration::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dash_qmltyperegistration-Debug-a66ba952e1eb06fb9c42.json",
+					"name" : "Bolt_Dash_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dash_resources_1::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dash_resources_1-Debug-f941936bb9e211476b67.json",
+					"name" : "Bolt_Dash_resources_1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dash_resources_2::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dash_resources_2-Debug-4a8635105ce5670d28ed.json",
+					"name" : "Bolt_Dash_resources_2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dash_tooling::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dash_tooling-Debug-fa310d612e1f5c4b7e79.json",
+					"name" : "Bolt_Dash_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dashplugin::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dashplugin-Debug-188f7d99bfb7fd4ce5ed.json",
+					"name" : "Bolt_Dashplugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dashplugin_autogen::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dashplugin_autogen-Debug-9a452770f8adbf060a01.json",
+					"name" : "Bolt_Dashplugin_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dashplugin_autogen_timestamp_deps::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dashplugin_autogen_timestamp_deps-Debug-f9d79c4e9cde3feff6ed.json",
+					"name" : "Bolt_Dashplugin_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dashplugin_init::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dashplugin_init-Debug-d8f518305c4ecf6747f6.json",
+					"name" : "Bolt_Dashplugin_init",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dashplugin_init_autogen::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dashplugin_init_autogen-Debug-6cbb6c2e197bd8d1f37d.json",
+					"name" : "Bolt_Dashplugin_init_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Bolt_Dashplugin_init_autogen_timestamp_deps::@4896ae50d004c4a48929",
+					"jsonFile" : "target-Bolt_Dashplugin_init_autogen_timestamp_deps-Debug-32f76fa5b6be2d7ecb15.json",
+					"name" : "Bolt_Dashplugin_init_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IO::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IO-Debug-e29c6efea1915d85c9e6.json",
+					"name" : "IO",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IOPlugin::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IOPlugin-Debug-e858e202624a3206316e.json",
+					"name" : "IOPlugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IOPlugin_autogen::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IOPlugin_autogen-Debug-ab7dda293435bacb6cef.json",
+					"name" : "IOPlugin_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IOPlugin_autogen_timestamp_deps::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IOPlugin_autogen_timestamp_deps-Debug-9fd2f2bd055f0f2aa787.json",
+					"name" : "IOPlugin_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IOPlugin_qmllint::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IOPlugin_qmllint-Debug-8c11c37e67daa846bd4d.json",
+					"name" : "IOPlugin_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IOPlugin_qmllint_json::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IOPlugin_qmllint_json-Debug-ff36221727ea077c298a.json",
+					"name" : "IOPlugin_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IOPlugin_qmllint_module::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IOPlugin_qmllint_module-Debug-e500ecfaad5c8fc0f0e5.json",
+					"name" : "IOPlugin_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IOPlugin_qmltyperegistration::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IOPlugin_qmltyperegistration-Debug-ef5f2c0b53e30c6e5e52.json",
+					"name" : "IOPlugin_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IOPluginplugin::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IOPluginplugin-Debug-a0d4e74bb53dc236a11a.json",
+					"name" : "IOPluginplugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IOPluginplugin_autogen::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IOPluginplugin_autogen-Debug-0789b3865f46588f5ad0.json",
+					"name" : "IOPluginplugin_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IOPluginplugin_autogen_timestamp_deps::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IOPluginplugin_autogen_timestamp_deps-Debug-7c334fe2ed061162f2bb.json",
+					"name" : "IOPluginplugin_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IO_autogen::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IO_autogen-Debug-708994b234752366cd0d.json",
+					"name" : "IO_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "IO_autogen_timestamp_deps::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-IO_autogen_timestamp_deps-Debug-c486d73ceaf28f507353.json",
+					"name" : "IO_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-c143a655f3229854e7a1.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-02e8fac95724d14079aa.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-74f2c776ef292c1a5eef.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-fbf9e0225f3838680c13.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "content::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-content-Debug-84c13ddb4d05224351df.json",
+					"name" : "content",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "content_autogen::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-content_autogen-Debug-3c4e7cf7b92ed045bf43.json",
+					"name" : "content_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "content_autogen_timestamp_deps::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-content_autogen_timestamp_deps-Debug-cf12f537e2a66db07150.json",
+					"name" : "content_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "content_qmllint::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-content_qmllint-Debug-8142ca0703017c202a06.json",
+					"name" : "content_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "content_qmllint_json::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-content_qmllint_json-Debug-7eab1ed0c12a3f64d3b1.json",
+					"name" : "content_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "content_qmllint_module::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-content_qmllint_module-Debug-8f5301cedfba2c65c02b.json",
+					"name" : "content_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "content_qmltyperegistration::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-content_qmltyperegistration-Debug-4d171b3e279cd861953b.json",
+					"name" : "content_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "content_resources_1::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-content_resources_1-Debug-3dfee9aca78a1157a591.json",
+					"name" : "content_resources_1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "content_resources_2::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-content_resources_2-Debug-4e21ea579599e366b50a.json",
+					"name" : "content_resources_2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "content_tooling::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-content_tooling-Debug-31cbc5df92c7478ca653.json",
+					"name" : "content_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "contentplugin::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-contentplugin-Debug-2c9a48946c97ef59f438.json",
+					"name" : "contentplugin",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "contentplugin_autogen::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-contentplugin_autogen-Debug-c1a4b967070723e2f2f4.json",
+					"name" : "contentplugin_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "contentplugin_autogen_timestamp_deps::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-contentplugin_autogen_timestamp_deps-Debug-c808e5e877b5935fa4e2.json",
+					"name" : "contentplugin_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "contentplugin_init::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-contentplugin_init-Debug-202e8c1956da63ca4598.json",
+					"name" : "contentplugin_init",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "contentplugin_init_autogen::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-contentplugin_init_autogen-Debug-7e23e3d44851a0a93369.json",
+					"name" : "contentplugin_init_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "contentplugin_init_autogen_timestamp_deps::@73a38b9e525c9c2ae262",
+					"jsonFile" : "target-contentplugin_init_autogen_timestamp_deps-Debug-b58281811959a68fc485.json",
+					"name" : "contentplugin_init_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "qt_internal_plugins::@6adf3e82e1b4a763410e",
+					"jsonFile" : "target-qt_internal_plugins-Debug-73d78de408bb540280e3.json",
+					"name" : "qt_internal_plugins",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/mason/Documents/Code/dash-cpp/build",
+		"source" : "/Users/mason/Documents/Code/dash-cpp/Bolt_Dash"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

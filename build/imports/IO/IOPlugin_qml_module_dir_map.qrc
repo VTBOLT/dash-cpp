@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/IO">/Users/mason/Documents/Code/dash-cpp/build/imports/IO</file>
+
+  </qresource>
+</RCC>
