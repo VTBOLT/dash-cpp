@@ -1,54 +1,48 @@
 #include "gpsprocessing.h"
 
-const char *SERIAL_PORT = "/dev/ACM0"; // Serial port for GPS
-const int BAUD_RATE = B9600;           // Baud rate for GPS communication
+int gpsMain() {
+    gpsmm gps_rec("localhost", DEFAULT_GPSD_PORT);
 
-int initializeGPS() {
-    int fd = open(SERIAL_PORT, O_RDWR | O_NOCTTY | O_NDELAY);
-    if (fd == -1) {
-        perror("Unable to open serial port");
-        return -1;
-    }
-
-    struct termios options;
-    tcgetattr(fd, &options);
-    cfsetispeed(&options, BAUD_RATE);
-    cfsetospeed(&options, BAUD_RATE);
-    options.c_cflag |= (CLOCAL | CREAD);
-    options.c_cflag &= ~PARENB;
-    options.c_cflag &= ~CSTOPB;
-    options.c_cflag &= ~CSIZE;
-    options.c_cflag |= CS8;
-    tcsetattr(fd, TCSANOW, &options);
-
-    return fd;
-}
-
-int parserStuff() {
-    // Function to initialize GPS serial port
-    int gps_fd = initializeGPS();
-    if (gps_fd < 0) {
-        std::cerr << "Failed to initialize GPS serial port" << std::endl;
+    if (!gps_rec.stream(WATCH_ENABLE | WATCH_JSON)) {
+        std::cerr << "No GPSD running." << std::endl;
         return 1;
     }
 
-    std::cout << "PiCAN+ GPS initialized successfully" << std::endl;
-
-    // Main loop
     while (true) {
-        // Read GPS data
-        char gps_buffer[256];
-        int n = read(gps_fd, gps_buffer, sizeof(gps_buffer));
-        if (n > 0) {
-            gps_buffer[n] = 0; // Null-terminate the string
-            // std::cout << "GPS Data: " << gps_buffer;
-            GPSData currentData = decodeNMEA(gps_buffer);
-            printGPSData(currentData);
+        struct gps_data_t *gpsd_data;
+
+        if (!gps_rec.waiting(5000000)) {
+            continue;
         }
 
-        usleep(100000); // Sleep for 100ms
+        gpsd_data = gps_rec.read();
+
+        if (gpsd_data == nullptr) {
+            std::cerr << "Read error." << std::endl;
+            continue;
+        }
+
+        if ((gpsd_data->fix.mode == MODE_2D || gpsd_data->fix.mode == MODE_3D) &&
+            !std::isnan(gpsd_data->fix.latitude) &&
+            !std::isnan(gpsd_data->fix.longitude)) {
+
+            std::cout << std::fixed << std::setprecision(6);
+            std::cout << "Latitude: " << gpsd_data->fix.latitude << std::endl;
+            std::cout << "Longitude: " << gpsd_data->fix.longitude << std::endl;
+            std::cout << "Altitude: " << gpsd_data->fix.altitude << " m" << std::endl;
+            std::cout << "Speed: " << gpsd_data->fix.speed * 3.6 << " km/h" << std::endl;
+
+            // Use timespec_t for time
+            std::cout << "Timestamp: "
+                      << gpsd_data->fix.time.tv_sec << "."
+                      << std::setfill('0') << std::setw(9)
+                      << gpsd_data->fix.time.tv_nsec << std::endl;
+
+            std::cout << std::endl;
+        }
+
+        sleep(1);
     }
 
-    close(gps_fd);
     return 0;
 }

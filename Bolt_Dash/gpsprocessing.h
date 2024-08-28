@@ -1,16 +1,9 @@
-#ifndef GPSPROCESSING_H
-#define GPSPROCESSING_H
+#pragma once
 
-#include <cstring>
-#include <fcntl.h>
+#include <cmath>
+#include <iomanip>
 #include <iostream>
-#include <termios.h>
+#include <libgpsmm.h>
 #include <unistd.h>
 
-#include "nmea_decoder.h"
-
-int initializeGPS();
-
-int parserStuff();
-
-#endif
+int gpsMain();
