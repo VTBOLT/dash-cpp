@@ -43,6 +43,7 @@ target_link_libraries(Bolt_DashApp PRIVATE
     Qt6::Qml
     Qt6::Quick
     pigpio
+    gps
 )
 
 # if (BUILD_QDS_COMPONENTS)
