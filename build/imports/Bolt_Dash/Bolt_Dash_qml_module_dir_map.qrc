@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/Bolt_Dash">/Users/mason/Documents/Code/dash-cpp/build/imports/Bolt_Dash</file>
-
-  </qresource>
-</RCC>

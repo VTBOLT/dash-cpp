@@ -1,6 +1,0 @@
-<RCC>
-  <qresource prefix="/">
-    <file alias="/Main">/Users/mason/Documents/Code/dash-cpp/build/Main</file>
-
-  </qresource>
-</RCC>

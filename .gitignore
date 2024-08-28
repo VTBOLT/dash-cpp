@@ -4,3 +4,4 @@
 *.qtds.**
 **/CMakeCache.txt
 .clangd
+build/

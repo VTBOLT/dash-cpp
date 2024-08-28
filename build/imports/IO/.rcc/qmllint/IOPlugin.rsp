@@ -1,7 +1,0 @@
---bare
--I
-/Users/mason/Documents/Code/dash-cpp/build/imports
--I
-/opt/homebrew/share/qt/qml
---resource
-/Users/mason/Documents/Code/dash-cpp/build/imports/IO/.rcc/qmake_IO.qrc

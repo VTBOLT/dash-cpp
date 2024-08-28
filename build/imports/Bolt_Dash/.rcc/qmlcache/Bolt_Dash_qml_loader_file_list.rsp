@@ -1,8 +1,0 @@
---resource
-/Users/mason/Documents/Code/dash-cpp/build/imports/Bolt_Dash/.rcc/qmake_Bolt_Dash.qrc
---resource
-/Users/mason/Documents/Code/dash-cpp/build/imports/Bolt_Dash/.rcc/Bolt_Dash_raw_qml_0.qrc
-/Bolt_Dash/Constants.qml
-/Bolt_Dash/DirectoryFontLoader.qml
-/Bolt_Dash/EventListModel.qml
-/Bolt_Dash/EventListSimulator.qml

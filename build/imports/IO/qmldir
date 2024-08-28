@@ -1,7 +1,0 @@
-module IO
-linktarget IOPluginplugin
-optional plugin IOPluginplugin
-classname IOPlugin
-typeinfo IOPlugin.qmltypes
-prefer :/IO/
-
