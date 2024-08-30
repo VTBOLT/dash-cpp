@@ -30,19 +30,24 @@ int gpsMain() {
             !std::isnan(gpsd_data->fix.latitude) &&
             !std::isnan(gpsd_data->fix.longitude)) {
 
-            std::cout << std::fixed << std::setprecision(6);
-            std::cout << "Latitude: " << gpsd_data->fix.latitude << std::endl;
-            std::cout << "Longitude: " << gpsd_data->fix.longitude << std::endl;
-            std::cout << "Altitude: " << gpsd_data->fix.altitude << " m" << std::endl;
-            std::cout << "Speed: " << gpsd_data->fix.speed * 3.6 << " km/h" << std::endl;
+            // std::cout << std::fixed << std::setprecision(6);
+            // std::cout << "Latitude: " << gpsd_data->fix.latitude << std::endl;
+            // std::cout << "Longitude: " << gpsd_data->fix.longitude << std::endl;
+            // std::cout << "Altitude: " << gpsd_data->fix.altitude << " m" << std::endl;
+            // std::cout << "Speed: " << gpsd_data->fix.speed * 3.6 << " km/h" << std::endl;
 
-            // Use timespec_t for time
-            std::cout << "Timestamp: "
-                      << gpsd_data->fix.time.tv_sec << "."
-                      << std::setfill('0') << std::setw(9)
-                      << gpsd_data->fix.time.tv_nsec << std::endl;
+            // // Use timespec_t for time
+            // std::cout << "Timestamp: "
+            //           << gpsd_data->fix.time.tv_sec << "."
+            //           << std::setfill('0') << std::setw(9)
+            //           << gpsd_data->fix.time.tv_nsec << std::endl;
 
-            std::cout << std::endl;
+            // std::cout << std::endl;
+
+            gps_m.lock();
+            gps_lat = gpsd_data->fix.latitude;
+            gps_lon = gpsd_data->fix.longitude;
+            gps_m.unlock();
         }
 
         sleep(1);

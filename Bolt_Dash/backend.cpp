@@ -59,6 +59,7 @@ void Backend::updateVars() {
         gps_m.lock();
         setLat(gps_lat);
         setLon(gps_lon);
+        std::cout << "Lat: " << lat() << " Lon: " << long() << std::endl;
         gps_m.unlock();
         // Debug Message
         // std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
