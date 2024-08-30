@@ -16,7 +16,7 @@
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
                                     m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{},
                                     m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{}, m_bikeStatus{}, m_packCurrent{}, m_bmsErrorCodes{},
-                                    m_bmsErrorCodesString{}, m_bmsError{}, m_bmsWarning{}, m_lat{}, m_lon{}, gps_lat{}, gps_lon{} {
+                                    m_bmsErrorCodesString{}, m_bmsError{}, m_bmsWarning{}, m_lat{}, m_lon{} {
     std::thread update_vars(&Backend::updateVars, this);
     update_vars.detach();
 
