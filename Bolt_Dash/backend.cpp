@@ -7,25 +7,23 @@
 #include <cstring>
 #include <fcntl.h>
 #include <fstream>
+#include <functional>
 #include <iostream>
 #include <thread>
 #include <unistd.h>
 
-std::mutex gps_m;
-double lat = 0.0;
-double lon = 0.0;
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
                                     m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{},
                                     m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{}, m_bikeStatus{}, m_packCurrent{}, m_bmsErrorCodes{},
-                                    m_bmsErrorCodesString{}, m_bmsError{}, m_bmsWarning{}, m_lat{}, m_lon{} {
+                                    m_bmsErrorCodesString{}, m_bmsError{}, m_bmsWarning{}, m_lat{}, m_lon{}, gps_lat{}, gps_lon{} {
     std::thread update_vars(&Backend::updateVars, this);
     update_vars.detach();
 
     std::thread run_app(&web::runApp);
     run_app.detach();
 
-    std::thread run_gps(&gpsMain, lat, lon, gps_m);
+    std::thread run_gps(&gpsMain, std::ref(gps_lat), std::ref(gps_lon), gps_m);
     run_gps.detach();
 }
 
@@ -59,8 +57,8 @@ void Backend::updateVars() {
         m.unlock();
 
         gps_m.lock();
-        setLat(lat);
-        setLon(lon);
+        setLat(gps_lat);
+        setLon(gps_lon);
         gps_m.unlock();
         // Debug Message
         // std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;

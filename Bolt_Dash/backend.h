@@ -130,6 +130,8 @@ private:
     std::vector<QString> m_bmsErrorCodesString;
     double m_lat;
     double m_lon;
+    double gps_lat;
+    double gps_lon;
 };
 
 #endif // BACKEND_H
