@@ -16,6 +16,8 @@ Item {
         bmsTemp: backend.bmsTemp
         motorSpeed: backend.motorSpeed
         bikeSpeed: backend.bikeSpeed
+        longitude: backend.lon
+        latitude: backend.lat
     }
 
     DebugMotor {

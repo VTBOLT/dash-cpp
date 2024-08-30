@@ -18,6 +18,8 @@ Item {
     property double motorSpeed: 0.0
     property double bikeSpeed: 0.0
     property double packVoltage: 0.0
+    property double latitude: 0.0
+    property double longitude: 0.0
 
     // Using grid layout for organized display
     GridLayout {
@@ -57,5 +59,11 @@ Item {
 
         Text { text: "Bike Speed:" }
         Text { text: qsTr("%1 mph").arg(bikeSpeed) }
+
+        Text { text: "Longitude:" }
+        Text { text: qsTr("%1").arg(longitude) }
+
+        Text { text: "Latitude:" }
+        Text { text: qsTr("%1").arg(latitude) }
     }
 }
