@@ -30,6 +30,8 @@ class Backend : public QObject {
     Q_PROPERTY(bool bmsError READ bmsError WRITE setBmsError NOTIFY bmsErrorChanged);
     Q_PROPERTY(bool bmsWarning READ bmsWarning WRITE setBmsWarning NOTIFY bmsWarningChanged);
     Q_PROPERTY(std::vector<QString> bmsErrorCodesString READ bmsErrorCodesString NOTIFY bmsErrorCodesStringChanged);
+    Q_PROPERTY(double lat READ lat WRITE setLat NOTIFY latChanged);
+    Q_PROPERTY(double lon READ lon WRITE setLon NOTIFY lonChanged);
 
 public:
     explicit Backend(QObject *parent = nullptr);
@@ -53,6 +55,8 @@ public:
     bool bmsWarning() const;
     uint32_t bmsErrorCodes() const;
     std::vector<QString> bmsErrorCodesString() const;
+    double lat() const;
+    double lon() const;
 
     void setMotorTemp(const double temp);
     void setAuxVoltage(const double cap);
@@ -74,6 +78,8 @@ public:
     void setBmsWarning(const bool warning);
     void setBmsErrorCodes(const uint32_t warnings);
     void setBmsErrorCodesString(const std::vector<QString> warnings);
+    void setLat(const double lat);
+    void setLon(const double lon);
 
 signals:
     void motorTempChanged();
@@ -96,6 +102,8 @@ signals:
     void bmsWarningChanged();
     void bmsErrorCodesChanged();
     void bmsErrorCodesStringChanged();
+    void latChanged();
+    void lonChanged();
 
 private:
     void updateVars();
@@ -120,6 +128,8 @@ private:
     bool m_bmsWarning;
     uint32_t m_bmsErrorCodes;
     std::vector<QString> m_bmsErrorCodesString;
+    double m_lat;
+    double m_lon;
 };
 
 #endif // BACKEND_H

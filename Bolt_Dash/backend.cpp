@@ -11,18 +11,19 @@
 #include <thread>
 #include <unistd.h>
 
+std::mutex gps_m;
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
                                     m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{},
                                     m_bmsFault{}, m_packVoltage{}, m_motorOn{}, m_mcFault{}, m_bikeStatus{}, m_packCurrent{}, m_bmsErrorCodes{},
-                                    m_bmsErrorCodesString{}, m_bmsError{}, m_bmsWarning{} {
+                                    m_bmsErrorCodesString{}, m_bmsError{}, m_bmsWarning{}, m_lat{}, m_lon{} {
     std::thread update_vars(&Backend::updateVars, this);
     update_vars.detach();
 
     std::thread run_app(&web::runApp);
     run_app.detach();
 
-    std::thread run_gps(&gpsMain);
+    std::thread run_gps(&gpsMain, &m_lat, &m_lon, gps_m);
     run_gps.detach();
 }
 
@@ -221,6 +222,13 @@ std::vector<QString> Backend::bmsErrorCodesString() const {
     return m_bmsErrorCodesString;
 }
 
+double Backend::lat() const {
+    return m_lat;
+}
+
+double Backend::lon() const {
+    return m_lon;
+}
 // }
 
 // Setter Functions
@@ -362,6 +370,20 @@ void Backend::setBmsErrorCodesString(const std::vector<QString> warnings) {
     if (m_bmsErrorCodesString != warnings) {
         m_bmsErrorCodesString = warnings;
         emit bmsErrorCodesStringChanged();
+    }
+}
+
+void Backend::setLat(const double lat) {
+    if (m_lat != lat) {
+        m_lat = lat;
+        emit latChanged();
+    }
+}
+
+void Backend::setLon(const double lon) {
+    if (m_lon != lon) {
+        m_lon = lon;
+        emit lonChanged();
     }
 }
 // }

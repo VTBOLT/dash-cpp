@@ -1,6 +1,6 @@
 #include "gpsprocessing.h"
 
-int gpsMain() {
+int gpsMain(double &lat, double &long, std::mutex m) {
     gpsmm gps_rec("localhost", DEFAULT_GPSD_PORT);
 
     if (!gps_rec.stream(WATCH_ENABLE | WATCH_JSON)) {
