@@ -12,6 +12,8 @@
 #include <unistd.h>
 
 std::mutex gps_m;
+double *lat = 0.0;
+double *lon = 0.0;
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
                                     m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{},
@@ -23,7 +25,7 @@ Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage
     std::thread run_app(&web::runApp);
     run_app.detach();
 
-    std::thread run_gps(&gpsMain, &m_lat, &m_lon, gps_m);
+    std::thread run_gps(&gpsMain, lat, lon, gps_m);
     run_gps.detach();
 }
 
@@ -55,6 +57,11 @@ void Backend::updateVars() {
         std::vector<QString> warnings = getErrorCodeStrings(data.bms_error_codes);
         setBmsErrorCodesString(warnings);
         m.unlock();
+
+        gps_m.lock();
+        setLat(*lat);
+        setLon(*lon);
+        gps_m.unlock();
         // Debug Message
         // std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
