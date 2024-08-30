@@ -24,7 +24,7 @@ Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage
     std::thread run_app(&web::runApp);
     run_app.detach();
 
-    std::thread run_gps(&gpsMain, std::ref(gps_lat), std::ref(gps_lon), gps_m);
+    std::thread run_gps(&gpsMain, std::ref(gps_lat), std::ref(gps_lon), std::ref(gps_m));
     run_gps.detach();
 }
 
