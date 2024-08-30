@@ -12,8 +12,8 @@
 #include <unistd.h>
 
 std::mutex gps_m;
-double *lat = 0.0;
-double *lon = 0.0;
+double lat = 0.0;
+double lon = 0.0;
 // Create Backend class which can be included in QML
 Backend::Backend(QObject *parent) : QObject(parent), m_motorTemp{}, m_auxVoltage{}, m_auxPercent{},
                                     m_packSOC{}, m_highCellTemp{}, m_lowCellTemp{}, m_bmsTemp{}, m_motorSpeed{}, m_bikeSpeed{}, m_mcTemp{},
@@ -59,8 +59,8 @@ void Backend::updateVars() {
         m.unlock();
 
         gps_m.lock();
-        setLat(*lat);
-        setLon(*lon);
+        setLat(lat);
+        setLon(lon);
         gps_m.unlock();
         // Debug Message
         // std::cout << "MotorTemp: " << motorTemp() << " AuxVoltage: " << auxVoltage() << " AuxPercent: " << auxPercent() << " PackSOC: " << packSOC() << " HighCellTemp: " << highCellTemp() << " LowCellTemp: " << lowCellTemp() << " BmsTemp: " << bmsTemp() << " MotorSpeed: " << motorSpeed() << " BikeSpeed: " << bikeSpeed() << std::endl;
