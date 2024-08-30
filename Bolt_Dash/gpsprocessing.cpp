@@ -1,5 +1,4 @@
 #include "gpsprocessing.h"
-#include <mutex>
 
 std::mutex gps_m;
 double gps_lat;
