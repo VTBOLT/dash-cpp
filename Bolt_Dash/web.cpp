@@ -2,6 +2,7 @@
 #include "can.h"
 #include "constants.h"
 #include "crow.h"
+#include "gpsprocessing.h"
 #include <string>
 
 namespace web {
@@ -28,6 +29,10 @@ namespace web {
             response["motor_on"] = data.motor_on;
             response["bike_status"] = data.bike_status;
             m.unlock();
+            gps_m.lock();
+            response["lat"] = gps_lat;
+            response["lon"] = gps_lon;
+            gps_m.unlock();
             return response;
         });
 
