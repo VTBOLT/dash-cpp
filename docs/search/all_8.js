@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['setauxpercent_0',['setAuxPercent',['../class_backend.html#a181d4ef7a800a59f30970aff81935ff9',1,'Backend']]],
+  ['setauxvoltage_1',['setAuxVoltage',['../class_backend.html#aea1988760e23d3a71c8e59d3fbd629a3',1,'Backend']]],
+  ['setbikespeed_2',['setBikeSpeed',['../class_backend.html#a41f530c3353b3090ecb5e5be8cc285b6',1,'Backend']]],
+  ['setbikestatus_3',['setBikeStatus',['../class_backend.html#aa4dd42516324c53f45594ebfde561937',1,'Backend']]],
+  ['setbmserror_4',['setBmsError',['../class_backend.html#a5fb55f0d084b1526cd7722e9536367f3',1,'Backend']]],
+  ['setbmserrorcodes_5',['setBmsErrorCodes',['../class_backend.html#aa9a795644028d3c7e77563034dcbc20a',1,'Backend']]],
+  ['setbmserrorcodesstring_6',['setBmsErrorCodesString',['../class_backend.html#af2fcdd85b15e60d1ddbc2bc48391a6f9',1,'Backend']]],
+  ['setbmsfault_7',['setBmsFault',['../class_backend.html#abc484080dc62f7f36a96c72586b25799',1,'Backend']]],
+  ['setbmstemp_8',['setBmsTemp',['../class_backend.html#a4d63556bfd846e2f327a766620e8b8df',1,'Backend']]],
+  ['setbmswarning_9',['setBmsWarning',['../class_backend.html#a1ed8e3394afa439f9f16710f7896649c',1,'Backend']]],
+  ['sethighcelltemp_10',['setHighCellTemp',['../class_backend.html#a1e83e3ce8504f024857446e12b8845b7',1,'Backend']]],
+  ['setlat_11',['setLat',['../class_backend.html#ac6479865cb1424e3db4420da0877e215',1,'Backend']]],
+  ['setlon_12',['setLon',['../class_backend.html#a23d341fe68297b82782e786210022585',1,'Backend']]],
+  ['setlowcelltemp_13',['setLowCellTemp',['../class_backend.html#aba6f3cfe6aa6137dc7351bb44dfa45a7',1,'Backend']]],
+  ['setmcfault_14',['setMcFault',['../class_backend.html#abaf8de6f691d2259eb872b72537f7058',1,'Backend']]],
+  ['setmctemp_15',['setMcTemp',['../class_backend.html#a157a36598b32143e812533cf87dd272f',1,'Backend']]],
+  ['setmotoron_16',['setMotorOn',['../class_backend.html#ab4699e9d0f3fd20c7bf325e412d02031',1,'Backend']]],
+  ['setmotorspeed_17',['setMotorSpeed',['../class_backend.html#a3ae0f65b4936686f6e41154c2ea9b7f8',1,'Backend']]],
+  ['setmotortemp_18',['setMotorTemp',['../class_backend.html#aa2bf5fa75e4d89a37ff1310fb1d88aa2',1,'Backend']]],
+  ['setpackcurrent_19',['setPackCurrent',['../class_backend.html#a5ef79b5db160853a21fc658c662f99ce',1,'Backend']]],
+  ['setpacksoc_20',['setPackSOC',['../class_backend.html#af059700e1da309edb7e8e50d76141077',1,'Backend']]],
+  ['setpackvoltage_21',['setPackVoltage',['../class_backend.html#adb6236eaa2d963d07cf80154e84f0f59',1,'Backend']]]
+];
