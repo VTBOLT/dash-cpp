@@ -13,27 +13,95 @@
 
 #define BMS_FAULT_MASK 0b0010000
 
+/**
+ * @brief This is a struct that contains all the data that we get from the CAN bus
+ * and is used in the dash project.
+ *
+ */
 struct our_candata {
+    /**
+     * @brief The voltage of the aux pack
+     */
     uint8_t aux_voltage{};
+    /**
+     * @brief The battery percentage of the aux pack
+     */
     uint8_t aux_percent{};
+    /**
+     * @brief The state of charge of the main pack as a percentage
+     */
     uint8_t pack_state_of_charge{};
+    /**
+     * @brief The voltage of the main pack
+     */
     uint16_t pack_voltage{};
+    /**
+     * @brief The current of the main pack
+     */
     int16_t pack_current{};
+    /**
+     * @brief The temperature of the hottest cell group in the main pack
+     */
     uint16_t high_cell_temp{};
+    /**
+     * @brief The temperature of the coldest cell group in the main pack
+     */
     uint16_t low_cell_temp{};
+    /**
+     * @brief The temperature of the motor
+     */
     int16_t motor_temperature{};
+    /**
+     * @brief The temperature of the BMS
+     */
     uint16_t bms_temperature{};
+    /**
+     * @brief The temperature of the motor controller
+     */
     uint16_t mc_temperature{};
+    /**
+     * @brief The RPM of the motor
+     */
     int16_t motor_speed{};
+    /**
+     * @brief The speed of the bike in mph
+     */
     int16_t bike_speed{};
+    /**
+     * @brief The fault status of the BMS
+     */
     uint8_t bms_fault{};
+    /**
+     * @brief Whether the BMS has any errors
+     */
     uint8_t bms_error{};
+    /**
+     * @brief Whether the BMS has any warnings
+     */
     uint8_t bms_warning{};
+    /**
+     * @brief The actual error codes of the BMS concatenated together
+     */
     uint32_t bms_error_codes{};
+    /**
+     * @brief Whether or no the MC has a fault
+     */
     uint8_t mc_fault{};
+    /**
+     * @brief Whether or not the motor is active
+     */
     uint8_t motor_on{};
+    /**
+     * @brief The internal state of the bike, not used rn
+     */
     uint8_t bike_status{};
+    /**
+     * @brief The highest cell voltage in the main pack
+     */
     uint16_t highest_cell_voltage{};
+    /**
+     * @brief The lowest cell voltage in the main pack
+     */
     uint16_t lowest_cell_voltage{};
 };
 
