@@ -37,8 +37,6 @@ qt_add_resources(Bolt_DashApp "configuration"
 
 target_include_directories(Bolt_DashApp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/includes/headers)
 
-find_package(pigpio COMPONENTS filesystem system QUIET)
-
 target_link_libraries(Bolt_DashApp PRIVATE
     Qt6::Core
     Qt6::Gui
@@ -46,8 +44,9 @@ target_link_libraries(Bolt_DashApp PRIVATE
     Qt6::Quick
 )
 
-if (TARGET pigpio)
-    target_link_libraries(Bolt_DashApp PRIVATE pigpio)
+find_library(PIGPIO_LIBRARY pigpio)
+if (PIGPIO_LIBRARY)
+    target_link_libraries(Bolt_DashApp PRIVATE ${PIGPIO_LIBRARY})
 endif()
 
 find_library(GPS_LIBRARY gps)

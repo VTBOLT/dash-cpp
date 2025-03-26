@@ -9,13 +9,6 @@
 #include <mutex>
 #include <string>
 
-// Assuming m, gps_m, data, gps_lat, gps_lon are declared elsewhere
-extern std::mutex m;
-extern std::mutex gps_m;
-extern Data data;
-extern double gps_lat;
-extern double gps_lon;
-
 namespace web {
 
     void runApp() {
