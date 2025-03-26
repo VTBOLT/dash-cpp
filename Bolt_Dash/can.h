@@ -8,8 +8,11 @@
 #include <sys/ioctl.h>
 #include <sys/socket.h>
 
+#if __has_include(<linux/can.h>) && __has_include(<linux/can/raw.h>)
 #include <linux/can.h>
 #include <linux/can/raw.h>
+#define CAN_LIB_FOUND 1
+#endif
 
 #define BMS_FAULT_MASK 0b0010000
 
@@ -106,6 +109,7 @@ struct our_candata {
 };
 
 // ID's for each CAN thing
+#ifdef CAN_LIB_FOUND
 constexpr struct {
     canid_t aux_battery{0x700};
     canid_t info{0x6B0};
@@ -120,6 +124,11 @@ constexpr struct {
     canid_t mc_faults{0x0AB};
     canid_t internal_states{0x0AA};
 } can_ids;
+#else
+constexpr struct {
+
+} can_ids;
+#endif // CAN_LIB_FOUND
 
 constexpr struct {
     uint32_t discharge_limit_enforcement{1 << 0};

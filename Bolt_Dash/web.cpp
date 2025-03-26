@@ -1,9 +1,20 @@
+#if __has_include(<crow.h>)
+#define CROW_FOUND 1
 #include "web.h"
 #include "can.h"
 #include "constants.h"
-#include "crow.h"
 #include "gpsprocessing.h"
+#include <chrono>
+#include <crow.h>
+#include <mutex>
 #include <string>
+
+// Assuming m, gps_m, data, gps_lat, gps_lon are declared elsewhere
+extern std::mutex m;
+extern std::mutex gps_m;
+extern Data data;
+extern double gps_lat;
+extern double gps_lon;
 
 namespace web {
 
@@ -12,7 +23,7 @@ namespace web {
 
         CROW_ROUTE(app, "/")
         ([]() {
-            std::chrono::duration now = std::chrono::system_clock::now().time_since_epoch();
+            auto now = std::chrono::system_clock::now().time_since_epoch();
             crow::json::wvalue response({{"timestamp", std::chrono::duration_cast<std::chrono::milliseconds>(now).count()}});
             m.lock();
             response["pack_state_of_charge"] = data.pack_state_of_charge * PACK_STATE_OF_CHARGE_SCALE;
@@ -39,3 +50,11 @@ namespace web {
         app.port(18080).multithreaded().run_async();
     }
 }
+
+#else // crow.h not found; do nothing
+namespace web {
+    void runApp() {
+        // No web server functionality
+    }
+}
+#endif

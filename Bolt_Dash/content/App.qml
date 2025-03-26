@@ -9,7 +9,7 @@ Window {
     width: mainScreen.width
     height: mainScreen.height
     property bool debugMode: false
-    
+
 
     visible: true
     title: "Bolt_Dash"

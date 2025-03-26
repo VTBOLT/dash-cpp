@@ -37,6 +37,7 @@ namespace can {
         return sum / FRAMES_TO_AVERAGE;
     }
 
+#ifdef CAN_LIB_FOUND
     int run() {
         // Where the data will be stored to be send to the front end
         int s, i;
@@ -217,4 +218,11 @@ namespace can {
 
         return 0;
     }
+
+#else
+    int run() {
+        // If no CAN library is found, just return 0
+        return 0;
+    }
+#endif // CAN_LIB_FOUND
 }

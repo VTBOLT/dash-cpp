@@ -3,7 +3,10 @@
 #include <cmath>
 #include <iomanip>
 #include <iostream>
+#if __has_include(<libgpsmm.h>)
 #include <libgpsmm.h>
+#define GPS_LIB_FOUND 1
+#endif
 #include <mutex>
 #include <unistd.h>
 

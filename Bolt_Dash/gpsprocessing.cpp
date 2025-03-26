@@ -4,6 +4,8 @@ std::mutex gps_m;
 double gps_lat;
 double gps_lon;
 
+#ifdef GPS_LIB_FOUND
+
 int gpsMain() {
     gpsmm gps_rec("localhost", DEFAULT_GPSD_PORT);
 
@@ -55,3 +57,11 @@ int gpsMain() {
 
     return 0;
 }
+
+#else
+int gpsMain() {
+    gps_lat = 0.0;
+    gps_lon = 0.0;
+    return 0;
+}
+#endif
