@@ -58,6 +58,14 @@ Item {
         bikeStatus: backend.bikeStatus
     }
 
+    DebugOther {
+        visible: menu.selected == DebugMain.Selected.OTHER
+        width: 650
+        id: debugOther
+        gpsLat: backend.lat
+        gpsLong: backend.lon
+    }
+
     DebugMain {
         id: menu
         x: 650

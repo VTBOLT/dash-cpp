@@ -39,4 +39,5 @@ qt6_add_qml_module(content
         QML_FILES DebugOverview.qml
         QML_FILES DebugBMS.qml
         QML_FILES DebugPDU.qml
+        QML_FILES DebugOther.qml
 )

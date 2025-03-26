@@ -10,12 +10,13 @@ Item {
         OVERVIEW,
         MOTOR,
         BMS,
-        PDU
+        PDU,
+        OTHER
     }
 
     Column {
         id: column
-        property int numButtons: 4
+        property int numButtons: 5
         y: spacing
         spacing: 3
         width: parent.width
@@ -41,6 +42,8 @@ Item {
                             return "BMS"
                         case DebugMain.Selected.PDU:
                             return "PDU"
+                        case DebugMain.Selected.OTHER:
+                            return "Other"
                         default:
                             return "Unknown"
                         }

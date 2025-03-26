@@ -7,3 +7,5 @@
 build/
 html/
 latex/
+.idea/**
+.DS_STORE
