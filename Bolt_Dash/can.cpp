@@ -178,6 +178,13 @@ namespace can {
                     data.bms_warning &= ~bms_errors.lowest_cell_voltage_too_low;
                 }
                 break;
+            case can_ids.acc_signal:
+                if (frame.data[0] == 0) {
+                    data.bike_status = 0;
+                } else if (data.bike_status == 0) {
+                    data.bike_status = frame.data[0];
+                }
+                break;
             default:
                 unknown_data = new int8_t[frame.can_dlc];
                 for (int i{}; i < frame.can_dlc; i++) {
