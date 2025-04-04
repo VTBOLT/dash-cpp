@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import Bolt_Dash
 
 Item {
     width: 60
@@ -18,6 +19,7 @@ Item {
 
     Rectangle {
         id: enclosing
+        radius: 15
         x: 0
         y: 0
         width: 60
@@ -28,6 +30,7 @@ Item {
 
     Rectangle {
         id: level
+        radius: 15
         x: 0
         y: 0
         width: 60

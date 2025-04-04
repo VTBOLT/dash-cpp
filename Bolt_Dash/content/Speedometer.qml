@@ -8,7 +8,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Shapes 2.15
 import Bolt_Dash 1.0
-import QtQuick.Studio.Components
+// import QtQuick.Components
 
 
 Item {
@@ -18,28 +18,22 @@ Item {
     height: 75
     property double fullness: 0.5;
 
-    Connections {
-        target: container
-        onSpeedoPercentChanged: {
-            curveCanvas.requestPaint();
-        }
-    }
-
     Rectangle {
         id: root
         width: parent.width
         height: parent.height
-        radius: 10
-        border.color: "#616161"
+        radius: 0
+        border.color: "#000000"
         border.width: 10
 
         Rectangle {
             id: rectangle
+            radius: 0
             x: 10
             y: 10
             width: 680*fullness
             height: 55
-            color: "#0c00ff"
+            color: "#E5751F"
         }
     }
 }

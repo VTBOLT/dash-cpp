@@ -17,6 +17,9 @@ Item {
     property double bmsTemp: 0.0
     property double motorSpeed: 0.0
     property double bikeSpeed: 0.0
+    property double packVoltage: 0.0
+    property double latitude: 0.0
+    property double longitude: 0.0
 
     // Using grid layout for organized display
     GridLayout {
@@ -27,31 +30,40 @@ Item {
         height: parent.height
 
         // Labels and dynamic text for each data item, converting double to string for display
-        Label { text: "Motor Temperature:" }
+        Text { text: "Motor Temperature:" }
         Text { text: qsTr("%1°C").arg(backend.motorTemp) }
 
-        Label { text: "Aux Voltage:" }
+        Text { text: "Aux Voltage:" }
         Text { text: qsTr("%1V").arg(auxVoltage) }
 
-        Label { text: "Aux Percent:" }
+        Text { text: "Aux Percent:" }
         Text { text: qsTr("%1\%").arg(auxPercent*100) }
 
-        Label { text: "Pack State of Charge (SOC):" }
+        Text { text: "Pack State of Charge (SOC):" }
         Text { text: qsTr("%1\%").arg(packSOC*100) }
 
-        Label { text: "High Cell Temperature:" }
+        Text { text: "PackVoltage:" }
+        Text { text: qsTr("%1V").arg(packVoltage) }
+
+        Text { text: "High Cell Temperature:" }
         Text { text: qsTr("%1°C").arg(highCellTemp) }
 
-        Label { text: "Low Cell Temperature:" }
+        Text { text: "Low Cell Temperature:" }
         Text { text: qsTr("%1°C").arg(lowCellTemp) }
 
-        Label { text: "BMS Temperature:" }
+        Text { text: "BMS Temperature:" }
         Text { text: qsTr("%1°C").arg(bmsTemp) }
 
-        Label { text: "Motor Speed:" }
+        Text { text: "Motor Speed:" }
         Text { text: qsTr("%1 RPM").arg(motorSpeed) }
 
-        Label { text: "Bike Speed:" }
+        Text { text: "Bike Speed:" }
         Text { text: qsTr("%1 mph").arg(bikeSpeed) }
+
+        Text { text: "Longitude:" }
+        Text { text: qsTr("%1").arg(longitude) }
+
+        Text { text: "Latitude:" }
+        Text { text: qsTr("%1").arg(latitude) }
     }
 }

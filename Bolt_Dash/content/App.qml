@@ -3,14 +3,13 @@
 
 import QtQuick 6.2
 import Bolt_Dash
-import Backend
 import IO
 
 Window {
     width: mainScreen.width
     height: mainScreen.height
     property bool debugMode: false
-    
+
 
     visible: true
     title: "Bolt_Dash"
@@ -31,6 +30,15 @@ Window {
         onButtonTapped: {
             debugMode = !debugMode
         }
+    }
+
+    Rectangle {
+        visible: true
+        color: "transparent"
+        border.color: "red"
+        border.width: 1
+        height: Constants.height
+        width: Constants.width
     }
 }
 

@@ -5,4 +5,5 @@ import QtQuick
 import content
 
 App {
+	 visibility: "FullScreen"
 }

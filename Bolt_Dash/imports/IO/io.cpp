@@ -1,5 +1,10 @@
 #include "io.h"
+#if __has_include(<pigpio.h>)
 #include <pigpio.h>
+#define PIGPIO_FOUND 1
+#endif
+
+#ifdef PIGPIO_FOUND
 
 // Create IO class which can be included in QML
 IO::IO(QObject *parent) : QObject(parent), m_buttonStatus{} {
@@ -39,3 +44,27 @@ void IO::setButtonStatus(const bool status) {
         }
     }
 }
+
+#else // PIGPIO_FOUND
+
+IO::IO(QObject *parent) : QObject(parent), m_buttonStatus{} {
+    setButtonStatus(false);
+}
+
+// Functions to get variable values
+bool IO::buttonStatus() const {
+    return m_buttonStatus;
+}
+
+// Setter Functions
+void IO::setButtonStatus(const bool status) {
+    if (m_buttonStatus != status) {
+        m_buttonStatus = status;
+        emit buttonStatusChanged();
+        if (m_buttonStatus == PRESSED) {
+            emit buttonTapped();
+        }
+    }
+}
+
+#endif // PIGPIO_FOUND

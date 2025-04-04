@@ -3,18 +3,27 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
 
 #include "app_environment.h"
+#include "backend.h"
+#include "can.h"
 #include "import_qml_components_plugins.h"
 #include "import_qml_plugins.h"
+#include "qfont.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     set_qt_environment();
 
     QGuiApplication app(argc, argv);
-
+    QFont font;
+    font.setFamily("MesloLGSDZ Nerd Font Mono");
+    app.setFont(font);
     QQmlApplicationEngine engine;
+
+    Backend *backend = new Backend();
+    engine.rootContext()->setContextProperty("backend", backend);
+
     const QUrl url(u"qrc:Main/main.qml"_qs);
     QObject::connect(
         &engine, &QQmlApplicationEngine::objectCreated, &app,

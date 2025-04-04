@@ -3,3 +3,9 @@
 **.user
 *.qtds.**
 **/CMakeCache.txt
+.clangd
+build/
+html/
+latex/
+.idea/**
+.DS_STORE

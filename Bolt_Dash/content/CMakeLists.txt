@@ -11,12 +11,33 @@ qt6_add_qml_module(content
         Speedometer.qml
         BatterySlider.qml
         TempSlider.qml
-        WarningSymbol.qml
         Debug1.qml
         BoltLeanAngle.qml
+        BikeStatus.qml
+        BatteryReadout.qml
+        FullBatterySlider.qml
+        TemperatureIsland.qml
+        FullSlider.qml
+        BMSFaultDetails.qml
     RESOURCES
         fonts/fonts.txt
         fonts/nasalization-rg.otf
+        fonts/MesloLGSDZNerdFontMono-Regular.ttf
         Pictures/leanAngleBack.png
+        Pictures/motorcycleIcon.png
+        Pictures/battery-twotone-0-svgrepo-com.svg
+        Pictures/battery.svg
+        Pictures/battery_temp.svg
+        Pictures/controller_temp.svg
+        Pictures/motor_temp.svg
+        Pictures/Virginia_Tech_Hokies_logo.svg
         QML_FILES DebugItem1.ui.qml
+        QML_FILES FaultMotorStatus.qml
+        QML_FILES SpeedometerDecorations.qml
+        QML_FILES DebugMain.qml
+        QML_FILES DebugMotor.qml
+        QML_FILES DebugOverview.qml
+        QML_FILES DebugBMS.qml
+        QML_FILES DebugPDU.qml
+        QML_FILES DebugOther.qml
 )
