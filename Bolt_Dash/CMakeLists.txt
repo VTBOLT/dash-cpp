@@ -42,6 +42,7 @@ target_link_libraries(Bolt_DashApp PRIVATE
     Qt6::Gui
     Qt6::Qml
     Qt6::Quick
+    pigpio
 )
 
 find_library(PIGPIO_LIBRARY pigpio)
