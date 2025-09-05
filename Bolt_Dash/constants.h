@@ -1,4 +1,4 @@
-#define RPM_TO_SPEED (19.0 / 45.0 * 27.63 * M_PI / 1056)
+#define RPM_TO_SPEED (18.0 / 45.0 * 27.63 * M_PI / 1056)
 
 // Scaling for CAN data
 #define MOTOR_TEMPERATURE_SCALE (1.0 / 10.0)
